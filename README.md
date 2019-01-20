@@ -1,5 +1,7 @@
 # 介绍
 
+[![Build status](https://ci.appveyor.com/api/projects/status/cu5jwgjvuc4k5hrv/branch/master?svg=true)](https://ci.appveyor.com/project/codeyu/python-data-structure-cn/branch/master)
+
 #### problem-solving-with-algorithms-and-data-structure-using-python 中文版
 
 #### 目的
@@ -9,12 +11,13 @@
 
 * 由于本人英语能力不佳，本书部分翻译参考谷歌，但每句话都经过个人理解后调整修改，尽量保证语句畅通。
 * 由于翻译比较仓促，难以避免有些排版错别字等问题，后续会润色。如你也有兴趣参与，可 pull request 到  [github 仓库](https://github.com/facert/python-data-structure-cn)
-* 本书未加上课后练习，如有兴趣，可上原书网站练习。
+* 本书暂未翻译课后练习，如有兴趣，可[上原书网站练习](http://interactivepython.org/runestone/static/pythonds/index.html)。
 
 #### 地址
 
 * github 地址: https://github.com/facert/python-data-structure-cn
 * gitbook 在线浏览: https://facert.gitbooks.io/python-data-structure-cn
+* github pages 在线浏览: http://codeyu.com/python-data-structure-cn
 
 #### 联系作者
 
