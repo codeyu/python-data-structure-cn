@@ -1,0 +1,1887 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.9.实现广度优先搜索 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../7.10.广度优先搜索分析/" />
+    
+    
+    <link rel="prev" href="../7.8.构建字梯图/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../1.介绍/">
+            
+                <a href="../../1.介绍/">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../1.介绍/1.1.目标/">
+            
+                <a href="../../1.介绍/1.1.目标/">
+            
+                    
+                    1.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../1.介绍/1.2.快速开始/">
+            
+                <a href="../../1.介绍/1.2.快速开始/">
+            
+                    
+                    1.2.快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../1.介绍/1.3.什么是计算机科学/">
+            
+                <a href="../../1.介绍/1.3.什么是计算机科学/">
+            
+                    
+                    1.3.什么是计算机科学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../1.介绍/1.4.什么是编程/">
+            
+                <a href="../../1.介绍/1.4.什么是编程/">
+            
+                    
+                    1.4.什么是编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../1.介绍/1.5.为什么要学习数据结构和抽象数据类型/">
+            
+                <a href="../../1.介绍/1.5.为什么要学习数据结构和抽象数据类型/">
+            
+                    
+                    1.5.为什么要学习数据结构和抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../1.介绍/1.6.为什么要学习算法/">
+            
+                <a href="../../1.介绍/1.6.为什么要学习算法/">
+            
+                    
+                    1.6.为什么要学习算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../1.介绍/1.7.回顾Python基础/">
+            
+                <a href="../../1.介绍/1.7.回顾Python基础/">
+            
+                    
+                    1.7.回顾Python基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../1.介绍/1.8.数据入门/">
+            
+                <a href="../../1.介绍/1.8.数据入门/">
+            
+                    
+                    1.8.数据入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../1.介绍/1.9.输入和输出/">
+            
+                <a href="../../1.介绍/1.9.输入和输出/">
+            
+                    
+                    1.9.输入和输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../1.介绍/1.10.控制结构/">
+            
+                <a href="../../1.介绍/1.10.控制结构/">
+            
+                    
+                    1.10.控制结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../1.介绍/1.11.处理异常/">
+            
+                <a href="../../1.介绍/1.11.处理异常/">
+            
+                    
+                    1.11.处理异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../../1.介绍/1.12.定义函数/">
+            
+                <a href="../../1.介绍/1.12.定义函数/">
+            
+                    
+                    1.12.定义函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../../1.介绍/1.13.面向对象编程-定义类/">
+            
+                <a href="../../1.介绍/1.13.面向对象编程-定义类/">
+            
+                    
+                    1.13.面向对象编程-定义类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../../1.介绍/1.14.总结/">
+            
+                <a href="../../1.介绍/1.14.总结/">
+            
+                    
+                    1.14.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../2.算法分析/">
+            
+                <a href="../../2.算法分析/">
+            
+                    
+                    2.算法分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../2.算法分析/2.1.目标/">
+            
+                <a href="../../2.算法分析/2.1.目标/">
+            
+                    
+                    2.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../2.算法分析/2.2.什么是算法分析/">
+            
+                <a href="../../2.算法分析/2.2.什么是算法分析/">
+            
+                    
+                    2.2.什么是算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../2.算法分析/2.3.大O符号/">
+            
+                <a href="../../2.算法分析/2.3.大O符号/">
+            
+                    
+                    2.3.大O符号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../2.算法分析/2.4.一个乱序字符串检查的例子/">
+            
+                <a href="../../2.算法分析/2.4.一个乱序字符串检查的例子/">
+            
+                    
+                    2.4.一个乱序字符串检查的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../2.算法分析/2.5.Python数据结构的性能/">
+            
+                <a href="../../2.算法分析/2.5.Python数据结构的性能/">
+            
+                    
+                    2.5.Python数据结构的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../2.算法分析/2.6.列表/">
+            
+                <a href="../../2.算法分析/2.6.列表/">
+            
+                    
+                    2.6.列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../2.算法分析/2.7.字典/">
+            
+                <a href="../../2.算法分析/2.7.字典/">
+            
+                    
+                    2.7.字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../2.算法分析/2.8.总结/">
+            
+                <a href="../../2.算法分析/2.8.总结/">
+            
+                    
+                    2.8.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../3.基本数据结构/">
+            
+                <a href="../../3.基本数据结构/">
+            
+                    
+                    3.基本数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../3.基本数据结构/3.1.目标/">
+            
+                <a href="../../3.基本数据结构/3.1.目标/">
+            
+                    
+                    3.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../3.基本数据结构/3.2.什么是线性数据结构/">
+            
+                <a href="../../3.基本数据结构/3.2.什么是线性数据结构/">
+            
+                    
+                    3.2.什么是线性数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../3.基本数据结构/3.3.什么是栈/">
+            
+                <a href="../../3.基本数据结构/3.3.什么是栈/">
+            
+                    
+                    3.3.什么是栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../3.基本数据结构/3.4.栈的抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.4.栈的抽象数据类型/">
+            
+                    
+                    3.4.栈的抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../3.基本数据结构/3.5.Python实现栈/">
+            
+                <a href="../../3.基本数据结构/3.5.Python实现栈/">
+            
+                    
+                    3.5.Python实现栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../3.基本数据结构/3.6.简单括号匹配/">
+            
+                <a href="../../3.基本数据结构/3.6.简单括号匹配/">
+            
+                    
+                    3.6.简单括号匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../3.基本数据结构/3.7.符号匹配/">
+            
+                <a href="../../3.基本数据结构/3.7.符号匹配/">
+            
+                    
+                    3.7.符号匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../3.基本数据结构/3.8.十进制转换成二进制/">
+            
+                <a href="../../3.基本数据结构/3.8.十进制转换成二进制/">
+            
+                    
+                    3.8.十进制转换成二进制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../3.基本数据结构/3.9.中缀前缀和后缀表达式/">
+            
+                <a href="../../3.基本数据结构/3.9.中缀前缀和后缀表达式/">
+            
+                    
+                    3.9.中缀前缀和后缀表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../3.基本数据结构/3.10.什么是队列/">
+            
+                <a href="../../3.基本数据结构/3.10.什么是队列/">
+            
+                    
+                    3.10.什么是队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../3.基本数据结构/3.11.队列抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.11.队列抽象数据类型/">
+            
+                    
+                    3.11.队列抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../3.基本数据结构/3.12.Python实现队列/">
+            
+                <a href="../../3.基本数据结构/3.12.Python实现队列/">
+            
+                    
+                    3.12.Python实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../3.基本数据结构/3.13.模拟：烫手山芋/">
+            
+                <a href="../../3.基本数据结构/3.13.模拟：烫手山芋/">
+            
+                    
+                    3.13.模拟：烫手山芋
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../3.基本数据结构/3.14.模拟：打印机/">
+            
+                <a href="../../3.基本数据结构/3.14.模拟：打印机/">
+            
+                    
+                    3.14.模拟：打印机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../3.基本数据结构/3.15.什么是Deque/">
+            
+                <a href="../../3.基本数据结构/3.15.什么是Deque/">
+            
+                    
+                    3.15.什么是Deque
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../../3.基本数据结构/3.16.Deque抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.16.Deque抽象数据类型/">
+            
+                    
+                    3.16.Deque抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../../3.基本数据结构/3.17.Python实现Deque/">
+            
+                <a href="../../3.基本数据结构/3.17.Python实现Deque/">
+            
+                    
+                    3.17.Python实现Deque
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../../3.基本数据结构/3.18.回文检查/">
+            
+                <a href="../../3.基本数据结构/3.18.回文检查/">
+            
+                    
+                    3.18.回文检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../../3.基本数据结构/3.19.列表/">
+            
+                <a href="../../3.基本数据结构/3.19.列表/">
+            
+                    
+                    3.19.列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../../3.基本数据结构/3.20.无序列表抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.20.无序列表抽象数据类型/">
+            
+                    
+                    3.20.无序列表抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../../3.基本数据结构/3.21.实现无序列表：链表/">
+            
+                <a href="../../3.基本数据结构/3.21.实现无序列表：链表/">
+            
+                    
+                    3.21.实现无序列表：链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../../3.基本数据结构/3.22.有序列表抽象数据结构/">
+            
+                <a href="../../3.基本数据结构/3.22.有序列表抽象数据结构/">
+            
+                    
+                    3.22.有序列表抽象数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../../3.基本数据结构/3.23.实现有序列表/">
+            
+                <a href="../../3.基本数据结构/3.23.实现有序列表/">
+            
+                    
+                    3.23.实现有序列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../../3.基本数据结构/3.24.总结/">
+            
+                <a href="../../3.基本数据结构/3.24.总结/">
+            
+                    
+                    3.24.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../4.递归/">
+            
+                <a href="../../4.递归/">
+            
+                    
+                    4.递归
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../4.递归/4.1.目标/">
+            
+                <a href="../../4.递归/4.1.目标/">
+            
+                    
+                    4.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../4.递归/4.2.什么是递归/">
+            
+                <a href="../../4.递归/4.2.什么是递归/">
+            
+                    
+                    4.2.什么是递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../4.递归/4.3.计算整数列表和/">
+            
+                <a href="../../4.递归/4.3.计算整数列表和/">
+            
+                    
+                    4.3.计算整数列表和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../4.递归/4.4.递归的三定律/">
+            
+                <a href="../../4.递归/4.4.递归的三定律/">
+            
+                    
+                    4.4.递归的三定律
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../4.递归/4.5.整数转换为任意进制字符串/">
+            
+                <a href="../../4.递归/4.5.整数转换为任意进制字符串/">
+            
+                    
+                    4.5.整数转换为任意进制字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../4.递归/4.6.栈帧：实现递归/">
+            
+                <a href="../../4.递归/4.6.栈帧：实现递归/">
+            
+                    
+                    4.6.栈帧：实现递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../4.递归/4.7.介绍：可视化递归/">
+            
+                <a href="../../4.递归/4.7.介绍：可视化递归/">
+            
+                    
+                    4.7.介绍：可视化递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../4.递归/4.8.谢尔宾斯基三角形/">
+            
+                <a href="../../4.递归/4.8.谢尔宾斯基三角形/">
+            
+                    
+                    4.8.谢尔宾斯基三角形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../4.递归/4.10.汉诺塔游戏/">
+            
+                <a href="../../4.递归/4.10.汉诺塔游戏/">
+            
+                    
+                    4.10.汉诺塔游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../../4.递归/4.11.探索迷宫/">
+            
+                <a href="../../4.递归/4.11.探索迷宫/">
+            
+                    
+                    4.11.探索迷宫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../../4.递归/4.12.动态规划/">
+            
+                <a href="../../4.递归/4.12.动态规划/">
+            
+                    
+                    4.12.动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../../4.递归/4.13.总结/">
+            
+                <a href="../../4.递归/4.13.总结/">
+            
+                    
+                    4.13.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../5.排序和搜索/">
+            
+                <a href="../../5.排序和搜索/">
+            
+                    
+                    5.排序和搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../5.排序和搜索/5.1.目标/">
+            
+                <a href="../../5.排序和搜索/5.1.目标/">
+            
+                    
+                    5.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../5.排序和搜索/5.2.搜索/">
+            
+                <a href="../../5.排序和搜索/5.2.搜索/">
+            
+                    
+                    5.2.搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../5.排序和搜索/5.3.顺序查找/">
+            
+                <a href="../../5.排序和搜索/5.3.顺序查找/">
+            
+                    
+                    5.3.顺序查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../5.排序和搜索/5.4.二分查找/">
+            
+                <a href="../../5.排序和搜索/5.4.二分查找/">
+            
+                    
+                    5.4.二分查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../5.排序和搜索/5.5.Hash查找/">
+            
+                <a href="../../5.排序和搜索/5.5.Hash查找/">
+            
+                    
+                    5.5.Hash查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../5.排序和搜索/5.6.排序/">
+            
+                <a href="../../5.排序和搜索/5.6.排序/">
+            
+                    
+                    5.6.排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../5.排序和搜索/5.7.冒泡排序/">
+            
+                <a href="../../5.排序和搜索/5.7.冒泡排序/">
+            
+                    
+                    5.7.冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../5.排序和搜索/5.8.选择排序/">
+            
+                <a href="../../5.排序和搜索/5.8.选择排序/">
+            
+                    
+                    5.8.选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../5.排序和搜索/5.9.插入排序/">
+            
+                <a href="../../5.排序和搜索/5.9.插入排序/">
+            
+                    
+                    5.9.插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../5.排序和搜索/5.10.希尔排序/">
+            
+                <a href="../../5.排序和搜索/5.10.希尔排序/">
+            
+                    
+                    5.10.希尔排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../5.排序和搜索/5.11.归并排序/">
+            
+                <a href="../../5.排序和搜索/5.11.归并排序/">
+            
+                    
+                    5.11.归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../../5.排序和搜索/5.12.快速排序/">
+            
+                <a href="../../5.排序和搜索/5.12.快速排序/">
+            
+                    
+                    5.12.快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../../5.排序和搜索/5.13.总结/">
+            
+                <a href="../../5.排序和搜索/5.13.总结/">
+            
+                    
+                    5.13.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../6.树和树的算法/">
+            
+                <a href="../../6.树和树的算法/">
+            
+                    
+                    6.树和树的算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../6.树和树的算法/6.1.目标/">
+            
+                <a href="../../6.树和树的算法/6.1.目标/">
+            
+                    
+                    6.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../6.树和树的算法/6.2.树的例子/">
+            
+                <a href="../../6.树和树的算法/6.2.树的例子/">
+            
+                    
+                    6.2.树的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../6.树和树的算法/6.3.词汇和定义/">
+            
+                <a href="../../6.树和树的算法/6.3.词汇和定义/">
+            
+                    
+                    6.3.词汇和定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../6.树和树的算法/6.4.列表表示/">
+            
+                <a href="../../6.树和树的算法/6.4.列表表示/">
+            
+                    
+                    6.4.列表表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../../6.树和树的算法/6.5.节点表示/">
+            
+                <a href="../../6.树和树的算法/6.5.节点表示/">
+            
+                    
+                    6.5.节点表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../../6.树和树的算法/6.6.分析树/">
+            
+                <a href="../../6.树和树的算法/6.6.分析树/">
+            
+                    
+                    6.6.分析树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../../6.树和树的算法/6.7.树的遍历/">
+            
+                <a href="../../6.树和树的算法/6.7.树的遍历/">
+            
+                    
+                    6.7.树的遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../../6.树和树的算法/6.8.基于二叉堆的优先队列/">
+            
+                <a href="../../6.树和树的算法/6.8.基于二叉堆的优先队列/">
+            
+                    
+                    6.8.基于二叉堆的优先队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../../6.树和树的算法/6.9.二叉堆操作/">
+            
+                <a href="../../6.树和树的算法/6.9.二叉堆操作/">
+            
+                    
+                    6.9.二叉堆操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../../6.树和树的算法/6.10.二叉堆实现/">
+            
+                <a href="../../6.树和树的算法/6.10.二叉堆实现/">
+            
+                    
+                    6.10.二叉堆实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../../6.树和树的算法/6.11.二叉查找树/">
+            
+                <a href="../../6.树和树的算法/6.11.二叉查找树/">
+            
+                    
+                    6.11.二叉查找树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../../6.树和树的算法/6.12.查找树操作/">
+            
+                <a href="../../6.树和树的算法/6.12.查找树操作/">
+            
+                    
+                    6.12.查找树操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../../6.树和树的算法/6.13.查找树实现/">
+            
+                <a href="../../6.树和树的算法/6.13.查找树实现/">
+            
+                    
+                    6.13.查找树实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../../6.树和树的算法/6.14.查找树分析/">
+            
+                <a href="../../6.树和树的算法/6.14.查找树分析/">
+            
+                    
+                    6.14.查找树分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../../6.树和树的算法/6.15.平衡二叉搜索树/">
+            
+                <a href="../../6.树和树的算法/6.15.平衡二叉搜索树/">
+            
+                    
+                    6.15.平衡二叉搜索树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../../6.树和树的算法/6.16.AVL平衡二叉搜索树/">
+            
+                <a href="../../6.树和树的算法/6.16.AVL平衡二叉搜索树/">
+            
+                    
+                    6.16.AVL平衡二叉搜索树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../../6.树和树的算法/6.17.AVL平衡二叉搜索树实现/">
+            
+                <a href="../../6.树和树的算法/6.17.AVL平衡二叉搜索树实现/">
+            
+                    
+                    6.17.AVL平衡二叉搜索树实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../../6.树和树的算法/6.18.Map抽象数据结构总结/">
+            
+                <a href="../../6.树和树的算法/6.18.Map抽象数据结构总结/">
+            
+                    
+                    6.18.Map抽象数据结构总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.19" data-path="../../6.树和树的算法/6.19.总结/">
+            
+                <a href="../../6.树和树的算法/6.19.总结/">
+            
+                    
+                    6.19.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    7.图和图的算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../7.1.目标/">
+            
+                <a href="../7.1.目标/">
+            
+                    
+                    7.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../7.2.词汇和定义/">
+            
+                <a href="../7.2.词汇和定义/">
+            
+                    
+                    7.2.词汇和定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../7.3.图抽象数据类型/">
+            
+                <a href="../7.3.图抽象数据类型/">
+            
+                    
+                    7.3.图抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../7.4.邻接矩阵/">
+            
+                <a href="../7.4.邻接矩阵/">
+            
+                    
+                    7.4.邻接矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../7.5.邻接表/">
+            
+                <a href="../7.5.邻接表/">
+            
+                    
+                    7.5.邻接表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../7.6.实现/">
+            
+                <a href="../7.6.实现/">
+            
+                    
+                    7.6.实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../7.7.字梯的问题/">
+            
+                <a href="../7.7.字梯的问题/">
+            
+                    
+                    7.7.字梯的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../7.8.构建字梯图/">
+            
+                <a href="../7.8.构建字梯图/">
+            
+                    
+                    7.8.构建字梯图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    7.9.实现广度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../7.10.广度优先搜索分析/">
+            
+                <a href="../7.10.广度优先搜索分析/">
+            
+                    
+                    7.10.广度优先搜索分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../7.11.骑士之旅/">
+            
+                <a href="../7.11.骑士之旅/">
+            
+                    
+                    7.11.骑士之旅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../7.12.构建骑士之旅图/">
+            
+                <a href="../7.12.构建骑士之旅图/">
+            
+                    
+                    7.12.构建骑士之旅图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../7.13.实现骑士之旅/">
+            
+                <a href="../7.13.实现骑士之旅/">
+            
+                    
+                    7.13.实现骑士之旅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../7.14.骑士之旅分析/">
+            
+                <a href="../7.14.骑士之旅分析/">
+            
+                    
+                    7.14.骑士之旅分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../7.15.通用深度优先搜索/">
+            
+                <a href="../7.15.通用深度优先搜索/">
+            
+                    
+                    7.15.通用深度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.16" data-path="../7.16.深度优先搜索分析/">
+            
+                <a href="../7.16.深度优先搜索分析/">
+            
+                    
+                    7.16.深度优先搜索分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.17" data-path="../7.17.拓扑排序/">
+            
+                <a href="../7.17.拓扑排序/">
+            
+                    
+                    7.17.拓扑排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.18" data-path="../7.18.强连通分量/">
+            
+                <a href="../7.18.强连通分量/">
+            
+                    
+                    7.18.强连通分量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.19" data-path="../7.19.最短路径问题/">
+            
+                <a href="../7.19.最短路径问题/">
+            
+                    
+                    7.19.最短路径问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.20" data-path="../7.20.Dijkstra算法/">
+            
+                <a href="../7.20.Dijkstra算法/">
+            
+                    
+                    7.20.Dijkstra算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.21" data-path="../7.21.Dijkstra算法分析/">
+            
+                <a href="../7.21.Dijkstra算法分析/">
+            
+                    
+                    7.21.Dijkstra算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.22" data-path="../7.22.Prim生成树算法/">
+            
+                <a href="../7.22.Prim生成树算法/">
+            
+                    
+                    7.22.Prim生成树算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.23" data-path="../7.23.总结/">
+            
+                <a href="../7.23.总结/">
+            
+                    
+                    7.23.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >7.9.实现广度优先搜索</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="79&#x5B9E;&#x73B0;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;">7.9.&#x5B9E;&#x73B0;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</h2>
+<p>&#x901A;&#x8FC7;&#x6784;&#x5EFA;&#x56FE;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x5C06;&#x6CE8;&#x610F;&#x529B;&#x8F6C;&#x5411;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x7684;&#x7B97;&#x6CD5;&#x6765;&#x627E;&#x5230;&#x5B57;&#x68AF;&#x95EE;&#x9898;&#x7684;&#x6700;&#x77ED;&#x89E3;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x7684;&#x56FE;&#x7B97;&#x6CD5;&#x79F0;&#x4E3A;&#x201C;&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x201D;&#x7B97;&#x6CD5;&#x3002;&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#xFF08;BFS&#xFF09;&#x662F;&#x7528;&#x4E8E;&#x641C;&#x7D22;&#x56FE;&#x7684;&#x6700;&#x7B80;&#x5355;&#x7684;&#x7B97;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;&#x5B83;&#x4E5F;&#x4F5C;&#x4E3A;&#x51E0;&#x4E2A;&#x5176;&#x4ED6;&#x91CD;&#x8981;&#x7684;&#x56FE;&#x7B97;&#x6CD5;&#x7684;&#x539F;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4EE5;&#x540E;&#x7814;&#x7A76;&#x3002;</p>
+<p>&#x7ED9;&#x5B9A;&#x56FE; G &#x548C;&#x8D77;&#x59CB;&#x9876;&#x70B9; s&#xFF0C;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x901A;&#x8FC7;&#x63A2;&#x7D22;&#x56FE;&#x4E2D;&#x7684;&#x8FB9;&#x4EE5;&#x627E;&#x5230; G &#x4E2D;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#xFF0C;&#x5176;&#x4E2D;&#x5B58;&#x5728;&#x4ECE; s &#x5F00;&#x59CB;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x901A;&#x8FC7;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#xFF0C;&#x5B83;&#x627E;&#x5230;&#x548C; s &#x76F8;&#x8DDD; k &#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x627E;&#x5230;&#x8DDD;&#x79BB;&#x4E3A; k + 1 &#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x3002;&#x53EF;&#x89C6;&#x5316;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x7B97;&#x6CD5;&#x4E00;&#x4E2A;&#x597D;&#x65B9;&#x6CD5;&#x662F;&#x60F3;&#x8C61;&#x5B83;&#x6B63;&#x5728;&#x5EFA;&#x4E00;&#x68F5;&#x6811;&#xFF0C;&#x4E00;&#x6B21;&#x5EFA;&#x4E00;&#x5C42;&#x3002;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x5148;&#x4ECE;&#x5176;&#x4ED6;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x5F00;&#x59CB;&#x6DFB;&#x52A0;&#x5B83;&#x7684;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6DFB;&#x52A0;&#x5176;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8DDF;&#x8E2A;&#x8FDB;&#x5EA6;&#xFF0C;BFS &#x5C06;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7740;&#x8272;&#x4E3A;&#x767D;&#x8272;&#xFF0C;&#x7070;&#x8272;&#x6216;&#x9ED1;&#x8272;&#x3002;&#x5F53;&#x5B83;&#x4EEC;&#x88AB;&#x6784;&#x9020;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x9876;&#x70B9;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x4E3A;&#x767D;&#x8272;&#x3002;&#x767D;&#x8272;&#x9876;&#x70B9;&#x662F;&#x672A;&#x53D1;&#x73B0;&#x7684;&#x9876;&#x70B9;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x6700;&#x521D;&#x88AB;&#x53D1;&#x73B0;&#x65F6;&#x5B83;&#x53D8;&#x6210;&#x7070;&#x8272;&#x7684;&#xFF0C;&#x5F53; BFS &#x5B8C;&#x5168;&#x63A2;&#x7D22;&#x5B8C;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x65F6;&#xFF0C;&#x5B83;&#x88AB;&#x7740;&#x8272;&#x4E3A;&#x9ED1;&#x8272;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4E00;&#x65E6;&#x9876;&#x70B9;&#x53D8;&#x9ED1;&#x8272;&#xFF0C;&#x5C31;&#x6CA1;&#x6709;&#x4E0E;&#x5B83;&#x76F8;&#x90BB;&#x7684;&#x767D;&#x8272;&#x9876;&#x70B9;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x7070;&#x8272;&#x8282;&#x70B9;&#x53EF;&#x80FD;&#x6709;&#x4E0E;&#x5176;&#x76F8;&#x90BB;&#x7684;&#x4E00;&#x4E9B;&#x767D;&#x8272;&#x9876;&#x70B9;&#xFF0C;&#x8868;&#x793A;&#x4ECD;&#x6709;&#x989D;&#x5916;&#x7684;&#x9876;&#x70B9;&#x8981;&#x63A2;&#x7D22;&#x3002;</p>
+<p>&#x4E0B;&#x9762; Listing 2 &#x4E2D;&#x6240;&#x793A;&#x7684;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x7B97;&#x6CD5;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x5148;&#x524D;&#x5F00;&#x53D1;&#x7684;&#x90BB;&#x63A5;&#x8868;&#x8868;&#x793A;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; Queue&#xFF0C;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x51B3;&#x5B9A;&#x4E0B;&#x4E00;&#x4E2A;&#x63A2;&#x7D22;&#x7684;&#x9876;&#x70B9;&#x3002;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;BFS &#x7B97;&#x6CD5;&#x4F7F;&#x7528; Vertex &#x7C7B;&#x7684;&#x6269;&#x5C55;&#x7248;&#x672C;&#x3002;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x9876;&#x70B9;&#x7C7B;&#x6DFB;&#x52A0;&#x4E86;&#x4E09;&#x4E2A;&#x65B0;&#x7684;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#xFF1A;<code>distance</code>&#xFF0C;<code>predecessor</code>&#x548C; <code>color</code> &#x3002;&#x8FD9;&#x4E9B;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x8FD8;&#x5177;&#x6709;&#x9002;&#x5F53;&#x7684; <code>getter</code> &#x548C; <code>setter</code> &#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x6269;&#x5C55;&#x7684;&#x9876;&#x70B9;&#x7C7B;&#x4EE3;&#x7801;&#x5305;&#x542B;&#x5728;<code>pythonds</code>&#x5305;&#x4E2D;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x4E0D;&#x4F1A;&#x5728;&#x8FD9;&#x91CC;&#x5C55;&#x793A;&#x5B83;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x65B0;&#x7684;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x70B9;&#x3002;</p>
+<p>BFS &#x4ECE;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x5F00;&#x59CB;&#xFF0C;&#x989C;&#x8272;&#x4ECE;&#x7070;&#x8272;&#x5F00;&#x59CB;&#xFF0C;&#x8868;&#x660E;&#x5B83;&#x6B63;&#x5728;&#x88AB;&#x63A2;&#x7D22;&#x3002;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x503C;&#xFF0C;&#x5373;&#x8DDD;&#x79BB;&#x548C;&#x524D;&#x5BFC;&#xFF0C;&#x5BF9;&#x4E8E;&#x8D77;&#x59CB;&#x9876;&#x70B9;&#x5206;&#x522B;&#x521D;&#x59CB;&#x5316;&#x4E3A; 0 &#x548C; None &#x3002;&#x6700;&#x540E;&#xFF0C;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x4E0B;&#x4E00;&#x6B65;&#x662F;&#x5F00;&#x59CB;&#x7CFB;&#x7EDF;&#x5730;&#x68C0;&#x67E5;&#x961F;&#x5217;&#x524D;&#x9762;&#x7684;&#x9876;&#x70B9;&#x3002;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x5B83;&#x7684;&#x90BB;&#x63A5;&#x8868;&#x6765;&#x63A2;&#x7D22;&#x961F;&#x5217;&#x524D;&#x9762;&#x7684;&#x6BCF;&#x4E2A;&#x65B0;&#x8282;&#x70B9;&#x3002;&#x5F53;&#x68C0;&#x67E5;&#x90BB;&#x63A5;&#x8868;&#x4E0A;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x68C0;&#x67E5;&#x5176;&#x989C;&#x8272;&#x3002;&#x5982;&#x679C;&#x5B83;&#x662F;&#x767D;&#x8272;&#x7684;&#xFF0C;&#x9876;&#x70B9;&#x662F;&#x672A;&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x6709;&#x56DB;&#x4EF6;&#x4E8B;&#x60C5;&#x53D1;&#x751F;&#xFF1A;</p>
+<ol>
+<li>&#x65B0;&#x7684;&#xFF0C;&#x672A;&#x5F00;&#x53D1;&#x7684;&#x9876;&#x70B9; nbr&#xFF0C;&#x88AB;&#x7740;&#x8272;&#x4E3A;&#x7070;&#x8272;&#x3002;</li>
+<li>nbr &#x7684;&#x524D;&#x5BFC;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9; <code>currentVert</code></li>
+<li>&#x5230; nbr &#x7684;&#x8DDD;&#x79BB;&#x8BBE;&#x7F6E;&#x4E3A;&#x5230; <code>currentVert + 1</code> &#x7684;&#x8DDD;&#x79BB;</li>
+<li>nbr &#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x7684;&#x672B;&#x5C3E;&#x3002; &#x5C06; nbr &#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x7684;&#x672B;&#x5C3E;&#x6709;&#x6548;&#x5730;&#x8C03;&#x5EA6;&#x6B64;&#x8282;&#x70B9;&#x4EE5;&#x8FDB;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x63A2;&#x7D22;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x76F4;&#x5230; <code>currentVert</code> &#x7684;&#x90BB;&#x63A5;&#x8868;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x9876;&#x70B9;&#x90FD;&#x88AB;&#x63A2;&#x7D22;&#x3002;</li>
+</ol>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pythonds.graphs <span class="hljs-keyword">import</span> Graph, Vertex
+<span class="hljs-keyword">from</span> pythonds.basic <span class="hljs-keyword">import</span> Queue
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bfs</span><span class="hljs-params">(g,start)</span>:</span>
+  start.setDistance(<span class="hljs-number">0</span>)
+  start.setPred(<span class="hljs-keyword">None</span>)
+  vertQueue = Queue()
+  vertQueue.enqueue(start)
+  <span class="hljs-keyword">while</span> (vertQueue.size() &gt; <span class="hljs-number">0</span>):
+    currentVert = vertQueue.dequeue()
+    <span class="hljs-keyword">for</span> nbr <span class="hljs-keyword">in</span> currentVert.getConnections():
+      <span class="hljs-keyword">if</span> (nbr.getColor() == <span class="hljs-string">&apos;white&apos;</span>):
+        nbr.setColor(<span class="hljs-string">&apos;gray&apos;</span>)
+        nbr.setDistance(currentVert.getDistance() + <span class="hljs-number">1</span>)
+        nbr.setPred(currentVert)
+        vertQueue.enqueue(nbr)
+    currentVert.setColor(<span class="hljs-string">&apos;black&apos;</span>)
+</code></pre>
+<p><em>Listing 2</em></p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B; bfs &#x51FD;&#x6570;&#x5982;&#x4F55;&#x6784;&#x9020;&#x5BF9;&#x5E94;&#x4E8E; Figure 1 &#x4E2D;&#x7684;&#x56FE;&#x7684;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x6811;&#x3002;&#x5F00;&#x59CB;&#x6211;&#x4EEC;&#x53D6;&#x6240;&#x6709;&#x4E0E; <code>fool</code> &#x76F8;&#x90BB;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x6DFB;&#x52A0;&#x5230;&#x6811;&#x4E2D;&#x3002; &#x76F8;&#x90BB;&#x8282;&#x70B9;&#x5305;&#x62EC; <code>pool</code>, <code>foil</code>, <code>foul</code>, <code>cool</code>&#x3002; &#x8FD9;&#x4E9B;&#x8282;&#x70B9;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x65B0;&#x8282;&#x70B9;&#x7684;&#x961F;&#x5217;&#x4EE5;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x3002; Figure 3 &#x5C55;&#x793A;&#x4E86;&#x5728;&#x6B64;&#x6B65;&#x9AA4;&#x4E4B;&#x540E;&#x6811;&#x4EE5;&#x53CA;&#x961F;&#x5217;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+<p><img src="assets/7.9.%E5%AE%9E%E7%8E%B0%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2.figure3.png" alt="7.9.&#x5B9E;&#x73B0;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;.figure3"></p>
+<p><em>Figure 3</em></p>
+<p>&#x5728;&#x4E0B;&#x4E00;&#x6B65;&#x9AA4;&#x4E2D;&#xFF0C;bfs &#x4ECE;&#x961F;&#x5217;&#x7684;&#x524D;&#x9762;&#x5220;&#x9664;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF08;<code>pool</code>&#xFF09;&#xFF0C;&#x5E76;&#x5BF9;&#x5176;&#x6240;&#x6709;&#x76F8;&#x90BB;&#x8282;&#x70B9;&#x91CD;&#x590D;&#x8BE5;&#x8FC7;&#x7A0B;&#x3002; &#x7136;&#x800C;&#xFF0C;&#x5F53; bfs &#x68C0;&#x67E5;&#x8282;&#x70B9; <code>cool</code> &#x65F6;&#xFF0C;&#x5B83;&#x53D1;&#x73B0; <code>cool</code> &#x7684;&#x989C;&#x8272;&#x5DF2;&#x7ECF;&#x6539;&#x53D8;&#x4E3A;&#x7070;&#x8272;&#x3002;&#x8FD9;&#x8868;&#x660E;&#x6709;&#x4E00;&#x6761;&#x8F83;&#x77ED;&#x7684;&#x8DEF;&#x5F84;&#x5230; <code>cool</code>&#xFF0C;&#x5E76;&#x4E14; <code>cool</code> &#x5DF2;&#x7ECF;&#x5728;&#x961F;&#x5217;&#x4E0A;&#x8FDB;&#x4E00;&#x6B65;&#x6269;&#x5C55;&#x3002;&#x5728;&#x68C0;&#x67E5; <code>pool</code> &#x671F;&#x95F4;&#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x7684;&#x552F;&#x4E00;&#x65B0;&#x8282;&#x70B9;&#x662F; <code>poll</code>&#x3002; &#x6811;&#x548C;&#x961F;&#x5217;&#x7684;&#x65B0;&#x72B6;&#x6001;&#x5982; Figure 4&#x6240;&#x793A;&#x3002;</p>
+<p><img src="assets/7.9.%E5%AE%9E%E7%8E%B0%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2.figure4.png" alt="7.9.&#x5B9E;&#x73B0;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;.figure4"></p>
+<p><em>Figure 4</em></p>
+<p>&#x961F;&#x5217;&#x4E0A;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x662F; <code>foil</code>&#x3002; <code>foil</code> &#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x5230;&#x6811;&#x4E2D;&#x7684;&#x552F;&#x4E00;&#x65B0;&#x8282;&#x70B9;&#x662F; <code>fail</code>&#x3002; &#x5F53; bfs &#x7EE7;&#x7EED;&#x5904;&#x7406;&#x961F;&#x5217;&#x65F6;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x4E0D;&#x5411;&#x961F;&#x5217;&#x6216;&#x6811;&#x6DFB;&#x52A0;&#x65B0;&#x5185;&#x5BB9;&#x3002; Figure 5 &#x5C55;&#x793A;&#x4E86;&#x5728;&#x6811;&#x7684;&#x7B2C;&#x4E8C;&#x7EA7;&#x4E0A;&#x5C55;&#x5F00;&#x6240;&#x6709;&#x9876;&#x70B9;&#x4E4B;&#x540E;&#x7684;&#x6811;&#x548C;&#x961F;&#x5217;&#x3002;</p>
+<p><img src="assets/7.9.%E5%AE%9E%E7%8E%B0%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2.figure5.png" alt="7.9.&#x5B9E;&#x73B0;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;.figure5"></p>
+<p><em>Figure 5-6</em></p>
+<p>&#x4F60;&#x5E94;&#x8BE5;&#x81EA;&#x5DF1;&#x7EE7;&#x7EED;&#x5B8C;&#x6210;&#x7B97;&#x6CD5;&#xFF0C;&#x4EE5;&#x4FBF;&#x80FD;&#x591F;&#x719F;&#x7EC3;&#x4F7F;&#x7528;&#x5B83;&#x3002;Figure 6 &#x5C55;&#x793A;&#x4E86;&#x5728; Figure 3 &#x4E2D;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x90FD;&#x88AB;&#x6269;&#x5C55;&#x4E4B;&#x540E;&#x7684;&#x6700;&#x7EC8;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x6811;&#x3002;&#x5173;&#x4E8E;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x4EE4;&#x4EBA;&#x60CA;&#x8BB6;&#x7684;&#x4E8B;&#x60C5;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4EC5;&#x89E3;&#x51B3;&#x4E86;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x7684; <code>FOOL-SAGE</code> &#x95EE;&#x9898;&#xFF0C;&#x8FD8;&#x89E3;&#x51B3;&#x4E86;&#x8BB8;&#x591A;&#x5176;&#x4ED6;&#x95EE;&#x9898;&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x6811;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x9876;&#x70B9;&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x6CBF;&#x7740;&#x524D;&#x5BFC;&#x7BAD;&#x5934;&#x56DE;&#x5230;&#x6839;&#xFF0C;&#x627E;&#x5230;&#x4ECE;&#x4EFB;&#x4F55;&#x5B57;&#x56DE;&#x5230; <code>fool</code> &#x7684;&#x6700;&#x77ED;&#x7684;&#x8BCD;&#x68AF;&#x3002; &#x4E0B;&#x9762;&#x7684;&#x51FD;&#x6570;&#xFF08;Listing 3&#xFF09;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x6309;&#x524D;&#x5BFC;&#x94FE;&#x63A5;&#x6253;&#x5370;&#x51FA;&#x5B57;&#x68AF;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">traverse</span><span class="hljs-params">(y)</span>:</span>
+    x = y
+    <span class="hljs-keyword">while</span> (x.getPred()):
+        print(x.getId())
+        x = x.getPred()
+    print(x.getId())
+
+traverse(g.getVertex(<span class="hljs-string">&apos;sage&apos;</span>))
+</code></pre>
+<p><em>Listing 3</em></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../7.8.构建字梯图/" class="navigation navigation-prev " aria-label="Previous page: 7.8.构建字梯图">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../7.10.广度优先搜索分析/" class="navigation navigation-next " aria-label="Next page: 7.10.广度优先搜索分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.9.实现广度优先搜索","level":"1.8.9","depth":2,"next":{"title":"7.10.广度优先搜索分析","level":"1.8.10","depth":2,"path":"7.图和图的算法/7.10.广度优先搜索分析/README.md","ref":"7.图和图的算法/7.10.广度优先搜索分析/README.md","articles":[]},"previous":{"title":"7.8.构建字梯图","level":"1.8.8","depth":2,"path":"7.图和图的算法/7.8.构建字梯图/README.md","ref":"7.图和图的算法/7.8.构建字梯图/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"7.图和图的算法/7.9.实现广度优先搜索/README.md","mtime":"2019-01-20T07:40:10.827Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T07:41:15.270Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

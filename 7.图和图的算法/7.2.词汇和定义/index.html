@@ -1,0 +1,1866 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.2.词汇和定义 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../7.3.图抽象数据类型/" />
+    
+    
+    <link rel="prev" href="../7.1.目标/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../1.介绍/">
+            
+                <a href="../../1.介绍/">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../1.介绍/1.1.目标/">
+            
+                <a href="../../1.介绍/1.1.目标/">
+            
+                    
+                    1.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../1.介绍/1.2.快速开始/">
+            
+                <a href="../../1.介绍/1.2.快速开始/">
+            
+                    
+                    1.2.快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../1.介绍/1.3.什么是计算机科学/">
+            
+                <a href="../../1.介绍/1.3.什么是计算机科学/">
+            
+                    
+                    1.3.什么是计算机科学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../1.介绍/1.4.什么是编程/">
+            
+                <a href="../../1.介绍/1.4.什么是编程/">
+            
+                    
+                    1.4.什么是编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../1.介绍/1.5.为什么要学习数据结构和抽象数据类型/">
+            
+                <a href="../../1.介绍/1.5.为什么要学习数据结构和抽象数据类型/">
+            
+                    
+                    1.5.为什么要学习数据结构和抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../1.介绍/1.6.为什么要学习算法/">
+            
+                <a href="../../1.介绍/1.6.为什么要学习算法/">
+            
+                    
+                    1.6.为什么要学习算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../1.介绍/1.7.回顾Python基础/">
+            
+                <a href="../../1.介绍/1.7.回顾Python基础/">
+            
+                    
+                    1.7.回顾Python基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../1.介绍/1.8.数据入门/">
+            
+                <a href="../../1.介绍/1.8.数据入门/">
+            
+                    
+                    1.8.数据入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../1.介绍/1.9.输入和输出/">
+            
+                <a href="../../1.介绍/1.9.输入和输出/">
+            
+                    
+                    1.9.输入和输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../1.介绍/1.10.控制结构/">
+            
+                <a href="../../1.介绍/1.10.控制结构/">
+            
+                    
+                    1.10.控制结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../1.介绍/1.11.处理异常/">
+            
+                <a href="../../1.介绍/1.11.处理异常/">
+            
+                    
+                    1.11.处理异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../../1.介绍/1.12.定义函数/">
+            
+                <a href="../../1.介绍/1.12.定义函数/">
+            
+                    
+                    1.12.定义函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../../1.介绍/1.13.面向对象编程-定义类/">
+            
+                <a href="../../1.介绍/1.13.面向对象编程-定义类/">
+            
+                    
+                    1.13.面向对象编程-定义类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../../1.介绍/1.14.总结/">
+            
+                <a href="../../1.介绍/1.14.总结/">
+            
+                    
+                    1.14.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../2.算法分析/">
+            
+                <a href="../../2.算法分析/">
+            
+                    
+                    2.算法分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../2.算法分析/2.1.目标/">
+            
+                <a href="../../2.算法分析/2.1.目标/">
+            
+                    
+                    2.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../2.算法分析/2.2.什么是算法分析/">
+            
+                <a href="../../2.算法分析/2.2.什么是算法分析/">
+            
+                    
+                    2.2.什么是算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../2.算法分析/2.3.大O符号/">
+            
+                <a href="../../2.算法分析/2.3.大O符号/">
+            
+                    
+                    2.3.大O符号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../2.算法分析/2.4.一个乱序字符串检查的例子/">
+            
+                <a href="../../2.算法分析/2.4.一个乱序字符串检查的例子/">
+            
+                    
+                    2.4.一个乱序字符串检查的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../2.算法分析/2.5.Python数据结构的性能/">
+            
+                <a href="../../2.算法分析/2.5.Python数据结构的性能/">
+            
+                    
+                    2.5.Python数据结构的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../2.算法分析/2.6.列表/">
+            
+                <a href="../../2.算法分析/2.6.列表/">
+            
+                    
+                    2.6.列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../2.算法分析/2.7.字典/">
+            
+                <a href="../../2.算法分析/2.7.字典/">
+            
+                    
+                    2.7.字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../2.算法分析/2.8.总结/">
+            
+                <a href="../../2.算法分析/2.8.总结/">
+            
+                    
+                    2.8.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../3.基本数据结构/">
+            
+                <a href="../../3.基本数据结构/">
+            
+                    
+                    3.基本数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../3.基本数据结构/3.1.目标/">
+            
+                <a href="../../3.基本数据结构/3.1.目标/">
+            
+                    
+                    3.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../3.基本数据结构/3.2.什么是线性数据结构/">
+            
+                <a href="../../3.基本数据结构/3.2.什么是线性数据结构/">
+            
+                    
+                    3.2.什么是线性数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../3.基本数据结构/3.3.什么是栈/">
+            
+                <a href="../../3.基本数据结构/3.3.什么是栈/">
+            
+                    
+                    3.3.什么是栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../3.基本数据结构/3.4.栈的抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.4.栈的抽象数据类型/">
+            
+                    
+                    3.4.栈的抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../3.基本数据结构/3.5.Python实现栈/">
+            
+                <a href="../../3.基本数据结构/3.5.Python实现栈/">
+            
+                    
+                    3.5.Python实现栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../3.基本数据结构/3.6.简单括号匹配/">
+            
+                <a href="../../3.基本数据结构/3.6.简单括号匹配/">
+            
+                    
+                    3.6.简单括号匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../3.基本数据结构/3.7.符号匹配/">
+            
+                <a href="../../3.基本数据结构/3.7.符号匹配/">
+            
+                    
+                    3.7.符号匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../3.基本数据结构/3.8.十进制转换成二进制/">
+            
+                <a href="../../3.基本数据结构/3.8.十进制转换成二进制/">
+            
+                    
+                    3.8.十进制转换成二进制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../3.基本数据结构/3.9.中缀前缀和后缀表达式/">
+            
+                <a href="../../3.基本数据结构/3.9.中缀前缀和后缀表达式/">
+            
+                    
+                    3.9.中缀前缀和后缀表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../3.基本数据结构/3.10.什么是队列/">
+            
+                <a href="../../3.基本数据结构/3.10.什么是队列/">
+            
+                    
+                    3.10.什么是队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../3.基本数据结构/3.11.队列抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.11.队列抽象数据类型/">
+            
+                    
+                    3.11.队列抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../3.基本数据结构/3.12.Python实现队列/">
+            
+                <a href="../../3.基本数据结构/3.12.Python实现队列/">
+            
+                    
+                    3.12.Python实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../3.基本数据结构/3.13.模拟：烫手山芋/">
+            
+                <a href="../../3.基本数据结构/3.13.模拟：烫手山芋/">
+            
+                    
+                    3.13.模拟：烫手山芋
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../3.基本数据结构/3.14.模拟：打印机/">
+            
+                <a href="../../3.基本数据结构/3.14.模拟：打印机/">
+            
+                    
+                    3.14.模拟：打印机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../3.基本数据结构/3.15.什么是Deque/">
+            
+                <a href="../../3.基本数据结构/3.15.什么是Deque/">
+            
+                    
+                    3.15.什么是Deque
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../../3.基本数据结构/3.16.Deque抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.16.Deque抽象数据类型/">
+            
+                    
+                    3.16.Deque抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../../3.基本数据结构/3.17.Python实现Deque/">
+            
+                <a href="../../3.基本数据结构/3.17.Python实现Deque/">
+            
+                    
+                    3.17.Python实现Deque
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../../3.基本数据结构/3.18.回文检查/">
+            
+                <a href="../../3.基本数据结构/3.18.回文检查/">
+            
+                    
+                    3.18.回文检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../../3.基本数据结构/3.19.列表/">
+            
+                <a href="../../3.基本数据结构/3.19.列表/">
+            
+                    
+                    3.19.列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../../3.基本数据结构/3.20.无序列表抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.20.无序列表抽象数据类型/">
+            
+                    
+                    3.20.无序列表抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../../3.基本数据结构/3.21.实现无序列表：链表/">
+            
+                <a href="../../3.基本数据结构/3.21.实现无序列表：链表/">
+            
+                    
+                    3.21.实现无序列表：链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../../3.基本数据结构/3.22.有序列表抽象数据结构/">
+            
+                <a href="../../3.基本数据结构/3.22.有序列表抽象数据结构/">
+            
+                    
+                    3.22.有序列表抽象数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../../3.基本数据结构/3.23.实现有序列表/">
+            
+                <a href="../../3.基本数据结构/3.23.实现有序列表/">
+            
+                    
+                    3.23.实现有序列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../../3.基本数据结构/3.24.总结/">
+            
+                <a href="../../3.基本数据结构/3.24.总结/">
+            
+                    
+                    3.24.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../4.递归/">
+            
+                <a href="../../4.递归/">
+            
+                    
+                    4.递归
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../4.递归/4.1.目标/">
+            
+                <a href="../../4.递归/4.1.目标/">
+            
+                    
+                    4.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../4.递归/4.2.什么是递归/">
+            
+                <a href="../../4.递归/4.2.什么是递归/">
+            
+                    
+                    4.2.什么是递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../4.递归/4.3.计算整数列表和/">
+            
+                <a href="../../4.递归/4.3.计算整数列表和/">
+            
+                    
+                    4.3.计算整数列表和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../4.递归/4.4.递归的三定律/">
+            
+                <a href="../../4.递归/4.4.递归的三定律/">
+            
+                    
+                    4.4.递归的三定律
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../4.递归/4.5.整数转换为任意进制字符串/">
+            
+                <a href="../../4.递归/4.5.整数转换为任意进制字符串/">
+            
+                    
+                    4.5.整数转换为任意进制字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../4.递归/4.6.栈帧：实现递归/">
+            
+                <a href="../../4.递归/4.6.栈帧：实现递归/">
+            
+                    
+                    4.6.栈帧：实现递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../4.递归/4.7.介绍：可视化递归/">
+            
+                <a href="../../4.递归/4.7.介绍：可视化递归/">
+            
+                    
+                    4.7.介绍：可视化递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../4.递归/4.8.谢尔宾斯基三角形/">
+            
+                <a href="../../4.递归/4.8.谢尔宾斯基三角形/">
+            
+                    
+                    4.8.谢尔宾斯基三角形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../4.递归/4.10.汉诺塔游戏/">
+            
+                <a href="../../4.递归/4.10.汉诺塔游戏/">
+            
+                    
+                    4.10.汉诺塔游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../../4.递归/4.11.探索迷宫/">
+            
+                <a href="../../4.递归/4.11.探索迷宫/">
+            
+                    
+                    4.11.探索迷宫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../../4.递归/4.12.动态规划/">
+            
+                <a href="../../4.递归/4.12.动态规划/">
+            
+                    
+                    4.12.动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../../4.递归/4.13.总结/">
+            
+                <a href="../../4.递归/4.13.总结/">
+            
+                    
+                    4.13.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../5.排序和搜索/">
+            
+                <a href="../../5.排序和搜索/">
+            
+                    
+                    5.排序和搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../5.排序和搜索/5.1.目标/">
+            
+                <a href="../../5.排序和搜索/5.1.目标/">
+            
+                    
+                    5.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../5.排序和搜索/5.2.搜索/">
+            
+                <a href="../../5.排序和搜索/5.2.搜索/">
+            
+                    
+                    5.2.搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../5.排序和搜索/5.3.顺序查找/">
+            
+                <a href="../../5.排序和搜索/5.3.顺序查找/">
+            
+                    
+                    5.3.顺序查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../5.排序和搜索/5.4.二分查找/">
+            
+                <a href="../../5.排序和搜索/5.4.二分查找/">
+            
+                    
+                    5.4.二分查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../5.排序和搜索/5.5.Hash查找/">
+            
+                <a href="../../5.排序和搜索/5.5.Hash查找/">
+            
+                    
+                    5.5.Hash查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../5.排序和搜索/5.6.排序/">
+            
+                <a href="../../5.排序和搜索/5.6.排序/">
+            
+                    
+                    5.6.排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../5.排序和搜索/5.7.冒泡排序/">
+            
+                <a href="../../5.排序和搜索/5.7.冒泡排序/">
+            
+                    
+                    5.7.冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../5.排序和搜索/5.8.选择排序/">
+            
+                <a href="../../5.排序和搜索/5.8.选择排序/">
+            
+                    
+                    5.8.选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../5.排序和搜索/5.9.插入排序/">
+            
+                <a href="../../5.排序和搜索/5.9.插入排序/">
+            
+                    
+                    5.9.插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../5.排序和搜索/5.10.希尔排序/">
+            
+                <a href="../../5.排序和搜索/5.10.希尔排序/">
+            
+                    
+                    5.10.希尔排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../5.排序和搜索/5.11.归并排序/">
+            
+                <a href="../../5.排序和搜索/5.11.归并排序/">
+            
+                    
+                    5.11.归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../../5.排序和搜索/5.12.快速排序/">
+            
+                <a href="../../5.排序和搜索/5.12.快速排序/">
+            
+                    
+                    5.12.快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../../5.排序和搜索/5.13.总结/">
+            
+                <a href="../../5.排序和搜索/5.13.总结/">
+            
+                    
+                    5.13.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../6.树和树的算法/">
+            
+                <a href="../../6.树和树的算法/">
+            
+                    
+                    6.树和树的算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../6.树和树的算法/6.1.目标/">
+            
+                <a href="../../6.树和树的算法/6.1.目标/">
+            
+                    
+                    6.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../6.树和树的算法/6.2.树的例子/">
+            
+                <a href="../../6.树和树的算法/6.2.树的例子/">
+            
+                    
+                    6.2.树的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../6.树和树的算法/6.3.词汇和定义/">
+            
+                <a href="../../6.树和树的算法/6.3.词汇和定义/">
+            
+                    
+                    6.3.词汇和定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../6.树和树的算法/6.4.列表表示/">
+            
+                <a href="../../6.树和树的算法/6.4.列表表示/">
+            
+                    
+                    6.4.列表表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../../6.树和树的算法/6.5.节点表示/">
+            
+                <a href="../../6.树和树的算法/6.5.节点表示/">
+            
+                    
+                    6.5.节点表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../../6.树和树的算法/6.6.分析树/">
+            
+                <a href="../../6.树和树的算法/6.6.分析树/">
+            
+                    
+                    6.6.分析树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../../6.树和树的算法/6.7.树的遍历/">
+            
+                <a href="../../6.树和树的算法/6.7.树的遍历/">
+            
+                    
+                    6.7.树的遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../../6.树和树的算法/6.8.基于二叉堆的优先队列/">
+            
+                <a href="../../6.树和树的算法/6.8.基于二叉堆的优先队列/">
+            
+                    
+                    6.8.基于二叉堆的优先队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../../6.树和树的算法/6.9.二叉堆操作/">
+            
+                <a href="../../6.树和树的算法/6.9.二叉堆操作/">
+            
+                    
+                    6.9.二叉堆操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../../6.树和树的算法/6.10.二叉堆实现/">
+            
+                <a href="../../6.树和树的算法/6.10.二叉堆实现/">
+            
+                    
+                    6.10.二叉堆实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../../6.树和树的算法/6.11.二叉查找树/">
+            
+                <a href="../../6.树和树的算法/6.11.二叉查找树/">
+            
+                    
+                    6.11.二叉查找树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../../6.树和树的算法/6.12.查找树操作/">
+            
+                <a href="../../6.树和树的算法/6.12.查找树操作/">
+            
+                    
+                    6.12.查找树操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../../6.树和树的算法/6.13.查找树实现/">
+            
+                <a href="../../6.树和树的算法/6.13.查找树实现/">
+            
+                    
+                    6.13.查找树实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../../6.树和树的算法/6.14.查找树分析/">
+            
+                <a href="../../6.树和树的算法/6.14.查找树分析/">
+            
+                    
+                    6.14.查找树分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../../6.树和树的算法/6.15.平衡二叉搜索树/">
+            
+                <a href="../../6.树和树的算法/6.15.平衡二叉搜索树/">
+            
+                    
+                    6.15.平衡二叉搜索树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../../6.树和树的算法/6.16.AVL平衡二叉搜索树/">
+            
+                <a href="../../6.树和树的算法/6.16.AVL平衡二叉搜索树/">
+            
+                    
+                    6.16.AVL平衡二叉搜索树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../../6.树和树的算法/6.17.AVL平衡二叉搜索树实现/">
+            
+                <a href="../../6.树和树的算法/6.17.AVL平衡二叉搜索树实现/">
+            
+                    
+                    6.17.AVL平衡二叉搜索树实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../../6.树和树的算法/6.18.Map抽象数据结构总结/">
+            
+                <a href="../../6.树和树的算法/6.18.Map抽象数据结构总结/">
+            
+                    
+                    6.18.Map抽象数据结构总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.19" data-path="../../6.树和树的算法/6.19.总结/">
+            
+                <a href="../../6.树和树的算法/6.19.总结/">
+            
+                    
+                    6.19.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    7.图和图的算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../7.1.目标/">
+            
+                <a href="../7.1.目标/">
+            
+                    
+                    7.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    7.2.词汇和定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../7.3.图抽象数据类型/">
+            
+                <a href="../7.3.图抽象数据类型/">
+            
+                    
+                    7.3.图抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../7.4.邻接矩阵/">
+            
+                <a href="../7.4.邻接矩阵/">
+            
+                    
+                    7.4.邻接矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../7.5.邻接表/">
+            
+                <a href="../7.5.邻接表/">
+            
+                    
+                    7.5.邻接表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../7.6.实现/">
+            
+                <a href="../7.6.实现/">
+            
+                    
+                    7.6.实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../7.7.字梯的问题/">
+            
+                <a href="../7.7.字梯的问题/">
+            
+                    
+                    7.7.字梯的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../7.8.构建字梯图/">
+            
+                <a href="../7.8.构建字梯图/">
+            
+                    
+                    7.8.构建字梯图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../7.9.实现广度优先搜索/">
+            
+                <a href="../7.9.实现广度优先搜索/">
+            
+                    
+                    7.9.实现广度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../7.10.广度优先搜索分析/">
+            
+                <a href="../7.10.广度优先搜索分析/">
+            
+                    
+                    7.10.广度优先搜索分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../7.11.骑士之旅/">
+            
+                <a href="../7.11.骑士之旅/">
+            
+                    
+                    7.11.骑士之旅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../7.12.构建骑士之旅图/">
+            
+                <a href="../7.12.构建骑士之旅图/">
+            
+                    
+                    7.12.构建骑士之旅图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../7.13.实现骑士之旅/">
+            
+                <a href="../7.13.实现骑士之旅/">
+            
+                    
+                    7.13.实现骑士之旅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../7.14.骑士之旅分析/">
+            
+                <a href="../7.14.骑士之旅分析/">
+            
+                    
+                    7.14.骑士之旅分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../7.15.通用深度优先搜索/">
+            
+                <a href="../7.15.通用深度优先搜索/">
+            
+                    
+                    7.15.通用深度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.16" data-path="../7.16.深度优先搜索分析/">
+            
+                <a href="../7.16.深度优先搜索分析/">
+            
+                    
+                    7.16.深度优先搜索分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.17" data-path="../7.17.拓扑排序/">
+            
+                <a href="../7.17.拓扑排序/">
+            
+                    
+                    7.17.拓扑排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.18" data-path="../7.18.强连通分量/">
+            
+                <a href="../7.18.强连通分量/">
+            
+                    
+                    7.18.强连通分量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.19" data-path="../7.19.最短路径问题/">
+            
+                <a href="../7.19.最短路径问题/">
+            
+                    
+                    7.19.最短路径问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.20" data-path="../7.20.Dijkstra算法/">
+            
+                <a href="../7.20.Dijkstra算法/">
+            
+                    
+                    7.20.Dijkstra算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.21" data-path="../7.21.Dijkstra算法分析/">
+            
+                <a href="../7.21.Dijkstra算法分析/">
+            
+                    
+                    7.21.Dijkstra算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.22" data-path="../7.22.Prim生成树算法/">
+            
+                <a href="../7.22.Prim生成树算法/">
+            
+                    
+                    7.22.Prim生成树算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.23" data-path="../7.23.总结/">
+            
+                <a href="../7.23.总结/">
+            
+                    
+                    7.23.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >7.2.词汇和定义</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="72&#x8BCD;&#x6C47;&#x548C;&#x5B9A;&#x4E49;">7.2.&#x8BCD;&#x6C47;&#x548C;&#x5B9A;&#x4E49;</h2>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x4E86;&#x4E00;&#x4E9B;&#x56FE;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x66F4;&#x6B63;&#x5F0F;&#x5730;&#x5B9A;&#x4E49;&#x56FE;&#x53CA;&#x5176;&#x7EC4;&#x4EF6;&#x3002;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4ECE;&#x5BF9;&#x6811;&#x7684;&#x8BA8;&#x8BBA;&#x4E2D;&#x77E5;&#x9053;&#x4E86;&#x4E00;&#x4E9B;&#x672F;&#x8BED;&#x3002;</p>
+<p><strong>&#x9876;&#x70B9;</strong>
+&#x9876;&#x70B9;&#xFF08;&#x4E5F;&#x79F0;&#x4E3A;&#x201C;&#x8282;&#x70B9;&#x201D;&#xFF09;&#x662F;&#x56FE;&#x7684;&#x57FA;&#x672C;&#x90E8;&#x5206;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x79F0;&#x4E3A;&#x201C;&#x952E;&#x201D;&#x3002;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x4E5F;&#x53EF;&#x80FD;&#x6709;&#x989D;&#x5916;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E2A;&#x9644;&#x52A0;&#x4FE1;&#x606F;&#x79F0;&#x4E3A;&#x201C;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x201D;&#x3002;</p>
+<p><strong>&#x8FB9;</strong>
+&#x8FB9;&#xFF08;&#x4E5F;&#x79F0;&#x4E3A;&#x201C;&#x5F27;&#x201D;&#xFF09;&#x662F;&#x56FE;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x90E8;&#x5206;&#x3002;&#x8FB9;&#x8FDE;&#x63A5;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#xFF0C;&#x4EE5;&#x8868;&#x660E;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x5173;&#x7CFB;&#x3002;&#x8FB9;&#x53EF;&#x4EE5;&#x662F;&#x5355;&#x5411;&#x7684;&#x6216;&#x53CC;&#x5411;&#x7684;&#x3002;&#x5982;&#x679C;&#x56FE;&#x4E2D;&#x7684;&#x8FB9;&#x90FD;&#x662F;&#x5355;&#x5411;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x8BE5;&#x56FE;&#x662F;<code>&#x6709;&#x5411;&#x56FE;</code>&#x3002;&#x4E0A;&#x9762;&#x663E;&#x793A;&#x7684;&#x8BFE;&#x7A0B;&#x5148;&#x51B3;&#x6761;&#x4EF6;&#x663E;&#x7136;&#x662F;&#x4E00;&#x4E2A;&#x56FE;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x5FC5;&#x987B;&#x5728;&#x5176;&#x4ED6;&#x8BFE;&#x7A0B;&#x4E4B;&#x524D;&#x5B66;&#x4E60;&#x4E00;&#x4E9B;&#x8BFE;&#x7A0B;&#x3002;</p>
+<p><strong>&#x6743;&#x91CD;</strong>
+&#x8FB9;&#x53EF;&#x4EE5;&#x88AB;&#x52A0;&#x6743;&#x4EE5;&#x793A;&#x51FA;&#x4ECE;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x6210;&#x672C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x5C06;&#x4E00;&#x4E2A;&#x57CE;&#x5E02;&#x8FDE;&#x63A5;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x57CE;&#x5E02;&#x7684;&#x9053;&#x8DEF;&#x7684;&#x56FE;&#x8868;&#x4E2D;&#xFF0C;&#x8FB9;&#x4E0A;&#x7684;&#x6743;&#x91CD;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E24;&#x4E2A;&#x57CE;&#x5E02;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x3002;</p>
+<p>&#x5229;&#x7528;&#x8FD9;&#x4E9B;&#x5B9A;&#x4E49;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6B63;&#x5F0F;&#x5B9A;&#x4E49;&#x56FE;&#x3002;&#x56FE;&#x53EF;&#x4EE5;&#x7531; G &#x8868;&#x793A;&#xFF0C;&#x5176;&#x4E2D; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mo>(</mo><mi>V</mi><mo separator="true">,</mo><mi>E</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">G =(V,E)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">G</span><span class="mrel">=</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span>&#x3002;&#x5BF9;&#x4E8E;&#x56FE; G&#xFF0C;V &#x662F;&#x4E00;&#x7EC4;&#x9876;&#x70B9;&#xFF0C;E &#x662F;&#x4E00;&#x7EC4;&#x8FB9;&#x3002;&#x6BCF;&#x4E2A;&#x8FB9;&#x662F;&#x4E00;&#x4E2A;&#x5143;&#x7EC4; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>v</mi><mo separator="true">,</mo><mi>w</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(v,w)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mclose">)</span></span></span></span>&#xFF0C;&#x5176;&#x4E2D; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mo separator="true">,</mo><mi>v</mi><mo>&#x2208;</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">w,v \in V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mrel">&#x2208;</span><span class="mord mathit" style="margin-right:0.22222em;">V</span></span></span></span>&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x7B2C;&#x4E09;&#x4E2A;&#x7EC4;&#x4EF6;&#x5230;&#x8FB9;&#x5143;&#x7EC4;&#x6765;&#x8868;&#x793A;&#x6743;&#x91CD;&#x3002;&#x5B50;&#x56FE; s &#x662F;&#x8FB9; e &#x548C;&#x9876;&#x70B9; v &#x7684;&#x96C6;&#x5408;&#xFF0C;&#x4F7F;&#x5F97; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mo>&#x2282;</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">e \subset E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathit">e</span><span class="mrel">&#x2282;</span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span> &#x548C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo>&#x2282;</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">v \subset V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mrel">&#x2282;</span><span class="mord mathit" style="margin-right:0.22222em;">V</span></span></span></span> &#x3002;</p>
+<p>Figure 2 &#x5C55;&#x793A;&#x4E86;&#x7B80;&#x5355;&#x52A0;&#x6743;&#x6709;&#x5411;&#x56FE;&#x7684;&#x53E6;&#x4E00;&#x793A;&#x4F8B;&#x3002;&#x6B63;&#x5F0F;&#x5730;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8BE5;&#x56FE;&#x8868;&#x793A;&#x4E3A;&#x516D;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x96C6;&#x5408;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>=</mo><mrow><mo fence="true">{</mo><mi>V</mi><mn>0</mn><mo separator="true">,</mo><mi>V</mi><mn>1</mn><mo separator="true">,</mo><mi>V</mi><mn>2</mn><mo separator="true">,</mo><mi>V</mi><mn>3</mn><mo separator="true">,</mo><mi>V</mi><mn>4</mn><mo separator="true">,</mo><mi>V</mi><mn>5</mn><mo fence="true">}</mo></mrow></mrow><annotation encoding="application/x-tex">
+V = \left\{ V0,V1,V2,V3,V4,V5 \right\}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mrel">=</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;">{</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">5</span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;">}</span></span></span></span></span></span></p>
+<p>&#x548C; 9 &#x6761;&#x8FB9;&#x7684;&#x96C6;&#x5408;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtable><mtr><mtd><mrow><mi>E</mi><mo>=</mo><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mrow><mo>(</mo><mi>v</mi><mn>0</mn><mo separator="true">,</mo><mi>v</mi><mn>1</mn><mo separator="true">,</mo><mn>5</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>1</mn><mo separator="true">,</mo><mi>v</mi><mn>2</mn><mo separator="true">,</mo><mn>4</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>2</mn><mo separator="true">,</mo><mi>v</mi><mn>3</mn><mo separator="true">,</mo><mn>9</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>3</mn><mo separator="true">,</mo><mi>v</mi><mn>4</mn><mo separator="true">,</mo><mn>7</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>4</mn><mo separator="true">,</mo><mi>v</mi><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo><mo separator="true">,</mo></mrow></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mi>v</mi><mn>0</mn><mo separator="true">,</mo><mi>v</mi><mn>5</mn><mo separator="true">,</mo><mn>2</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>5</mn><mo separator="true">,</mo><mi>v</mi><mn>4</mn><mo separator="true">,</mo><mn>8</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>3</mn><mo separator="true">,</mo><mi>v</mi><mn>5</mn><mo separator="true">,</mo><mn>3</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>5</mn><mo separator="true">,</mo><mi>v</mi><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow></mtd></mtr></mtable><mo fence="true">}</mo></mrow></mrow></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">
+\begin{aligned}
+E = \left\{
+    \begin{array}
+        {l}(v0,v1,5), (v1,v2,4), (v2,v3,9), (v3,v4,7), (v4,v0,1), \\
+        (v0,v5,2),(v5,v4,8),(v3,v5,3),(v5,v2,1)
+    \end{array}
+    \right\}
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.450015em;"></span><span class="strut bottom" style="height:2.40003em;vertical-align:-0.9500149999999999em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.000015000000000098268em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">=</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">{</span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">4</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathrm">9</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathrm">7</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mpunct">,</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathrm">8</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathrm">3</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">}</span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></p>
+<p><img src="assets/7.2.%E8%AF%8D%E6%B1%87%E5%92%8C%E5%AE%9A%E4%B9%89.figure2.png" alt="7.2.&#x8BCD;&#x6C47;&#x548C;&#x5B9A;&#x4E49;.figure2">
+<em>Figure 2</em></p>
+<p>figure 2 &#x4E2D;&#x7684;&#x793A;&#x4F8B;&#x56FE;&#x6709;&#x52A9;&#x4E8E;&#x8BF4;&#x660E;&#x4E24;&#x4E2A;&#x5176;&#x4ED6;&#x5173;&#x952E;&#x56FE;&#x5F62;&#x672F;&#x8BED;&#xFF1A;</p>
+<p><strong>&#x8DEF;&#x5F84;</strong>
+&#x56FE;&#x4E2D;&#x7684;&#x8DEF;&#x5F84;&#x662F;&#x7531;&#x8FB9;&#x8FDE;&#x63A5;&#x7684;&#x9876;&#x70B9;&#x5E8F;&#x5217;&#x3002;&#x5F62;&#x5F0F;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>w</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>w</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">w_1, w_2, ..., w_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02691em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02691em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02691em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#xFF0C;&#x4F7F;&#x5F97;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>w</mi><mi>i</mi><mo separator="true">,</mo><mi>w</mi><mi>i</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>&#x2208;</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">(wi, wi+1) \in E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mord mathit">i</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mord mathit">i</span><span class="mbin">+</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mrel">&#x2208;</span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span>, &#x5F53; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>&#x2264;</mo><mi>i</mi><mo>&#x2264;</mo><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1  \leq i  \leq n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mrel">&#x2264;</span><span class="mord mathit">i</span><span class="mrel">&#x2264;</span><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span>&#x3002;&#x672A;&#x52A0;&#x6743;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#x662F;&#x8DEF;&#x5F84;&#x4E2D;&#x7684;&#x8FB9;&#x7684;&#x6570;&#x76EE;&#xFF0C;&#x5177;&#x4F53;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span> &#x3002;&#x52A0;&#x6743;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#x662F;&#x8DEF;&#x5F84;&#x4E2D;&#x6240;&#x6709;&#x8FB9;&#x7684;&#x6743;&#x91CD;&#x7684;&#x603B;&#x548C;&#x3002;&#x4F8B;&#x5982;&#x5728; Figure 2&#x4E2D;&#xFF0C;&#x4ECE; V3 &#x5230; V1 &#x7684;&#x8DEF;&#x5F84;&#x662F;&#x9876;&#x70B9;&#x5E8F;&#x5217; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>V</mi><mn>3</mn><mo separator="true">,</mo><mi>V</mi><mn>4</mn><mo separator="true">,</mo><mi>V</mi><mn>0</mn><mo separator="true">,</mo><mi>V</mi><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(V3,V4,V0,V1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span>&#x3002;&#x8FB9;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mo>(</mo><mi>v</mi><mn>3</mn><mo separator="true">,</mo><mi>v</mi><mn>4</mn><mo separator="true">,</mo><mn>7</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>4</mn><mo separator="true">,</mo><mi>v</mi><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>v</mi><mn>0</mn><mo separator="true">,</mo><mi>v</mi><mn>1</mn><mo separator="true">,</mo><mn>5</mn><mo>)</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">\{(v3,v4,7),(v4,v0,1),(v0,v1,5)\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">{</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathrm">7</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mclose">)</span><span class="mclose">}</span></span></span></span>&#x3002;</p>
+<p><strong>&#x5FAA;&#x73AF;</strong>
+&#x6709;&#x5411;&#x56FE;&#x4E2D;&#x7684;&#x5FAA;&#x73AF;&#x662F;&#x5728;&#x540C;&#x4E00;&#x9876;&#x70B9;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728; Figure 2&#x4E2D;&#xFF0C;&#x8DEF;&#x5F84;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>V</mi><mn>5</mn><mo separator="true">,</mo><mi>V</mi><mn>2</mn><mo separator="true">,</mo><mi>V</mi><mn>3</mn><mo separator="true">,</mo><mi>V</mi><mn>5</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(V5,V2,V3,V5)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">5</span><span class="mclose">)</span></span></span></span>&#x662F;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x3002;&#x6CA1;&#x6709;&#x5FAA;&#x73AF;&#x7684;&#x56FE;&#x5F62;&#x79F0;&#x4E3A;&#x975E;&#x5FAA;&#x73AF;&#x56FE;&#x5F62;&#x3002;&#x6CA1;&#x6709;&#x5FAA;&#x73AF;&#x7684;&#x6709;&#x5411;&#x56FE;&#x79F0;&#x4E3A;&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE;&#x6216; <code>DAG</code> &#x3002;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x5230;&#xFF0C;&#x5982;&#x679C;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E3A; <code>DAG</code>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../7.1.目标/" class="navigation navigation-prev " aria-label="Previous page: 7.1.目标">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../7.3.图抽象数据类型/" class="navigation navigation-next " aria-label="Next page: 7.3.图抽象数据类型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.2.词汇和定义","level":"1.8.2","depth":2,"next":{"title":"7.3.图抽象数据类型","level":"1.8.3","depth":2,"path":"7.图和图的算法/7.3.图抽象数据类型/README.md","ref":"7.图和图的算法/7.3.图抽象数据类型/README.md","articles":[]},"previous":{"title":"7.1.目标","level":"1.8.1","depth":2,"path":"7.图和图的算法/7.1.目标/README.md","ref":"7.图和图的算法/7.1.目标/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"7.图和图的算法/7.2.词汇和定义/README.md","mtime":"2019-01-20T07:40:10.811Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T07:41:15.270Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

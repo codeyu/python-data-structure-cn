@@ -1,0 +1,1985 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.21.实现无序列表：链表 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../3.22.有序列表抽象数据结构/" />
+    
+    
+    <link rel="prev" href="../3.20.无序列表抽象数据类型/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../1.介绍/">
+            
+                <a href="../../1.介绍/">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../1.介绍/1.1.目标/">
+            
+                <a href="../../1.介绍/1.1.目标/">
+            
+                    
+                    1.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../1.介绍/1.2.快速开始/">
+            
+                <a href="../../1.介绍/1.2.快速开始/">
+            
+                    
+                    1.2.快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../1.介绍/1.3.什么是计算机科学/">
+            
+                <a href="../../1.介绍/1.3.什么是计算机科学/">
+            
+                    
+                    1.3.什么是计算机科学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../1.介绍/1.4.什么是编程/">
+            
+                <a href="../../1.介绍/1.4.什么是编程/">
+            
+                    
+                    1.4.什么是编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../1.介绍/1.5.为什么要学习数据结构和抽象数据类型/">
+            
+                <a href="../../1.介绍/1.5.为什么要学习数据结构和抽象数据类型/">
+            
+                    
+                    1.5.为什么要学习数据结构和抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../1.介绍/1.6.为什么要学习算法/">
+            
+                <a href="../../1.介绍/1.6.为什么要学习算法/">
+            
+                    
+                    1.6.为什么要学习算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../1.介绍/1.7.回顾Python基础/">
+            
+                <a href="../../1.介绍/1.7.回顾Python基础/">
+            
+                    
+                    1.7.回顾Python基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../1.介绍/1.8.数据入门/">
+            
+                <a href="../../1.介绍/1.8.数据入门/">
+            
+                    
+                    1.8.数据入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../1.介绍/1.9.输入和输出/">
+            
+                <a href="../../1.介绍/1.9.输入和输出/">
+            
+                    
+                    1.9.输入和输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../1.介绍/1.10.控制结构/">
+            
+                <a href="../../1.介绍/1.10.控制结构/">
+            
+                    
+                    1.10.控制结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../1.介绍/1.11.处理异常/">
+            
+                <a href="../../1.介绍/1.11.处理异常/">
+            
+                    
+                    1.11.处理异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../../1.介绍/1.12.定义函数/">
+            
+                <a href="../../1.介绍/1.12.定义函数/">
+            
+                    
+                    1.12.定义函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../../1.介绍/1.13.面向对象编程-定义类/">
+            
+                <a href="../../1.介绍/1.13.面向对象编程-定义类/">
+            
+                    
+                    1.13.面向对象编程-定义类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../../1.介绍/1.14.总结/">
+            
+                <a href="../../1.介绍/1.14.总结/">
+            
+                    
+                    1.14.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../2.算法分析/">
+            
+                <a href="../../2.算法分析/">
+            
+                    
+                    2.算法分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../2.算法分析/2.1.目标/">
+            
+                <a href="../../2.算法分析/2.1.目标/">
+            
+                    
+                    2.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../2.算法分析/2.2.什么是算法分析/">
+            
+                <a href="../../2.算法分析/2.2.什么是算法分析/">
+            
+                    
+                    2.2.什么是算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../2.算法分析/2.3.大O符号/">
+            
+                <a href="../../2.算法分析/2.3.大O符号/">
+            
+                    
+                    2.3.大O符号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../2.算法分析/2.4.一个乱序字符串检查的例子/">
+            
+                <a href="../../2.算法分析/2.4.一个乱序字符串检查的例子/">
+            
+                    
+                    2.4.一个乱序字符串检查的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../2.算法分析/2.5.Python数据结构的性能/">
+            
+                <a href="../../2.算法分析/2.5.Python数据结构的性能/">
+            
+                    
+                    2.5.Python数据结构的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../2.算法分析/2.6.列表/">
+            
+                <a href="../../2.算法分析/2.6.列表/">
+            
+                    
+                    2.6.列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../2.算法分析/2.7.字典/">
+            
+                <a href="../../2.算法分析/2.7.字典/">
+            
+                    
+                    2.7.字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../2.算法分析/2.8.总结/">
+            
+                <a href="../../2.算法分析/2.8.总结/">
+            
+                    
+                    2.8.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    3.基本数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3.1.目标/">
+            
+                <a href="../3.1.目标/">
+            
+                    
+                    3.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3.2.什么是线性数据结构/">
+            
+                <a href="../3.2.什么是线性数据结构/">
+            
+                    
+                    3.2.什么是线性数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3.3.什么是栈/">
+            
+                <a href="../3.3.什么是栈/">
+            
+                    
+                    3.3.什么是栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3.4.栈的抽象数据类型/">
+            
+                <a href="../3.4.栈的抽象数据类型/">
+            
+                    
+                    3.4.栈的抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3.5.Python实现栈/">
+            
+                <a href="../3.5.Python实现栈/">
+            
+                    
+                    3.5.Python实现栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3.6.简单括号匹配/">
+            
+                <a href="../3.6.简单括号匹配/">
+            
+                    
+                    3.6.简单括号匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3.7.符号匹配/">
+            
+                <a href="../3.7.符号匹配/">
+            
+                    
+                    3.7.符号匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../3.8.十进制转换成二进制/">
+            
+                <a href="../3.8.十进制转换成二进制/">
+            
+                    
+                    3.8.十进制转换成二进制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../3.9.中缀前缀和后缀表达式/">
+            
+                <a href="../3.9.中缀前缀和后缀表达式/">
+            
+                    
+                    3.9.中缀前缀和后缀表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../3.10.什么是队列/">
+            
+                <a href="../3.10.什么是队列/">
+            
+                    
+                    3.10.什么是队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../3.11.队列抽象数据类型/">
+            
+                <a href="../3.11.队列抽象数据类型/">
+            
+                    
+                    3.11.队列抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../3.12.Python实现队列/">
+            
+                <a href="../3.12.Python实现队列/">
+            
+                    
+                    3.12.Python实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../3.13.模拟：烫手山芋/">
+            
+                <a href="../3.13.模拟：烫手山芋/">
+            
+                    
+                    3.13.模拟：烫手山芋
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../3.14.模拟：打印机/">
+            
+                <a href="../3.14.模拟：打印机/">
+            
+                    
+                    3.14.模拟：打印机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../3.15.什么是Deque/">
+            
+                <a href="../3.15.什么是Deque/">
+            
+                    
+                    3.15.什么是Deque
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../3.16.Deque抽象数据类型/">
+            
+                <a href="../3.16.Deque抽象数据类型/">
+            
+                    
+                    3.16.Deque抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../3.17.Python实现Deque/">
+            
+                <a href="../3.17.Python实现Deque/">
+            
+                    
+                    3.17.Python实现Deque
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../3.18.回文检查/">
+            
+                <a href="../3.18.回文检查/">
+            
+                    
+                    3.18.回文检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../3.19.列表/">
+            
+                <a href="../3.19.列表/">
+            
+                    
+                    3.19.列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../3.20.无序列表抽象数据类型/">
+            
+                <a href="../3.20.无序列表抽象数据类型/">
+            
+                    
+                    3.20.无序列表抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.21" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    3.21.实现无序列表：链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../3.22.有序列表抽象数据结构/">
+            
+                <a href="../3.22.有序列表抽象数据结构/">
+            
+                    
+                    3.22.有序列表抽象数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../3.23.实现有序列表/">
+            
+                <a href="../3.23.实现有序列表/">
+            
+                    
+                    3.23.实现有序列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../3.24.总结/">
+            
+                <a href="../3.24.总结/">
+            
+                    
+                    3.24.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../4.递归/">
+            
+                <a href="../../4.递归/">
+            
+                    
+                    4.递归
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../4.递归/4.1.目标/">
+            
+                <a href="../../4.递归/4.1.目标/">
+            
+                    
+                    4.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../4.递归/4.2.什么是递归/">
+            
+                <a href="../../4.递归/4.2.什么是递归/">
+            
+                    
+                    4.2.什么是递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../4.递归/4.3.计算整数列表和/">
+            
+                <a href="../../4.递归/4.3.计算整数列表和/">
+            
+                    
+                    4.3.计算整数列表和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../4.递归/4.4.递归的三定律/">
+            
+                <a href="../../4.递归/4.4.递归的三定律/">
+            
+                    
+                    4.4.递归的三定律
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../4.递归/4.5.整数转换为任意进制字符串/">
+            
+                <a href="../../4.递归/4.5.整数转换为任意进制字符串/">
+            
+                    
+                    4.5.整数转换为任意进制字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../4.递归/4.6.栈帧：实现递归/">
+            
+                <a href="../../4.递归/4.6.栈帧：实现递归/">
+            
+                    
+                    4.6.栈帧：实现递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../4.递归/4.7.介绍：可视化递归/">
+            
+                <a href="../../4.递归/4.7.介绍：可视化递归/">
+            
+                    
+                    4.7.介绍：可视化递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../4.递归/4.8.谢尔宾斯基三角形/">
+            
+                <a href="../../4.递归/4.8.谢尔宾斯基三角形/">
+            
+                    
+                    4.8.谢尔宾斯基三角形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../4.递归/4.10.汉诺塔游戏/">
+            
+                <a href="../../4.递归/4.10.汉诺塔游戏/">
+            
+                    
+                    4.10.汉诺塔游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../../4.递归/4.11.探索迷宫/">
+            
+                <a href="../../4.递归/4.11.探索迷宫/">
+            
+                    
+                    4.11.探索迷宫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../../4.递归/4.12.动态规划/">
+            
+                <a href="../../4.递归/4.12.动态规划/">
+            
+                    
+                    4.12.动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../../4.递归/4.13.总结/">
+            
+                <a href="../../4.递归/4.13.总结/">
+            
+                    
+                    4.13.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../5.排序和搜索/">
+            
+                <a href="../../5.排序和搜索/">
+            
+                    
+                    5.排序和搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../5.排序和搜索/5.1.目标/">
+            
+                <a href="../../5.排序和搜索/5.1.目标/">
+            
+                    
+                    5.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../5.排序和搜索/5.2.搜索/">
+            
+                <a href="../../5.排序和搜索/5.2.搜索/">
+            
+                    
+                    5.2.搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../5.排序和搜索/5.3.顺序查找/">
+            
+                <a href="../../5.排序和搜索/5.3.顺序查找/">
+            
+                    
+                    5.3.顺序查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../5.排序和搜索/5.4.二分查找/">
+            
+                <a href="../../5.排序和搜索/5.4.二分查找/">
+            
+                    
+                    5.4.二分查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../5.排序和搜索/5.5.Hash查找/">
+            
+                <a href="../../5.排序和搜索/5.5.Hash查找/">
+            
+                    
+                    5.5.Hash查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../5.排序和搜索/5.6.排序/">
+            
+                <a href="../../5.排序和搜索/5.6.排序/">
+            
+                    
+                    5.6.排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../5.排序和搜索/5.7.冒泡排序/">
+            
+                <a href="../../5.排序和搜索/5.7.冒泡排序/">
+            
+                    
+                    5.7.冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../5.排序和搜索/5.8.选择排序/">
+            
+                <a href="../../5.排序和搜索/5.8.选择排序/">
+            
+                    
+                    5.8.选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../5.排序和搜索/5.9.插入排序/">
+            
+                <a href="../../5.排序和搜索/5.9.插入排序/">
+            
+                    
+                    5.9.插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../5.排序和搜索/5.10.希尔排序/">
+            
+                <a href="../../5.排序和搜索/5.10.希尔排序/">
+            
+                    
+                    5.10.希尔排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../5.排序和搜索/5.11.归并排序/">
+            
+                <a href="../../5.排序和搜索/5.11.归并排序/">
+            
+                    
+                    5.11.归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../../5.排序和搜索/5.12.快速排序/">
+            
+                <a href="../../5.排序和搜索/5.12.快速排序/">
+            
+                    
+                    5.12.快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../../5.排序和搜索/5.13.总结/">
+            
+                <a href="../../5.排序和搜索/5.13.总结/">
+            
+                    
+                    5.13.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../6.树和树的算法/">
+            
+                <a href="../../6.树和树的算法/">
+            
+                    
+                    6.树和树的算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../6.树和树的算法/6.1.目标/">
+            
+                <a href="../../6.树和树的算法/6.1.目标/">
+            
+                    
+                    6.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../6.树和树的算法/6.2.树的例子/">
+            
+                <a href="../../6.树和树的算法/6.2.树的例子/">
+            
+                    
+                    6.2.树的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../6.树和树的算法/6.3.词汇和定义/">
+            
+                <a href="../../6.树和树的算法/6.3.词汇和定义/">
+            
+                    
+                    6.3.词汇和定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../6.树和树的算法/6.4.列表表示/">
+            
+                <a href="../../6.树和树的算法/6.4.列表表示/">
+            
+                    
+                    6.4.列表表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../../6.树和树的算法/6.5.节点表示/">
+            
+                <a href="../../6.树和树的算法/6.5.节点表示/">
+            
+                    
+                    6.5.节点表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../../6.树和树的算法/6.6.分析树/">
+            
+                <a href="../../6.树和树的算法/6.6.分析树/">
+            
+                    
+                    6.6.分析树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../../6.树和树的算法/6.7.树的遍历/">
+            
+                <a href="../../6.树和树的算法/6.7.树的遍历/">
+            
+                    
+                    6.7.树的遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../../6.树和树的算法/6.8.基于二叉堆的优先队列/">
+            
+                <a href="../../6.树和树的算法/6.8.基于二叉堆的优先队列/">
+            
+                    
+                    6.8.基于二叉堆的优先队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../../6.树和树的算法/6.9.二叉堆操作/">
+            
+                <a href="../../6.树和树的算法/6.9.二叉堆操作/">
+            
+                    
+                    6.9.二叉堆操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../../6.树和树的算法/6.10.二叉堆实现/">
+            
+                <a href="../../6.树和树的算法/6.10.二叉堆实现/">
+            
+                    
+                    6.10.二叉堆实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../../6.树和树的算法/6.11.二叉查找树/">
+            
+                <a href="../../6.树和树的算法/6.11.二叉查找树/">
+            
+                    
+                    6.11.二叉查找树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../../6.树和树的算法/6.12.查找树操作/">
+            
+                <a href="../../6.树和树的算法/6.12.查找树操作/">
+            
+                    
+                    6.12.查找树操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../../6.树和树的算法/6.13.查找树实现/">
+            
+                <a href="../../6.树和树的算法/6.13.查找树实现/">
+            
+                    
+                    6.13.查找树实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../../6.树和树的算法/6.14.查找树分析/">
+            
+                <a href="../../6.树和树的算法/6.14.查找树分析/">
+            
+                    
+                    6.14.查找树分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../../6.树和树的算法/6.15.平衡二叉搜索树/">
+            
+                <a href="../../6.树和树的算法/6.15.平衡二叉搜索树/">
+            
+                    
+                    6.15.平衡二叉搜索树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../../6.树和树的算法/6.16.AVL平衡二叉搜索树/">
+            
+                <a href="../../6.树和树的算法/6.16.AVL平衡二叉搜索树/">
+            
+                    
+                    6.16.AVL平衡二叉搜索树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../../6.树和树的算法/6.17.AVL平衡二叉搜索树实现/">
+            
+                <a href="../../6.树和树的算法/6.17.AVL平衡二叉搜索树实现/">
+            
+                    
+                    6.17.AVL平衡二叉搜索树实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../../6.树和树的算法/6.18.Map抽象数据结构总结/">
+            
+                <a href="../../6.树和树的算法/6.18.Map抽象数据结构总结/">
+            
+                    
+                    6.18.Map抽象数据结构总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.19" data-path="../../6.树和树的算法/6.19.总结/">
+            
+                <a href="../../6.树和树的算法/6.19.总结/">
+            
+                    
+                    6.19.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../7.图和图的算法/">
+            
+                <a href="../../7.图和图的算法/">
+            
+                    
+                    7.图和图的算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../7.图和图的算法/7.1.目标/">
+            
+                <a href="../../7.图和图的算法/7.1.目标/">
+            
+                    
+                    7.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../7.图和图的算法/7.2.词汇和定义/">
+            
+                <a href="../../7.图和图的算法/7.2.词汇和定义/">
+            
+                    
+                    7.2.词汇和定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../7.图和图的算法/7.3.图抽象数据类型/">
+            
+                <a href="../../7.图和图的算法/7.3.图抽象数据类型/">
+            
+                    
+                    7.3.图抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../7.图和图的算法/7.4.邻接矩阵/">
+            
+                <a href="../../7.图和图的算法/7.4.邻接矩阵/">
+            
+                    
+                    7.4.邻接矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../7.图和图的算法/7.5.邻接表/">
+            
+                <a href="../../7.图和图的算法/7.5.邻接表/">
+            
+                    
+                    7.5.邻接表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../7.图和图的算法/7.6.实现/">
+            
+                <a href="../../7.图和图的算法/7.6.实现/">
+            
+                    
+                    7.6.实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../7.图和图的算法/7.7.字梯的问题/">
+            
+                <a href="../../7.图和图的算法/7.7.字梯的问题/">
+            
+                    
+                    7.7.字梯的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../7.图和图的算法/7.8.构建字梯图/">
+            
+                <a href="../../7.图和图的算法/7.8.构建字梯图/">
+            
+                    
+                    7.8.构建字梯图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../7.图和图的算法/7.9.实现广度优先搜索/">
+            
+                <a href="../../7.图和图的算法/7.9.实现广度优先搜索/">
+            
+                    
+                    7.9.实现广度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../../7.图和图的算法/7.10.广度优先搜索分析/">
+            
+                <a href="../../7.图和图的算法/7.10.广度优先搜索分析/">
+            
+                    
+                    7.10.广度优先搜索分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../../7.图和图的算法/7.11.骑士之旅/">
+            
+                <a href="../../7.图和图的算法/7.11.骑士之旅/">
+            
+                    
+                    7.11.骑士之旅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../../7.图和图的算法/7.12.构建骑士之旅图/">
+            
+                <a href="../../7.图和图的算法/7.12.构建骑士之旅图/">
+            
+                    
+                    7.12.构建骑士之旅图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../../7.图和图的算法/7.13.实现骑士之旅/">
+            
+                <a href="../../7.图和图的算法/7.13.实现骑士之旅/">
+            
+                    
+                    7.13.实现骑士之旅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../../7.图和图的算法/7.14.骑士之旅分析/">
+            
+                <a href="../../7.图和图的算法/7.14.骑士之旅分析/">
+            
+                    
+                    7.14.骑士之旅分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../../7.图和图的算法/7.15.通用深度优先搜索/">
+            
+                <a href="../../7.图和图的算法/7.15.通用深度优先搜索/">
+            
+                    
+                    7.15.通用深度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.16" data-path="../../7.图和图的算法/7.16.深度优先搜索分析/">
+            
+                <a href="../../7.图和图的算法/7.16.深度优先搜索分析/">
+            
+                    
+                    7.16.深度优先搜索分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.17" data-path="../../7.图和图的算法/7.17.拓扑排序/">
+            
+                <a href="../../7.图和图的算法/7.17.拓扑排序/">
+            
+                    
+                    7.17.拓扑排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.18" data-path="../../7.图和图的算法/7.18.强连通分量/">
+            
+                <a href="../../7.图和图的算法/7.18.强连通分量/">
+            
+                    
+                    7.18.强连通分量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.19" data-path="../../7.图和图的算法/7.19.最短路径问题/">
+            
+                <a href="../../7.图和图的算法/7.19.最短路径问题/">
+            
+                    
+                    7.19.最短路径问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.20" data-path="../../7.图和图的算法/7.20.Dijkstra算法/">
+            
+                <a href="../../7.图和图的算法/7.20.Dijkstra算法/">
+            
+                    
+                    7.20.Dijkstra算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.21" data-path="../../7.图和图的算法/7.21.Dijkstra算法分析/">
+            
+                <a href="../../7.图和图的算法/7.21.Dijkstra算法分析/">
+            
+                    
+                    7.21.Dijkstra算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.22" data-path="../../7.图和图的算法/7.22.Prim生成树算法/">
+            
+                <a href="../../7.图和图的算法/7.22.Prim生成树算法/">
+            
+                    
+                    7.22.Prim生成树算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.23" data-path="../../7.图和图的算法/7.23.总结/">
+            
+                <a href="../../7.图和图的算法/7.23.总结/">
+            
+                    
+                    7.23.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >3.21.实现无序列表：链表</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="321&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;">3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;</h2>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6784;&#x9020;&#x901A;&#x5E38;&#x6240;&#x77E5;&#x7684;&#x94FE;&#x8868;&#x3002;&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4FDD;&#x6301;&#x9879;&#x7684;&#x76F8;&#x5BF9;&#x5B9A;&#x4F4D;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6CA1;&#x6709;&#x8981;&#x6C42;&#x6211;&#x4EEC;&#x7EF4;&#x6301;&#x5728;&#x8FDE;&#x7EED;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#x7684;&#x5B9A;&#x4F4D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8003;&#x8651; Figure 1 &#x4E2D;&#x6240;&#x793A;&#x7684;&#x9879;&#x7684;&#x96C6;&#x5408;&#x3002;&#x770B;&#x6765;&#x8FD9;&#x4E9B;&#x503C;&#x5DF2;&#x88AB;&#x968F;&#x673A;&#x653E;&#x7F6E;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x4E2A;&#x9879;&#x4E2D;&#x4FDD;&#x6301;&#x4E00;&#x4E9B;&#x660E;&#x786E;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5373;&#x4E0B;&#x4E00;&#x4E2A;&#x9879;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x53C2;&#x89C1; Figure 2&#xFF09;&#xFF0C;&#x5219;&#x6BCF;&#x4E2A;&#x9879;&#x7684;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x5730;&#x4ECE;&#x4E00;&#x4E2A;&#x9879;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x9879;&#x7684;&#x94FE;&#x63A5;&#x6765;&#x8868;&#x793A;&#x3002;</p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure1.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure1"></p>
+<p><em>Figure 1</em></p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure2.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure2"></p>
+<p><em>Figure 2</em></p>
+<p>&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5FC5;&#x987B;&#x660E;&#x786E;&#x5730;&#x6307;&#x5B9A;&#x94FE;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x9879;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4E00;&#x65E6;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x7B2C;&#x4E00;&#x4E2A;&#x9879;&#x5728;&#x54EA;&#x91CC;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x5916;&#x90E8;&#x5F15;&#x7528;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x3002;&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x9879;&#x9700;&#x8981;&#x77E5;&#x9053;&#x6CA1;&#x6709;&#x4E0B;&#x4E00;&#x4E2A;&#x9879;&#x3002;</p>
+<h3 id="3211node-&#x7C7B;">3.21.1.Node &#x7C7B;</h3>
+<p>&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#x57FA;&#x672C;&#x6784;&#x9020;&#x5757;&#x662F;&#x8282;&#x70B9;&#x3002;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x81F3;&#x5C11;&#x4FDD;&#x5B58;&#x4E24;&#x4E2A;&#x4FE1;&#x606F;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x8282;&#x70B9;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x5217;&#x8868;&#x9879;&#x672C;&#x8EAB;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E2A;&#x79F0;&#x4E3A;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x5FC5;&#x987B;&#x4FDD;&#x5B58;&#x5BF9;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5F15;&#x7528;&#x3002; Listing 1 &#x5C55;&#x793A;&#x4E86; Python &#x5B9E;&#x73B0;&#x3002;&#x8981;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x521D;&#x59CB;&#x6570;&#x636E;&#x503C;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x5C06;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x503C; 93 &#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF08;&#x89C1; Figure 3&#xFF09;&#x3002;&#x5E94;&#x8BE5;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x4F1A;&#x5982; Figure 4 &#x6240;&#x793A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x3002;Node &#x7C7B;&#x8FD8;&#x5305;&#x62EC;&#x8BBF;&#x95EE;&#xFF0C;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x548C;&#x8BBF;&#x95EE;&#x4E0B;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,initdata)</span>:</span>
+        self.data = initdata
+        self.next = <span class="hljs-keyword">None</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getData</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.data
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getNext</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.next
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setData</span><span class="hljs-params">(self,newdata)</span>:</span>
+        self.data = newdata
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setNext</span><span class="hljs-params">(self,newnext)</span>:</span>
+        self.next = newnext
+</code></pre>
+<p><em>Listing 1</em></p>
+<p>&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Node &#x5BF9;&#x8C61;</p>
+<pre><code class="lang-bash">&gt;&gt;&gt; temp = Node(93)
+&gt;&gt;&gt; temp.getData()
+93
+</code></pre>
+<p>Python &#x5F15;&#x7528;&#x503C; None &#x5C06;&#x5728; Node &#x7C7B;&#x548C;&#x94FE;&#x8868;&#x672C;&#x8EAB;&#x53D1;&#x6325;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#x3002;&#x5F15;&#x7528; None &#x4EE3;&#x8868;&#x6CA1;&#x6709;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x6700;&#x521D;&#x521B;&#x5EFA;&#x7684;&#x8282;&#x70B9; next &#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; None&#x3002;&#x6709;&#x65F6;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A; <code>&#x63A5;&#x5730;&#x8282;&#x70B9;</code>&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x63A5;&#x5730;&#x7B26;&#x53F7;&#x8868;&#x793A;&#x5BF9; None &#x7684;&#x5F15;&#x7528;&#x3002;&#x5C06; None &#x663E;&#x5F0F;&#x7684;&#x5206;&#x914D;&#x7ED9;&#x521D;&#x59CB;&#x4E0B;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x503C;&#x662F;&#x4E2A;&#x597D;&#x4E3B;&#x610F;&#x3002;</p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure3.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure3"></p>
+<p><em>Figure 3</em></p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure4.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure4"></p>
+<p><em>Figure 4</em></p>
+<h3 id="3212unordered-list-&#x7C7B;">3.21.2.Unordered List &#x7C7B;</h3>
+<p>&#x5982;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#x5C06;&#x4ECE;&#x4E00;&#x7EC4;&#x8282;&#x70B9;&#x6784;&#x5EFA;&#xFF0C;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x901A;&#x8FC7;&#x663E;&#x5F0F;&#x5F15;&#x7528;&#x94FE;&#x63A5;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x53EA;&#x8981;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5728;&#x54EA;&#x91CC;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF08;&#x5305;&#x542B;&#x7B2C;&#x4E00;&#x4E2A;&#x9879;&#xFF09;&#xFF0C;&#x4E4B;&#x540E;&#x7684;&#x6BCF;&#x4E2A;&#x9879;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FDE;&#x7EED;&#x8DDF;&#x968F;&#x4E0B;&#x4E00;&#x4E2A;&#x94FE;&#x63A5;&#x627E;&#x5230;&#x3002;&#x8003;&#x8651;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;UnorderedList &#x7C7B;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x5BF9;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5F15;&#x7528;&#x3002;Listing 2 &#x663E;&#x793A;&#x4E86;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6BCF;&#x4E2A;&#x94FE;&#x8868;&#x5BF9;&#x8C61;&#x5C06;&#x7EF4;&#x62A4;&#x5BF9;&#x94FE;&#x8868;&#x5934;&#x90E8;&#x7684;&#x5355;&#x4E2A;&#x5F15;&#x7528;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UnorderedList</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.head = <span class="hljs-keyword">None</span>
+</code></pre>
+<p><em>Listing 2</em></p>
+<p>&#x6211;&#x4EEC;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;&#x94FE;&#x8868;&#x3002;&#x8D4B;&#x503C;&#x8BED;&#x53E5;</p>
+<pre><code class="lang-bash">&gt;&gt;&gt; mylist = UnorderedList()
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x5982; Figure 5 &#x6240;&#x793A;&#x7684;&#x94FE;&#x8868;&#x3002;&#x6B63;&#x5982;&#x6211;&#x4EEC;&#x5728; Node &#x7C7B;&#x4E2D;&#x8BA8;&#x8BBA;&#x7684;&#xFF0C;&#x7279;&#x6B8A;&#x5F15;&#x7528; None &#x5C06;&#x518D;&#x6B21;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x90E8;&#x4E0D;&#x5F15;&#x7528;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#x3002;&#x6700;&#x7EC8;&#xFF0C;&#x5148;&#x524D;&#x7ED9;&#x51FA;&#x7684;&#x793A;&#x4F8B;&#x5217;&#x8868;&#x5982; Figure 6 &#x6240;&#x793A;&#x7684;&#x94FE;&#x63A5;&#x5217;&#x8868;&#x8868;&#x793A;&#x3002;&#x94FE;&#x8868;&#x7684;&#x5934;&#x6307;&#x4EE3;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x9879;&#x7684;&#x7B2C;&#x4E00;&#x8282;&#x70B9;&#x3002;&#x53CD;&#x8FC7;&#x6765;&#xFF0C;&#x8BE5;&#x8282;&#x70B9;&#x4FDD;&#x5B58;&#x5BF9;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF08;&#x4E0B;&#x4E00;&#x4E2A;&#x9879;&#xFF09;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x91CD;&#x8981;&#x7684;&#x662F;&#x6CE8;&#x610F;&#x94FE;&#x8868;&#x7C7B;&#x672C;&#x8EAB;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x5B83;&#x53EA;&#x5305;&#x542B;&#x5BF9;&#x94FE;&#x63A5;&#x7ED3;&#x6784;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5355;&#x4E2A;&#x5F15;&#x7528;&#x3002;</p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure5.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure5"></p>
+<p><em>Figure 5</em></p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure6.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure6"></p>
+<p><em>Figure 6</em></p>
+<p>Listing 3 &#x4E2D;&#x6240;&#x793A;&#x7684; isEmpty &#x65B9;&#x6CD5;&#x53EA;&#x662F;&#x68C0;&#x67E5;&#x94FE;&#x8868;&#x5934;&#x662F;&#x5426;&#x662F; None &#x7684;&#x5F15;&#x7528;&#x3002; &#x5E03;&#x5C14;&#x8868;&#x8FBE;&#x5F0F; self.head == None &#x7684;&#x7ED3;&#x679C;&#x53EA;&#x6709;&#x5728;&#x94FE;&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x8282;&#x70B9;&#x65F6;&#x624D;&#x4E3A;&#x771F;&#x3002;&#x7531;&#x4E8E;&#x65B0;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#xFF0C;&#x56E0;&#x6B64;&#x6784;&#x9020;&#x51FD;&#x6570;&#x548C;&#x7A7A;&#x68C0;&#x67E5;&#x5FC5;&#x987B;&#x5F7C;&#x6B64;&#x4E00;&#x81F4;&#x3002;&#x8FD9;&#x663E;&#x793A;&#x4E86;&#x4F7F;&#x7528;&#x5F15;&#x7528; None &#x6765;&#x8868;&#x793A;&#x94FE;&#x63A5;&#x7ED3;&#x6784;&#x7684; <code>end</code> &#x7684;&#x4F18;&#x70B9;&#x3002;&#x5728; Python &#x4E2D;&#xFF0C;None &#x53EF;&#x4EE5;&#x4E0E;&#x4EFB;&#x4F55;&#x5F15;&#x7528;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;&#x5982;&#x679C;&#x5B83;&#x4EEC;&#x90FD;&#x6307;&#x5411;&#x76F8;&#x540C;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x4E24;&#x4E2A;&#x5F15;&#x7528;&#x662F;&#x76F8;&#x7B49;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x4E2D;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x5B83;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">(self)</span>:</span>
+    <span class="hljs-keyword">return</span> self.head == <span class="hljs-keyword">None</span>
+</code></pre>
+<p><em>Listing 3</em></p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x5C06;&#x9879;&#x52A0;&#x5165;&#x6211;&#x4EEC;&#x7684;&#x94FE;&#x8868;&#xFF1F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9E;&#x73B0; add &#x65B9;&#x6CD5;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x505A;&#x8FD9;&#x4E00;&#x70B9;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x89E3;&#x51B3;&#x5728;&#x94FE;&#x8868;&#x4E2D;&#x54EA;&#x4E2A;&#x4F4D;&#x7F6E;&#x653E;&#x7F6E;&#x65B0;&#x9879;&#x7684;&#x91CD;&#x8981;&#x95EE;&#x9898;&#x3002;&#x7531;&#x4E8E;&#x8BE5;&#x94FE;&#x8868;&#x662F;&#x65E0;&#x5E8F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x65B0;&#x9879;&#x76F8;&#x5BF9;&#x4E8E;&#x5DF2;&#x7ECF;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x9879;&#x7684;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x5E76;&#x4E0D;&#x91CD;&#x8981;&#x3002; &#x65B0;&#x9879;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x3002;&#x8003;&#x8651;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x5C06;&#x65B0;&#x9879;&#x653E;&#x5728;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x6709;&#x610F;&#x4E49;&#x7684;&#x3002;</p>
+<p>&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x94FE;&#x8868;&#x7ED3;&#x6784;&#x53EA;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#x70B9;&#xFF0C;&#x5373;&#x94FE;&#x8868;&#x7684;&#x5934;&#x90E8;&#x3002;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x8BBF;&#x95EE;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x8DDF;&#x968F;&#x4E0B;&#x4E00;&#x4E2A;&#x94FE;&#x63A5;&#x5230;&#x8FBE;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6DFB;&#x52A0;&#x65B0;&#x8282;&#x70B9;&#x7684;&#x6700;&#x7B80;&#x5355;&#x7684;&#x5730;&#x65B9;&#x5C31;&#x5728;&#x94FE;&#x8868;&#x7684;&#x5934;&#x90E8;&#x3002; &#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x65B0;&#x9879;&#x4F5C;&#x4E3A;&#x94FE;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x9879;&#xFF0C;&#x73B0;&#x6709;&#x9879;&#x5C06;&#x9700;&#x8981;&#x94FE;&#x63A5;&#x5230;&#x8FD9;&#x4E2A;&#x65B0;&#x9879;&#x540E;&#x3002;</p>
+<p>Figure 6 &#x5C55;&#x793A;&#x4E86;&#x94FE;&#x8868;&#x8C03;&#x7528;&#x591A;&#x6B21; add &#x51FD;&#x6570;&#x7684;&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-bash">&gt;&gt;&gt; mylist.add(31)
+&gt;&gt;&gt; mylist.add(77)
+&gt;&gt;&gt; mylist.add(17)
+&gt;&gt;&gt; mylist.add(93)
+&gt;&gt;&gt; mylist.add(26)
+&gt;&gt;&gt; mylist.add(54)
+</code></pre>
+<p><em>Figure 6</em></p>
+<p>&#x56E0;&#x4E3A; 31 &#x662F;&#x6DFB;&#x52A0;&#x5230;&#x94FE;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x9879;&#xFF0C;&#x5B83;&#x6700;&#x7EC8;&#x5C06;&#x662F;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x5176;&#x4ED6;&#x9879;&#x5728;&#x5176;&#x524D;&#x9762;&#x6DFB;&#x52A0;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x7531;&#x4E8E; 54 &#x662F;&#x6DFB;&#x52A0;&#x7684;&#x6700;&#x540E;&#x4E00;&#x9879;&#xFF0C;&#x5B83;&#x5C06;&#x6210;&#x4E3A;&#x94FE;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x503C;&#x3002;</p>
+<p>add &#x65B9;&#x6CD5;&#x5982; Listing 4 &#x6240;&#x793A;&#x3002;&#x94FE;&#x8868;&#x7684;&#x6BCF;&#x9879;&#x5FC5;&#x987B;&#x9A7B;&#x7559;&#x5728;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x7B2C; 2 &#x884C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x8282;&#x70B9;&#x5E76;&#x5C06;&#x8BE5;&#x9879;&#x4F5C;&#x4E3A;&#x5176;&#x6570;&#x636E;&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x5C06;&#x65B0;&#x8282;&#x70B9;&#x94FE;&#x63A5;&#x5230;&#x73B0;&#x6709;&#x7ED3;&#x6784;&#x4E2D;&#x6765;&#x5B8C;&#x6210;&#x8BE5;&#x8FC7;&#x7A0B;&#x3002;&#x8FD9;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#xFF0C;&#x5982; Figure 7 &#x6240;&#x793A;&#x3002;&#x6B65;&#x9AA4;1&#xFF08;&#x884C;3&#xFF09;&#x66F4;&#x6539;&#x65B0;&#x8282;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x4EE5;&#x5F15;&#x7528;&#x65E7;&#x94FE;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x94FE;&#x8868;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x5DF2;&#x7ECF;&#x6B63;&#x786E;&#x5730;&#x9644;&#x52A0;&#x5230;&#x65B0;&#x8282;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x94FE;&#x8868;&#x7684;&#x5934;&#x4EE5;&#x5F15;&#x7528;&#x65B0;&#x8282;&#x70B9;&#x3002;&#x7B2C; 4 &#x884C;&#x4E2D;&#x7684;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x8BBE;&#x7F6E;&#x5217;&#x8868;&#x7684;&#x5934;&#x3002;</p>
+<p>&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#x7684;&#x987A;&#x5E8F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;&#x5982;&#x679C;&#x7B2C; 3 &#x884C;&#x548C;&#x7B2C; 4 &#x884C;&#x7684;&#x987A;&#x5E8F;&#x98A0;&#x5012;&#xFF0C;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1F;&#x5982;&#x679C;&#x94FE;&#x8868;&#x5934;&#x90E8;&#x7684;&#x4FEE;&#x6539;&#x9996;&#x5148;&#x53D1;&#x751F;&#xFF0C;&#x5219;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x5728; Figure 8 &#x4E2D;&#x770B;&#x5230;&#x3002;&#x7531;&#x4E8E; head &#x662F;&#x94FE;&#x8868;&#x8282;&#x70B9;&#x7684;&#x552F;&#x4E00;&#x5916;&#x90E8;&#x5F15;&#x7528;&#xFF0C;&#x6240;&#x6709;&#x539F;&#x59CB;&#x8282;&#x70B9;&#x90FD;&#x5C06;&#x4E22;&#x5931;&#x5E76;&#x4E14;&#x4E0D;&#x80FD;&#x518D;&#x88AB;&#x8BBF;&#x95EE;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(self,item)</span>:</span>
+    temp = Node(item)
+    temp.setNext(self.head)
+    self.head = temp
+</code></pre>
+<p><em>Listing 4</em></p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure7.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure7"></p>
+<p><em>Figure 7</em></p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure8.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure8"></p>
+<p><em>Figure 8</em></p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x5B9E;&#x73B0;&#x7684;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5; - <code>size</code>&#xFF0C;<code>search</code> &#x548C; <code>remove</code> - &#x90FD;&#x57FA;&#x4E8E;&#x4E00;&#x79CD;&#x79F0;&#x4E3A;&#x94FE;&#x8868;&#x904D;&#x5386;&#x7684;&#x6280;&#x672F;&#x3002;&#x904D;&#x5386;&#x662F;&#x6307;&#x7CFB;&#x7EDF;&#x5730;&#x8BBF;&#x95EE;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5F00;&#x59CB;&#x7684;&#x5916;&#x90E8;&#x5F15;&#x7528;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x8BBF;&#x95EE;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x201C;&#x904D;&#x5386;&#x201D;&#x4E0B;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x6765;&#x79FB;&#x52A8;&#x5230;&#x5BF9;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5F15;&#x7528;&#x3002;</p>
+<p>&#x8981;&#x5B9E;&#x73B0; <code>size</code> &#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x904D;&#x5386;&#x94FE;&#x8868;&#x5E76;&#x5BF9;&#x8282;&#x70B9;&#x6570;&#x8BA1;&#x6570;&#x3002;Listing 5 &#x5C55;&#x793A;&#x4E86;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x5217;&#x8868;&#x4E2D;&#x8282;&#x70B9;&#x6570;&#x7684; Python &#x4EE3;&#x7801;&#x3002;&#x5916;&#x90E8;&#x5F15;&#x7528;&#x79F0;&#x4E3A; <code>current</code>&#xFF0C;&#x5E76;&#x5728;&#x7B2C;&#x4E8C;&#x884C;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x5230;&#x94FE;&#x8868;&#x7684;&#x5934;&#x90E8;&#x3002;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x770B;&#x5230;&#x4EFB;&#x4F55;&#x8282;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x8BA1;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A; 0 &#x3002;&#x7B2C; 4-6 &#x884C;&#x5B9E;&#x9645;&#x4E0A;&#x5B9E;&#x73B0;&#x4E86;&#x904D;&#x5386;&#x3002;&#x53EA;&#x8981;&#x5F53;&#x524D;&#x5F15;&#x7528;&#x6CA1;&#x5230;&#x94FE;&#x8868;&#x7684;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#xFF08;None&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7B2C; 6 &#x884C;&#x4E2D;&#x7684;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x5C06;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x79FB;&#x52A8;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x518D;&#x6B21;&#xFF0C;&#x5C06;&#x5F15;&#x7528;&#x4E0E; None &#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x7684;&#x80FD;&#x529B;&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x3002;&#x6BCF;&#x5F53; <code>current</code> &#x79FB;&#x52A8;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x52A0; 1 &#x4EE5;&#x8BA1;&#x6570;&#x3002;&#x6700;&#x540E;&#xFF0C;<code>count</code> &#x5728;&#x8FED;&#x4EE3;&#x505C;&#x6B62;&#x540E;&#x8FD4;&#x56DE;&#x3002;Figure 9 &#x5C55;&#x793A;&#x4E86;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">size</span><span class="hljs-params">(self)</span>:</span>
+    current = self.head
+    count = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> current != <span class="hljs-keyword">None</span>:
+        count = count + <span class="hljs-number">1</span>
+        current = current.getNext()
+
+    <span class="hljs-keyword">return</span> count
+</code></pre>
+<p><em>Listing 5</em></p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure9.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure9"></p>
+<p><em>Figure 9</em></p>
+<p>&#x5728;&#x94FE;&#x8868;&#x4E2D;&#x641C;&#x7D22;&#x4E5F;&#x4F7F;&#x7528;&#x904D;&#x5386;&#x6280;&#x672F;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x8BBF;&#x95EE;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BE2;&#x95EE;&#x5B58;&#x50A8;&#x5728;&#x5176;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x662F;&#x5426;&#x4E0E;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x5BFB;&#x627E;&#x7684;&#x9879;&#x5339;&#x914D;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x5FC5;&#x4E00;&#x76F4;&#x904D;&#x5386;&#x5230;&#x5217;&#x8868;&#x7684;&#x672B;&#x5C3E;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5230;&#x8FBE;&#x94FE;&#x8868;&#x7684;&#x672B;&#x5C3E;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x5BFB;&#x627E;&#x7684;&#x9879;&#x4E0D;&#x5B58;&#x5728;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x627E;&#x5230;&#x9879;&#xFF0C;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x7EE7;&#x7EED;&#x3002;</p>
+<p>Listing 6 &#x5C55;&#x793A;&#x4E86;&#x641C;&#x7D22;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x548C;&#x5728; <code>size</code> &#x65B9;&#x6CD5;&#x4E2D;&#x4E00;&#x6837;&#xFF0C;&#x904D;&#x5386;&#x4ECE;&#x5217;&#x8868;&#x7684;&#x5934;&#x90E8;&#x5F00;&#x59CB;&#x521D;&#x59CB;&#x5316;&#xFF08;&#x884C;2&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x53D8;&#x91CF;&#x53EB; <code>found</code>&#xFF0C;&#x6807;&#x8BB0;&#x6211;&#x4EEC;&#x662F;&#x5426;&#x627E;&#x5230;&#x4E86;&#x6B63;&#x5728;&#x5BFB;&#x627E;&#x7684;&#x9879;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x8FD8;&#x6CA1;&#x6709;&#x5728;&#x904D;&#x5386;&#x5F00;&#x59CB;&#x65F6;&#x627E;&#x5230;&#x8BE5;&#x9879;&#xFF0C;<code>found</code> &#x8BBE;&#x7F6E;&#x4E3A; False&#xFF08;&#x7B2C;3&#x884C;&#xFF09;&#x3002;&#x7B2C;4&#x884C;&#x4E2D;&#x7684;&#x8FED;&#x4EE3;&#x8003;&#x8651;&#x4E86;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#x3002;&#x53EA;&#x8981;&#x6709;&#x66F4;&#x591A;&#x7684;&#x8282;&#x70B9;&#x8BBF;&#x95EE;&#xFF0C;&#x800C;&#x4E14;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x6B63;&#x5728;&#x5BFB;&#x627E;&#x7684;&#x9879;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x7EE7;&#x7EED;&#x68C0;&#x67E5;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x7B2C; 5 &#x884C;&#x68C0;&#x67E5;&#x6570;&#x636E;&#x9879;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E8E;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;<code>found</code> &#x8BBE;&#x7F6E;&#x4E3A; True&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span><span class="hljs-params">(self,item)</span>:</span>
+    current = self.head
+    found = <span class="hljs-keyword">False</span>
+    <span class="hljs-keyword">while</span> current != <span class="hljs-keyword">None</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> found:
+        <span class="hljs-keyword">if</span> current.getData() == item:
+            found = <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            current = current.getNext()
+
+    <span class="hljs-keyword">return</span> found
+</code></pre>
+<p><em>Listing 6</em></p>
+<p>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x8BD5;&#x8BD5;&#x8C03;&#x7528; <code>search</code> &#x65B9;&#x6CD5;&#x6765;&#x67E5;&#x627E; item 17</p>
+<pre><code class="lang-bash">&gt;&gt;&gt; mylist.search(17)
+True
+</code></pre>
+<p>&#x56E0;&#x4E3A; 17 &#x5728;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x9700;&#x8981;&#x79FB;&#x52A8;&#x5230;&#x5305;&#x542B; 17 &#x7684;&#x8282;&#x70B9;&#x3002;&#x6B64;&#x65F6;&#xFF0C;<code>found</code> &#x53D8;&#x91CF;&#x8BBE;&#x7F6E;&#x4E3A; True&#xFF0C;while &#x6761;&#x4EF6;&#x5C06;&#x5931;&#x8D25;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x3002; &#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x5728; Figure 10&#x4E2D;&#x770B;&#x5230;&#x3002;</p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure10.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure10"></p>
+<p><em>Figure 10</em></p>
+<p><code>remove</code> &#x65B9;&#x6CD5;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x903B;&#x8F91;&#x6B65;&#x9AA4;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x904D;&#x5386;&#x5217;&#x8868;&#x5BFB;&#x627E;&#x6211;&#x4EEC;&#x8981;&#x5220;&#x9664;&#x7684;&#x9879;&#x3002;&#x4E00;&#x65E6;&#x6211;&#x4EEC;&#x627E;&#x5230;&#x8BE5;&#x9879;&#xFF08;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x5B83;&#x5B58;&#x5728;&#xFF09;&#xFF0C;&#x5220;&#x9664;&#x5B83;&#x3002;&#x7B2C;&#x4E00;&#x6B65;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x4E8E;&#x641C;&#x7D22;&#x3002;&#x4ECE;&#x8BBE;&#x7F6E;&#x5230;&#x94FE;&#x8868;&#x5934;&#x90E8;&#x7684;&#x5916;&#x90E8;&#x5F15;&#x7528;&#x5F00;&#x59CB;&#xFF0C;&#x6211;&#x4EEC;&#x904D;&#x5386;&#x94FE;&#x63A5;&#xFF0C;&#x76F4;&#x5230;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6B63;&#x5728;&#x5BFB;&#x627E;&#x7684;&#x9879;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x9879;&#x5B58;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x8FED;&#x4EE3;&#x5C06;&#x5728; <code>current</code> &#x53D8;&#x4E3A; <code>None</code> &#x4E4B;&#x524D;&#x505C;&#x6B62;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x4F7F;&#x7528; <code>found</code> &#x5E03;&#x5C14;&#x503C;&#x3002;</p>
+<p>&#x5F53; <code>found</code> &#x53D8;&#x4E3A; True &#x65F6;&#xFF0C;<code>current</code> &#x5C06;&#x662F;&#x5BF9;&#x5305;&#x542B;&#x8981;&#x5220;&#x9664;&#x7684;&#x9879;&#x7684;&#x8282;&#x70B9;&#x7684;&#x5F15;&#x7528;&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x5220;&#x9664;&#x5462;&#xFF1F;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x7528;&#x6807;&#x793A;&#x8BE5;&#x9879;&#x76EE;&#x4E0D;&#x518D;&#x5B58;&#x5728;&#x7684;&#x67D0;&#x4E2A;&#x6807;&#x8BB0;&#x6765;&#x66FF;&#x6362;&#x9879;&#x76EE;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x7684;&#x95EE;&#x9898;&#x662F;&#x8282;&#x70B9;&#x6570;&#x91CF;&#x5C06;&#x4E0D;&#x518D;&#x5339;&#x914D;&#x9879;&#x6570;&#x91CF;&#x3002;&#x6700;&#x597D;&#x901A;&#x8FC7;&#x5220;&#x9664;&#x6574;&#x4E2A;&#x8282;&#x70B9;&#x6765;&#x5220;&#x9664;&#x8BE5;&#x9879;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x5220;&#x9664;&#x5305;&#x542B;&#x9879;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E0A;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x6307;&#x5411;&#x5F53;&#x524D;&#x4E4B;&#x540E;&#x7684;&#x8282;&#x70B9;&#x3002;&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x94FE;&#x8868;&#x904D;&#x5386;&#x6CA1;&#x6CD5;&#x56DE;&#x9000;&#x3002;&#x56E0;&#x4E3A; <code>current</code> &#x6307;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8FDB;&#x884C;&#x6539;&#x53D8;&#x7684;&#x8282;&#x70B9;&#x4E4B;&#x524D;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x592A;&#x8FDF;&#x4E86;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x56F0;&#x5883;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x5728;&#x6211;&#x4EEC;&#x904D;&#x5386;&#x94FE;&#x8868;&#x65F6;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x5916;&#x90E8;&#x5F15;&#x7528;&#x3002;<code>current</code> &#x5C06;&#x50CF;&#x4E4B;&#x524D;&#x4E00;&#x6837;&#x5DE5;&#x4F5C;&#xFF0C;&#x6807;&#x8BB0;&#x904D;&#x5386;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x3002;&#x65B0;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x53EB; <code>previous</code>&#xFF0C;&#x5C06;&#x603B;&#x662F;&#x4F20;&#x9012; <code>current</code>&#x540E;&#x9762;&#x7684;&#x4E00;&#x4E2A;&#x8282;&#x70B9; &#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x5F53; <code>current</code> &#x505C;&#x6B62;&#x5728;&#x8981;&#x88AB;&#x53BB;&#x9664;&#x7684;&#x8282;&#x70B9;&#x65F6;&#xFF0C;<code>previous</code> &#x5C06;&#x5F15;&#x7528;&#x94FE;&#x8868;&#x4E2D;&#x7528;&#x4E8E;&#x4FEE;&#x6539;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>Listing 7 &#x5C55;&#x793A;&#x4E86;&#x5B8C;&#x6574;&#x7684; <code>remove</code> &#x65B9;&#x6CD5;&#x3002;&#x7B2C; 2-3 &#x884C;&#x7ED9;&#x8FD9;&#x4E24;&#x4E2A;&#x5F15;&#x7528;&#x8D4B;&#x521D;&#x59CB;&#x503C;&#x3002;&#x6CE8;&#x610F;&#xFF0C;<code>current</code> &#x5728;&#x94FE;&#x8868;&#x5934;&#x5904;&#x5F00;&#x59CB;&#xFF0C;&#x548C;&#x5728;&#x5176;&#x4ED6;&#x904D;&#x5386;&#x793A;&#x4F8B;&#x4E2D;&#x4E00;&#x6837;&#x3002;&#x7136;&#x800C;&#xFF0C;<code>previous</code> &#x5047;&#x5B9A;&#x603B;&#x662F;&#x5728; <code>current</code>&#x4E4B;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7531;&#x4E8E;&#x5728; <code>previous</code> &#x4E4B;&#x524D;&#x6CA1;&#x6709;&#x8282;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x4E4B;&#x524D;&#x7684;&#x503C;&#x5C06;&#x4E3A; None&#xFF08;&#x89C1; Figure 11&#xFF09;&#x3002;<code>found</code> &#x7684;&#x5E03;&#x5C14;&#x53D8;&#x91CF;&#x5C06;&#x518D;&#x6B21;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x8FED;&#x4EE3;&#x3002;</p>
+<p>&#x5728;&#x7B2C; 6-7 &#x884C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x68C0;&#x67E5;&#x5B58;&#x50A8;&#x5728;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x9879;&#x662F;&#x5426;&#x662F;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5220;&#x9664;&#x7684;&#x9879;&#x3002;&#x5982;&#x679C;&#x662F;&#xFF0C;<code>found</code> &#x8BBE;&#x7F6E;&#x4E3A; True &#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x8BE5;&#x9879;&#xFF0C;&#x5219; <code>previous</code> &#x548C; <code>current</code> &#x90FD;&#x5FC5;&#x987B;&#x5411;&#x524D;&#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x8BED;&#x53E5;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x7684;&#x3002;<code>previous</code> &#x5FC5;&#x987B;&#x5148;&#x5C06;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x79FB;&#x52A8;&#x5230; <code>current</code> &#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x79FB;&#x52A8;<code>current</code>&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x82F1;&#x5BF8;&#x8815;&#x52A8;&#x201D;&#xFF0C;&#x56E0;&#x4E3A; <code>previous</code> &#x5FC5;&#x987B;&#x8D76;&#x4E0A; <code>current</code>&#xFF0C;&#x7136;&#x540E; <code>current</code> &#x524D;&#x8FDB;&#x3002;Figure 12 &#x5C55;&#x793A;&#x4E86; <code>previous</code> &#x548C;<code>current</code> &#x7684;&#x79FB;&#x52A8;&#xFF0C;&#x5B83;&#x4EEC;&#x6CBF;&#x7740;&#x94FE;&#x8868;&#x5411;&#x4E0B;&#x79FB;&#x52A8;&#xFF0C;&#x5BFB;&#x627E;&#x5305;&#x542B;&#x503C; 17 &#x7684;&#x8282;&#x70B9;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove</span><span class="hljs-params">(self,item)</span>:</span>
+    current = self.head
+    previous = <span class="hljs-keyword">None</span>
+    found = <span class="hljs-keyword">False</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> found:
+        <span class="hljs-keyword">if</span> current.getData() == item:
+            found = <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            previous = current
+            current = current.getNext()
+
+    <span class="hljs-keyword">if</span> previous == <span class="hljs-keyword">None</span>:
+        self.head = current.getNext()
+    <span class="hljs-keyword">else</span>:
+        previous.setNext(current.getNext())
+</code></pre>
+<p><em>Listing 7</em></p>
+<p> <img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure11.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure11"></p>
+<p><em>Figure 11</em></p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure12.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure12"></p>
+<p><em>Figure 12</em></p>
+<p>&#x4E00;&#x65E6; <code>remove</code> &#x7684;&#x641C;&#x7D22;&#x6B65;&#x9AA4;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x8BE5;&#x8282;&#x70B9;&#x3002; Figure 13 &#x5C55;&#x793A;&#x4E86;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x94FE;&#x63A5;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x9700;&#x8981;&#x89E3;&#x51B3;&#x3002; &#x5982;&#x679C;&#x8981;&#x5220;&#x9664;&#x7684;&#x9879;&#x76EE;&#x6070;&#x597D;&#x662F;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x9879;&#xFF0C;&#x5219; <code>current</code> &#x5C06;&#x5F15;&#x7528;&#x94FE;&#x63A5;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x8FD9;&#x4E5F;&#x610F;&#x5473;&#x7740; <code>previous</code> &#x662F; None&#x3002; &#x6211;&#x4EEC;&#x5148;&#x524D;&#x8BF4;&#x8FC7;&#xFF0C;<code>previous</code> &#x662F;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5B83;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x662F; <code>previous</code> &#xFF0C;&#x800C;&#x662F;&#x94FE;&#x8868;&#x7684; <code>head</code> &#x9700;&#x8981;&#x6539;&#x53D8;&#xFF08;&#x89C1; Figure 14&#xFF09;&#x3002;</p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure13.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure13"></p>
+<p><em>Figure 13</em></p>
+<p><img src="assets/3.21.%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A%E9%93%BE%E8%A1%A8.figure14.png" alt="3.21.&#x5B9E;&#x73B0;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF1A;&#x94FE;&#x8868;.figure14"></p>
+<p><em>Figure 14</em></p>
+<p>&#x7B2C; 12 &#x884C;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5904;&#x7406;&#x4E0A;&#x8FF0;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x3002;&#x5982;&#x679C; <code>previous</code> &#x6CA1;&#x6709;&#x79FB;&#x52A8;&#xFF0C;&#x5F53; <code>found</code> &#x7684;&#x5E03;&#x5C14;&#x53D8;&#x4E3A; True &#x65F6;&#xFF0C;&#x5B83;&#x4ECD;&#x662F; None&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF08;&#x884C;13&#xFF09;&#xFF0C;&#x94FE;&#x8868;&#x7684; <code>head</code> &#x88AB;&#x4FEE;&#x6539;&#x4EE5;&#x6307;&#x4EE3;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x4E4B;&#x540E;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x79FB;&#x9664;&#x7B2C;&#x4E00;&#x8282;&#x70B9;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C; <code>previous</code> &#x4E0D;&#x4E3A; None&#xFF0C;&#x5219;&#x8981;&#x5220;&#x9664;&#x7684;&#x8282;&#x70B9;&#x4F4D;&#x4E8E;&#x94FE;&#x8868;&#x7ED3;&#x6784;&#x7684;&#x4E0B;&#x65B9;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>previous</code> &#x7684;&#x5F15;&#x7528;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E0B;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x66F4;&#x6539;&#x7684;&#x8282;&#x70B9;&#x3002;&#x7B2C; 15 &#x884C;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x7684; <code>setNext</code> &#x65B9;&#x6CD5;&#x5B8C;&#x6210;&#x5220;&#x9664;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x8FD9;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F15;&#x7528;&#x66F4;&#x6539;&#x7684;&#x76EE;&#x6807;&#x662F; <code>current.getNext()</code>&#x3002; &#x7ECF;&#x5E38;&#x51FA;&#x73B0;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x8FD9;&#x91CC;&#x7ED9;&#x51FA;&#x7684;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#x5426;&#x4E5F;&#x5C06;&#x5904;&#x7406;&#x8981;&#x79FB;&#x9664;&#x7684;&#x9879;&#x5728;&#x94FE;&#x8868;&#x7684;&#x6700;&#x540E;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x6211;&#x4EEC;&#x7559;&#x7ED9;&#x4F60;&#x601D;&#x8003;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../3.20.无序列表抽象数据类型/" class="navigation navigation-prev " aria-label="Previous page: 3.20.无序列表抽象数据类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../3.22.有序列表抽象数据结构/" class="navigation navigation-next " aria-label="Next page: 3.22.有序列表抽象数据结构">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.21.实现无序列表：链表","level":"1.4.21","depth":2,"next":{"title":"3.22.有序列表抽象数据结构","level":"1.4.22","depth":2,"path":"3.基本数据结构/3.22.有序列表抽象数据结构/README.md","ref":"3.基本数据结构/3.22.有序列表抽象数据结构/README.md","articles":[]},"previous":{"title":"3.20.无序列表抽象数据类型","level":"1.4.20","depth":2,"path":"3.基本数据结构/3.20.无序列表抽象数据类型/README.md","ref":"3.基本数据结构/3.20.无序列表抽象数据类型/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3.基本数据结构/3.21.实现无序列表：链表/README.md","mtime":"2019-01-20T07:40:10.686Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T07:41:15.270Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

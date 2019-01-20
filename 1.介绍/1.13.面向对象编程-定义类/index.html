@@ -1,0 +1,2283 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.13.面向对象编程-定义类 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../1.14.总结/" />
+    
+    
+    <link rel="prev" href="../1.12.定义函数/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1.1.目标/">
+            
+                <a href="../1.1.目标/">
+            
+                    
+                    1.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1.2.快速开始/">
+            
+                <a href="../1.2.快速开始/">
+            
+                    
+                    1.2.快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1.3.什么是计算机科学/">
+            
+                <a href="../1.3.什么是计算机科学/">
+            
+                    
+                    1.3.什么是计算机科学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1.4.什么是编程/">
+            
+                <a href="../1.4.什么是编程/">
+            
+                    
+                    1.4.什么是编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../1.5.为什么要学习数据结构和抽象数据类型/">
+            
+                <a href="../1.5.为什么要学习数据结构和抽象数据类型/">
+            
+                    
+                    1.5.为什么要学习数据结构和抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../1.6.为什么要学习算法/">
+            
+                <a href="../1.6.为什么要学习算法/">
+            
+                    
+                    1.6.为什么要学习算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../1.7.回顾Python基础/">
+            
+                <a href="../1.7.回顾Python基础/">
+            
+                    
+                    1.7.回顾Python基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../1.8.数据入门/">
+            
+                <a href="../1.8.数据入门/">
+            
+                    
+                    1.8.数据入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../1.9.输入和输出/">
+            
+                <a href="../1.9.输入和输出/">
+            
+                    
+                    1.9.输入和输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../1.10.控制结构/">
+            
+                <a href="../1.10.控制结构/">
+            
+                    
+                    1.10.控制结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../1.11.处理异常/">
+            
+                <a href="../1.11.处理异常/">
+            
+                    
+                    1.11.处理异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../1.12.定义函数/">
+            
+                <a href="../1.12.定义函数/">
+            
+                    
+                    1.12.定义函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.13" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.13.面向对象编程-定义类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../1.14.总结/">
+            
+                <a href="../1.14.总结/">
+            
+                    
+                    1.14.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../2.算法分析/">
+            
+                <a href="../../2.算法分析/">
+            
+                    
+                    2.算法分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../2.算法分析/2.1.目标/">
+            
+                <a href="../../2.算法分析/2.1.目标/">
+            
+                    
+                    2.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../2.算法分析/2.2.什么是算法分析/">
+            
+                <a href="../../2.算法分析/2.2.什么是算法分析/">
+            
+                    
+                    2.2.什么是算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../2.算法分析/2.3.大O符号/">
+            
+                <a href="../../2.算法分析/2.3.大O符号/">
+            
+                    
+                    2.3.大O符号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../2.算法分析/2.4.一个乱序字符串检查的例子/">
+            
+                <a href="../../2.算法分析/2.4.一个乱序字符串检查的例子/">
+            
+                    
+                    2.4.一个乱序字符串检查的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../2.算法分析/2.5.Python数据结构的性能/">
+            
+                <a href="../../2.算法分析/2.5.Python数据结构的性能/">
+            
+                    
+                    2.5.Python数据结构的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../2.算法分析/2.6.列表/">
+            
+                <a href="../../2.算法分析/2.6.列表/">
+            
+                    
+                    2.6.列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../2.算法分析/2.7.字典/">
+            
+                <a href="../../2.算法分析/2.7.字典/">
+            
+                    
+                    2.7.字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../2.算法分析/2.8.总结/">
+            
+                <a href="../../2.算法分析/2.8.总结/">
+            
+                    
+                    2.8.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../3.基本数据结构/">
+            
+                <a href="../../3.基本数据结构/">
+            
+                    
+                    3.基本数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../3.基本数据结构/3.1.目标/">
+            
+                <a href="../../3.基本数据结构/3.1.目标/">
+            
+                    
+                    3.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../3.基本数据结构/3.2.什么是线性数据结构/">
+            
+                <a href="../../3.基本数据结构/3.2.什么是线性数据结构/">
+            
+                    
+                    3.2.什么是线性数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../3.基本数据结构/3.3.什么是栈/">
+            
+                <a href="../../3.基本数据结构/3.3.什么是栈/">
+            
+                    
+                    3.3.什么是栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../3.基本数据结构/3.4.栈的抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.4.栈的抽象数据类型/">
+            
+                    
+                    3.4.栈的抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../3.基本数据结构/3.5.Python实现栈/">
+            
+                <a href="../../3.基本数据结构/3.5.Python实现栈/">
+            
+                    
+                    3.5.Python实现栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../3.基本数据结构/3.6.简单括号匹配/">
+            
+                <a href="../../3.基本数据结构/3.6.简单括号匹配/">
+            
+                    
+                    3.6.简单括号匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../3.基本数据结构/3.7.符号匹配/">
+            
+                <a href="../../3.基本数据结构/3.7.符号匹配/">
+            
+                    
+                    3.7.符号匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../3.基本数据结构/3.8.十进制转换成二进制/">
+            
+                <a href="../../3.基本数据结构/3.8.十进制转换成二进制/">
+            
+                    
+                    3.8.十进制转换成二进制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../3.基本数据结构/3.9.中缀前缀和后缀表达式/">
+            
+                <a href="../../3.基本数据结构/3.9.中缀前缀和后缀表达式/">
+            
+                    
+                    3.9.中缀前缀和后缀表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../3.基本数据结构/3.10.什么是队列/">
+            
+                <a href="../../3.基本数据结构/3.10.什么是队列/">
+            
+                    
+                    3.10.什么是队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../3.基本数据结构/3.11.队列抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.11.队列抽象数据类型/">
+            
+                    
+                    3.11.队列抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../3.基本数据结构/3.12.Python实现队列/">
+            
+                <a href="../../3.基本数据结构/3.12.Python实现队列/">
+            
+                    
+                    3.12.Python实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../3.基本数据结构/3.13.模拟：烫手山芋/">
+            
+                <a href="../../3.基本数据结构/3.13.模拟：烫手山芋/">
+            
+                    
+                    3.13.模拟：烫手山芋
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../3.基本数据结构/3.14.模拟：打印机/">
+            
+                <a href="../../3.基本数据结构/3.14.模拟：打印机/">
+            
+                    
+                    3.14.模拟：打印机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../3.基本数据结构/3.15.什么是Deque/">
+            
+                <a href="../../3.基本数据结构/3.15.什么是Deque/">
+            
+                    
+                    3.15.什么是Deque
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../../3.基本数据结构/3.16.Deque抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.16.Deque抽象数据类型/">
+            
+                    
+                    3.16.Deque抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../../3.基本数据结构/3.17.Python实现Deque/">
+            
+                <a href="../../3.基本数据结构/3.17.Python实现Deque/">
+            
+                    
+                    3.17.Python实现Deque
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../../3.基本数据结构/3.18.回文检查/">
+            
+                <a href="../../3.基本数据结构/3.18.回文检查/">
+            
+                    
+                    3.18.回文检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../../3.基本数据结构/3.19.列表/">
+            
+                <a href="../../3.基本数据结构/3.19.列表/">
+            
+                    
+                    3.19.列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../../3.基本数据结构/3.20.无序列表抽象数据类型/">
+            
+                <a href="../../3.基本数据结构/3.20.无序列表抽象数据类型/">
+            
+                    
+                    3.20.无序列表抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../../3.基本数据结构/3.21.实现无序列表：链表/">
+            
+                <a href="../../3.基本数据结构/3.21.实现无序列表：链表/">
+            
+                    
+                    3.21.实现无序列表：链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../../3.基本数据结构/3.22.有序列表抽象数据结构/">
+            
+                <a href="../../3.基本数据结构/3.22.有序列表抽象数据结构/">
+            
+                    
+                    3.22.有序列表抽象数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../../3.基本数据结构/3.23.实现有序列表/">
+            
+                <a href="../../3.基本数据结构/3.23.实现有序列表/">
+            
+                    
+                    3.23.实现有序列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../../3.基本数据结构/3.24.总结/">
+            
+                <a href="../../3.基本数据结构/3.24.总结/">
+            
+                    
+                    3.24.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../4.递归/">
+            
+                <a href="../../4.递归/">
+            
+                    
+                    4.递归
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../4.递归/4.1.目标/">
+            
+                <a href="../../4.递归/4.1.目标/">
+            
+                    
+                    4.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../4.递归/4.2.什么是递归/">
+            
+                <a href="../../4.递归/4.2.什么是递归/">
+            
+                    
+                    4.2.什么是递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../4.递归/4.3.计算整数列表和/">
+            
+                <a href="../../4.递归/4.3.计算整数列表和/">
+            
+                    
+                    4.3.计算整数列表和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../4.递归/4.4.递归的三定律/">
+            
+                <a href="../../4.递归/4.4.递归的三定律/">
+            
+                    
+                    4.4.递归的三定律
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../4.递归/4.5.整数转换为任意进制字符串/">
+            
+                <a href="../../4.递归/4.5.整数转换为任意进制字符串/">
+            
+                    
+                    4.5.整数转换为任意进制字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../4.递归/4.6.栈帧：实现递归/">
+            
+                <a href="../../4.递归/4.6.栈帧：实现递归/">
+            
+                    
+                    4.6.栈帧：实现递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../4.递归/4.7.介绍：可视化递归/">
+            
+                <a href="../../4.递归/4.7.介绍：可视化递归/">
+            
+                    
+                    4.7.介绍：可视化递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../4.递归/4.8.谢尔宾斯基三角形/">
+            
+                <a href="../../4.递归/4.8.谢尔宾斯基三角形/">
+            
+                    
+                    4.8.谢尔宾斯基三角形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../4.递归/4.10.汉诺塔游戏/">
+            
+                <a href="../../4.递归/4.10.汉诺塔游戏/">
+            
+                    
+                    4.10.汉诺塔游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../../4.递归/4.11.探索迷宫/">
+            
+                <a href="../../4.递归/4.11.探索迷宫/">
+            
+                    
+                    4.11.探索迷宫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../../4.递归/4.12.动态规划/">
+            
+                <a href="../../4.递归/4.12.动态规划/">
+            
+                    
+                    4.12.动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../../4.递归/4.13.总结/">
+            
+                <a href="../../4.递归/4.13.总结/">
+            
+                    
+                    4.13.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../5.排序和搜索/">
+            
+                <a href="../../5.排序和搜索/">
+            
+                    
+                    5.排序和搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../5.排序和搜索/5.1.目标/">
+            
+                <a href="../../5.排序和搜索/5.1.目标/">
+            
+                    
+                    5.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../5.排序和搜索/5.2.搜索/">
+            
+                <a href="../../5.排序和搜索/5.2.搜索/">
+            
+                    
+                    5.2.搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../5.排序和搜索/5.3.顺序查找/">
+            
+                <a href="../../5.排序和搜索/5.3.顺序查找/">
+            
+                    
+                    5.3.顺序查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../5.排序和搜索/5.4.二分查找/">
+            
+                <a href="../../5.排序和搜索/5.4.二分查找/">
+            
+                    
+                    5.4.二分查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../5.排序和搜索/5.5.Hash查找/">
+            
+                <a href="../../5.排序和搜索/5.5.Hash查找/">
+            
+                    
+                    5.5.Hash查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../5.排序和搜索/5.6.排序/">
+            
+                <a href="../../5.排序和搜索/5.6.排序/">
+            
+                    
+                    5.6.排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../5.排序和搜索/5.7.冒泡排序/">
+            
+                <a href="../../5.排序和搜索/5.7.冒泡排序/">
+            
+                    
+                    5.7.冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../5.排序和搜索/5.8.选择排序/">
+            
+                <a href="../../5.排序和搜索/5.8.选择排序/">
+            
+                    
+                    5.8.选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../5.排序和搜索/5.9.插入排序/">
+            
+                <a href="../../5.排序和搜索/5.9.插入排序/">
+            
+                    
+                    5.9.插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../5.排序和搜索/5.10.希尔排序/">
+            
+                <a href="../../5.排序和搜索/5.10.希尔排序/">
+            
+                    
+                    5.10.希尔排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../5.排序和搜索/5.11.归并排序/">
+            
+                <a href="../../5.排序和搜索/5.11.归并排序/">
+            
+                    
+                    5.11.归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../../5.排序和搜索/5.12.快速排序/">
+            
+                <a href="../../5.排序和搜索/5.12.快速排序/">
+            
+                    
+                    5.12.快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../../5.排序和搜索/5.13.总结/">
+            
+                <a href="../../5.排序和搜索/5.13.总结/">
+            
+                    
+                    5.13.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../6.树和树的算法/">
+            
+                <a href="../../6.树和树的算法/">
+            
+                    
+                    6.树和树的算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../6.树和树的算法/6.1.目标/">
+            
+                <a href="../../6.树和树的算法/6.1.目标/">
+            
+                    
+                    6.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../6.树和树的算法/6.2.树的例子/">
+            
+                <a href="../../6.树和树的算法/6.2.树的例子/">
+            
+                    
+                    6.2.树的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../6.树和树的算法/6.3.词汇和定义/">
+            
+                <a href="../../6.树和树的算法/6.3.词汇和定义/">
+            
+                    
+                    6.3.词汇和定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../6.树和树的算法/6.4.列表表示/">
+            
+                <a href="../../6.树和树的算法/6.4.列表表示/">
+            
+                    
+                    6.4.列表表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../../6.树和树的算法/6.5.节点表示/">
+            
+                <a href="../../6.树和树的算法/6.5.节点表示/">
+            
+                    
+                    6.5.节点表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../../6.树和树的算法/6.6.分析树/">
+            
+                <a href="../../6.树和树的算法/6.6.分析树/">
+            
+                    
+                    6.6.分析树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../../6.树和树的算法/6.7.树的遍历/">
+            
+                <a href="../../6.树和树的算法/6.7.树的遍历/">
+            
+                    
+                    6.7.树的遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../../6.树和树的算法/6.8.基于二叉堆的优先队列/">
+            
+                <a href="../../6.树和树的算法/6.8.基于二叉堆的优先队列/">
+            
+                    
+                    6.8.基于二叉堆的优先队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../../6.树和树的算法/6.9.二叉堆操作/">
+            
+                <a href="../../6.树和树的算法/6.9.二叉堆操作/">
+            
+                    
+                    6.9.二叉堆操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../../6.树和树的算法/6.10.二叉堆实现/">
+            
+                <a href="../../6.树和树的算法/6.10.二叉堆实现/">
+            
+                    
+                    6.10.二叉堆实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../../6.树和树的算法/6.11.二叉查找树/">
+            
+                <a href="../../6.树和树的算法/6.11.二叉查找树/">
+            
+                    
+                    6.11.二叉查找树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../../6.树和树的算法/6.12.查找树操作/">
+            
+                <a href="../../6.树和树的算法/6.12.查找树操作/">
+            
+                    
+                    6.12.查找树操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../../6.树和树的算法/6.13.查找树实现/">
+            
+                <a href="../../6.树和树的算法/6.13.查找树实现/">
+            
+                    
+                    6.13.查找树实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../../6.树和树的算法/6.14.查找树分析/">
+            
+                <a href="../../6.树和树的算法/6.14.查找树分析/">
+            
+                    
+                    6.14.查找树分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../../6.树和树的算法/6.15.平衡二叉搜索树/">
+            
+                <a href="../../6.树和树的算法/6.15.平衡二叉搜索树/">
+            
+                    
+                    6.15.平衡二叉搜索树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../../6.树和树的算法/6.16.AVL平衡二叉搜索树/">
+            
+                <a href="../../6.树和树的算法/6.16.AVL平衡二叉搜索树/">
+            
+                    
+                    6.16.AVL平衡二叉搜索树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../../6.树和树的算法/6.17.AVL平衡二叉搜索树实现/">
+            
+                <a href="../../6.树和树的算法/6.17.AVL平衡二叉搜索树实现/">
+            
+                    
+                    6.17.AVL平衡二叉搜索树实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../../6.树和树的算法/6.18.Map抽象数据结构总结/">
+            
+                <a href="../../6.树和树的算法/6.18.Map抽象数据结构总结/">
+            
+                    
+                    6.18.Map抽象数据结构总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.19" data-path="../../6.树和树的算法/6.19.总结/">
+            
+                <a href="../../6.树和树的算法/6.19.总结/">
+            
+                    
+                    6.19.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../7.图和图的算法/">
+            
+                <a href="../../7.图和图的算法/">
+            
+                    
+                    7.图和图的算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../7.图和图的算法/7.1.目标/">
+            
+                <a href="../../7.图和图的算法/7.1.目标/">
+            
+                    
+                    7.1.目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../7.图和图的算法/7.2.词汇和定义/">
+            
+                <a href="../../7.图和图的算法/7.2.词汇和定义/">
+            
+                    
+                    7.2.词汇和定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../7.图和图的算法/7.3.图抽象数据类型/">
+            
+                <a href="../../7.图和图的算法/7.3.图抽象数据类型/">
+            
+                    
+                    7.3.图抽象数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../7.图和图的算法/7.4.邻接矩阵/">
+            
+                <a href="../../7.图和图的算法/7.4.邻接矩阵/">
+            
+                    
+                    7.4.邻接矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../7.图和图的算法/7.5.邻接表/">
+            
+                <a href="../../7.图和图的算法/7.5.邻接表/">
+            
+                    
+                    7.5.邻接表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../7.图和图的算法/7.6.实现/">
+            
+                <a href="../../7.图和图的算法/7.6.实现/">
+            
+                    
+                    7.6.实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../7.图和图的算法/7.7.字梯的问题/">
+            
+                <a href="../../7.图和图的算法/7.7.字梯的问题/">
+            
+                    
+                    7.7.字梯的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../7.图和图的算法/7.8.构建字梯图/">
+            
+                <a href="../../7.图和图的算法/7.8.构建字梯图/">
+            
+                    
+                    7.8.构建字梯图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../7.图和图的算法/7.9.实现广度优先搜索/">
+            
+                <a href="../../7.图和图的算法/7.9.实现广度优先搜索/">
+            
+                    
+                    7.9.实现广度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../../7.图和图的算法/7.10.广度优先搜索分析/">
+            
+                <a href="../../7.图和图的算法/7.10.广度优先搜索分析/">
+            
+                    
+                    7.10.广度优先搜索分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../../7.图和图的算法/7.11.骑士之旅/">
+            
+                <a href="../../7.图和图的算法/7.11.骑士之旅/">
+            
+                    
+                    7.11.骑士之旅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../../7.图和图的算法/7.12.构建骑士之旅图/">
+            
+                <a href="../../7.图和图的算法/7.12.构建骑士之旅图/">
+            
+                    
+                    7.12.构建骑士之旅图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../../7.图和图的算法/7.13.实现骑士之旅/">
+            
+                <a href="../../7.图和图的算法/7.13.实现骑士之旅/">
+            
+                    
+                    7.13.实现骑士之旅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../../7.图和图的算法/7.14.骑士之旅分析/">
+            
+                <a href="../../7.图和图的算法/7.14.骑士之旅分析/">
+            
+                    
+                    7.14.骑士之旅分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../../7.图和图的算法/7.15.通用深度优先搜索/">
+            
+                <a href="../../7.图和图的算法/7.15.通用深度优先搜索/">
+            
+                    
+                    7.15.通用深度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.16" data-path="../../7.图和图的算法/7.16.深度优先搜索分析/">
+            
+                <a href="../../7.图和图的算法/7.16.深度优先搜索分析/">
+            
+                    
+                    7.16.深度优先搜索分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.17" data-path="../../7.图和图的算法/7.17.拓扑排序/">
+            
+                <a href="../../7.图和图的算法/7.17.拓扑排序/">
+            
+                    
+                    7.17.拓扑排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.18" data-path="../../7.图和图的算法/7.18.强连通分量/">
+            
+                <a href="../../7.图和图的算法/7.18.强连通分量/">
+            
+                    
+                    7.18.强连通分量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.19" data-path="../../7.图和图的算法/7.19.最短路径问题/">
+            
+                <a href="../../7.图和图的算法/7.19.最短路径问题/">
+            
+                    
+                    7.19.最短路径问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.20" data-path="../../7.图和图的算法/7.20.Dijkstra算法/">
+            
+                <a href="../../7.图和图的算法/7.20.Dijkstra算法/">
+            
+                    
+                    7.20.Dijkstra算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.21" data-path="../../7.图和图的算法/7.21.Dijkstra算法分析/">
+            
+                <a href="../../7.图和图的算法/7.21.Dijkstra算法分析/">
+            
+                    
+                    7.21.Dijkstra算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.22" data-path="../../7.图和图的算法/7.22.Prim生成树算法/">
+            
+                <a href="../../7.图和图的算法/7.22.Prim生成树算法/">
+            
+                    
+                    7.22.Prim生成树算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.23" data-path="../../7.图和图的算法/7.23.总结/">
+            
+                <a href="../../7.图和图的算法/7.23.总结/">
+            
+                    
+                    7.23.总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.13.面向对象编程-定义类</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="113python&#x4E2D;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#xFF1A;&#x5B9A;&#x4E49;&#x7C7B;">1.13.Python&#x4E2D;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#xFF1A;&#x5B9A;&#x4E49;&#x7C7B;</h2>
+<p>&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x8BF4;&#x8FC7;&#xFF0C;Python&#x662F;&#x4E00;&#x79CD;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x3002;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x4E86;&#x8BB8;&#x591A;&#x5185;&#x7F6E;&#x7C7B;&#x6765;&#x663E;&#x793A;&#x793A;&#x4F8B;&#x6570;&#x636E;&#x548C;&#x63A7;&#x5236;&#x7ED3;&#x6784;&#x3002; &#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x6700;&#x5F3A;&#x5927;&#x7684;&#x529F;&#x80FD;&#x4E4B;&#x4E00;&#x662F;&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x5458;&#xFF08;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x8005;&#xFF09;&#x521B;&#x5EFA;&#x65B0;&#x7C7B;&#xFF0C;&#x4EE5;&#x6A21;&#x62DF;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x6240;&#x9700;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x62BD;&#x8C61;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6765;&#x63D0;&#x4F9B;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7684;&#x5916;&#x89C2;&#xFF08;&#x5176;&#x72B6;&#x6001;&#xFF09;&#x53CA;&#x5176;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x5176;&#x65B9;&#x6CD5;&#xFF09;&#x7684;&#x903B;&#x8F91;&#x63CF;&#x8FF0;&#x3002; &#x901A;&#x8FC7;&#x6784;&#x5EFA;&#x5B9E;&#x73B0;&#x62BD;&#x8C61;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x62BD;&#x8C61;&#x8FC7;&#x7A0B;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x62BD;&#x8C61;&#x6240;&#x9700;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002; &#x6BCF;&#x5F53;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5B9E;&#x73B0;&#x62BD;&#x8C61;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x65B0;&#x7C7B;&#x3002;</p>
+<h3 id="1131&#x4E00;&#x4E2A;&#x5206;&#x6570;&#x7C7B;">1.13.1.&#x4E00;&#x4E2A;&#x5206;&#x6570;&#x7C7B;</h3>
+<p>&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5E38;&#x89C1;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5C55;&#x793A;&#x5B9E;&#x73B0;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x5C31;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x62BD;&#x8C61;&#x7684;&#x5206;&#x6570;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x5230;Python&#x63D0;&#x4F9B;&#x4E86;&#x8BB8;&#x591A;&#x4F9B;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x80FD;&#x591F;&#x521B;&#x5EFA;&#x201C;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x201D;&#x5206;&#x6570;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x662F;&#x6700;&#x5408;&#x9002;&#x7684;&#x3002;</p>
+<p>&#x50CF;3/5&#x8FD9;&#x6837;&#x7684;&#x5206;&#x6570;&#x7531;&#x4E24;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#x3002;&#x6700;&#x4E0A;&#x9762;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5206;&#x5B50;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x6574;&#x6570;&#x3002;&#x5E95;&#x90E8;&#x7684;&#x503C;&#xFF0C;&#x53EB;&#x505A;&#x5206;&#x6BCD;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5927;&#x4E8E;0&#x7684;&#x6574;&#x6570;&#xFF08;&#x8D1F;&#x5206;&#x6570;&#x6709;&#x8D1F;&#x7684;&#x5206;&#x5B50;&#xFF09;&#x3002;&#x5C3D;&#x7BA1;&#x53EF;&#x4EE5;&#x4E3A;&#x4EFB;&#x4F55;&#x5206;&#x6570;&#x521B;&#x5EFA;&#x6D6E;&#x70B9;&#x8FD1;&#x4F3C;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x628A;&#x5206;&#x6570;&#x8868;&#x793A;&#x6210;&#x4E00;&#x4E2A;&#x7CBE;&#x786E;&#x7684;&#x503C;&#x3002;</p>
+<p>Fraction&#x7C7B;&#x578B;&#x7684;&#x64CD;&#x4F5C;&#x5C06;&#x5141;&#x8BB8;Fraction&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x4E0E;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x6570;&#x503C;&#x4E00;&#x6837;&#x3002; &#x6211;&#x4EEC;&#x9700;&#x8981;&#x80FD;&#x591F;&#x5BF9;&#x5206;&#x6570;&#x8FDB;&#x884C;&#x52A0;&#xFF0C;&#x51CF;&#xFF0C;&#x4E58;&#x548C;&#x9664;&#x3002; &#x6211;&#x4EEC;&#x8FD8;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x7684;&#x201C;&#x659C;&#x6760;&#x201D;&#x5F62;&#x5F0F;&#x663E;&#x793A;&#x5206;&#x6570;&#xFF0C;&#x4F8B;&#x5982;3/5&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x6240;&#x6709;&#x5206;&#x6570;&#x65B9;&#x6CD5;&#x90FD;&#x5E94;&#x4EE5;&#x6700;&#x4F4E;&#x9879;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;&#x8FD9;&#x6837;&#x65E0;&#x8BBA;&#x6267;&#x884C;&#x4F55;&#x79CD;&#x8BA1;&#x7B97;&#xFF0C;&#x6211;&#x4EEC;&#x603B;&#x662F;&#x4EE5;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5F62;&#x5F0F;&#x7ED3;&#x675F;&#x3002;</p>
+<p>&#x5728;Python&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#x548C;&#x4E00;&#x7EC4;&#x5728;&#x8BED;&#x6CD5;&#x4E0A;&#x7C7B;&#x4F3C;&#x4E8E;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x6765;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B0;&#x7C7B;&#x3002; &#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;</p>
+<pre><code>class Fraction:
+
+   #the methods go here
+</code></pre><p>&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x7684;&#x6846;&#x67B6;&#x3002; &#x6240;&#x6709;&#x7C7B;&#x5E94;&#x63D0;&#x4F9B;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002; &#x6784;&#x9020;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4E86;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#x3002; &#x8981;&#x521B;&#x5EFA;Fraction&#x5BF9;&#x8C61;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#xFF0C;&#x5206;&#x5B50;&#x548C;&#x5206;&#x6BCD;&#x3002; &#x5728;Python&#x4E2D;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x65B9;&#x6CD5;&#x59CB;&#x7EC8;&#x79F0;&#x4E3A;<strong>init </strong>&#xFF08;init&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x7684;&#x4E24;&#x4E2A;&#x4E0B;&#x5212;&#x7EBF;&#xFF09;&#xFF0C;&#x5982;Listing 2&#x6240;&#x793A;&#x3002;</p>
+<p><em>Listing 1</em></p>
+<pre><code>class Fraction:
+
+    def __init__(self,top,bottom):
+
+        self.num = top
+        self.den = bottom
+</code></pre><p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5F62;&#x5F0F;&#x53C2;&#x6570;&#x5217;&#x8868;&#x5305;&#x542B;&#x4E09;&#x4E2A;&#x9879;&#x76EE;&#xFF08;self&#xFF0C;top&#xFF0C;bottom&#xFF09;&#x3002; self&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x53C2;&#x6570;&#xFF0C;&#x5C06;&#x59CB;&#x7EC8;&#x7528;&#x4F5C;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x7684;&#x5F15;&#x7528;&#x3002; &#x5B83;&#x5FC5;&#x987B;&#x59CB;&#x7EC8;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x5F62;&#x5F0F;&#x53C2;&#x6570;; &#x4F46;&#x662F;&#xFF0C;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x7ED9;&#x51FA;&#x5B9E;&#x9645;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002; &#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x5206;&#x6570;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x72B6;&#x6001;&#x6570;&#x636E;&#xFF0C;&#x5373;&#x5206;&#x5B50;&#x548C;&#x5206;&#x6BCD;&#x3002;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x7B26;&#x53F7;self.num&#x5B9A;&#x4E49;&#x4E86;Fraction&#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x5176;&#x5177;&#x6709;&#x540D;&#x4E3A;num&#x7684;&#x5185;&#x90E8;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x5176;&#x72B6;&#x6001;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x540C;&#x6837;&#xFF0C;self.den&#x521B;&#x5EFA;&#x4E86;&#x5206;&#x6BCD;&#x3002;&#x4E24;&#x4E2A;&#x6B63;&#x5F0F;&#x53C2;&#x6570;&#x505A;&#x521D;&#x59CB;&#x5316;&#x8D4B;&#x503C;&#xFF0C;&#x5141;&#x8BB8;&#x65B0;&#x7684;&#x5206;&#x6570;&#x5BF9;&#x8C61;&#x77E5;&#x9053;&#x5B83;&#x7684;&#x8D77;&#x59CB;&#x503C;&#x3002;</p>
+<p>&#x8981;&#x521B;&#x5EFA;&#x5206;&#x6570;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x53D1;&#x751F;&#x5728;&#x4F7F;&#x7528;&#x7C7B;&#x540D;&#x5E76;&#x4F20;&#x9012;&#x5FC5;&#x8981;&#x72B6;&#x6001;&#x7684;&#x5B9E;&#x9645;&#x503C;&#xFF08;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x4E0D;&#x76F4;&#x63A5;&#x8C03;&#x7528;<strong>init</strong>&#xFF09;&#x3002; &#x4F8B;&#x5982;&#xFF0C;</p>
+<pre><code>myfraction = Fraction(3,5)
+</code></pre><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;myfraction&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8868;&#x793A;&#x5206;&#x6570;3/5&#xFF08;&#x4E94;&#x5206;&#x4E4B;&#x4E09;&#xFF09;&#x3002; Figure 5&#x663E;&#x793A;&#x4E86;&#x6B64;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5F53;&#x524D;&#x5DF2;&#x5B9E;&#x73B0;&#x3002;</p>
+<p><img src="assets/1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure5.png" alt="1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure5"></p>
+<p><em>Figure 5</em></p>
+<p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E0B;&#x4E00;&#x4EF6;&#x4E8B;&#x662F;&#x5B9E;&#x73B0;&#x62BD;&#x8C61;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6240;&#x9700;&#x7684;&#x884C;&#x4E3A;&#x3002; &#x9996;&#x5148;&#xFF0C;&#x8003;&#x8651;&#x4E00;&#x4E0B;&#x5F53;&#x6211;&#x4EEC;&#x5C1D;&#x8BD5;&#x6253;&#x5370;Fraction&#x5BF9;&#x8C61;&#x65F6;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x3002;</p>
+<pre><code>&gt;&gt;&gt; myf = Fraction(3,5)
+&gt;&gt;&gt; print(myf)
+&lt;__main__.Fraction instance at 0x409b1acc&gt;
+</code></pre><p>fraction&#x5BF9;&#x8C61;myf&#x4E0D;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x54CD;&#x5E94;&#x6B64;&#x6253;&#x5370;&#x8BF7;&#x6C42;&#x3002; print&#x51FD;&#x6570;&#x8981;&#x6C42;&#x5BF9;&#x8C61;&#x5C06;&#x81EA;&#x8EAB;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4EE5;&#x4FBF;&#x53EF;&#x4EE5;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x5199;&#x5165;&#x8F93;&#x51FA;&#x3002; myf&#x552F;&#x4E00;&#x7684;&#x9009;&#x62E9;&#x662F;&#x663E;&#x793A;&#x5B58;&#x50A8;&#x5728;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x5B9E;&#x9645;&#x5F15;&#x7528;&#xFF08;&#x5730;&#x5740;&#x672C;&#x8EAB;&#xFF09;&#x3002; &#x8FD9;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002; &#x4E00;&#x79CD;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;show&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;Fraction&#x5BF9;&#x8C61;&#x5C06;&#x81EA;&#x5DF1;&#x6253;&#x5370;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6B64;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;Listing 3&#x6240;&#x793A;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x50CF;&#x4EE5;&#x524D;&#x4E00;&#x6837;&#x521B;&#x5EFA;Fraction&#x5BF9;&#x8C61;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8981;&#x6C42;&#x5B83;&#x663E;&#x793A;&#x81EA;&#x5DF1;&#xFF0C;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x4EE5;&#x9002;&#x5F53;&#x7684;&#x683C;&#x5F0F;&#x6253;&#x5370;&#x81EA;&#x5DF1;&#x3002; &#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E00;&#x822C;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002; &#x4E3A;&#x4E86;&#x4F7F;&#x6253;&#x5370;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x544A;&#x8BC9;Fraction&#x7C7B;&#x5982;&#x4F55;&#x5C06;&#x81EA;&#x8EAB;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x8FD9;&#x662F;&#x6253;&#x5370;&#x529F;&#x80FD;&#x4E3A;&#x4E86;&#x5B8C;&#x6210;&#x5176;&#x5DE5;&#x4F5C;&#x6240;&#x9700;&#x8981;&#x7684;&#x3002;</p>
+<p><em>Listing 3</em></p>
+<pre><code>def show(self):
+     print(self.num,&quot;/&quot;,self.den)
+</code></pre><pre><code>&gt;&gt;&gt; myf = Fraction(3,5)
+&gt;&gt;&gt; myf.show()
+3 / 5
+&gt;&gt;&gt; print(myf)
+&lt;__main__.Fraction instance at 0x40bce9ac&gt;
+&gt;&gt;&gt;
+</code></pre><p>&#x5728;Python&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x7C7B;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x6807;&#x51C6;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002; &#x5176;&#x4E2D;&#x4E4B;&#x4E00;<strong>str</strong>&#x662F;&#x4E00;&#x79CD;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x6B63;&#x5982;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x662F;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x5730;&#x5740;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x662F;&#x4E3A;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x201C;&#x66F4;&#x597D;&#x201D;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x8BF4;&#x8FD9;&#x4E2A;&#x5B9E;&#x73B0;&#x5C06;&#x8986;&#x76D6;&#x524D;&#x4E00;&#x4E2A;&#x6216;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
+<p>&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<strong>str</strong>&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E3A;&#x5176;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5982;Listing 4&#x6240;&#x793A;&#x3002;&#x9664;&#x4E86;&#x7279;&#x6B8A;&#x53C2;&#x6570;self&#x4E4B;&#x5916;&#xFF0C;&#x8BE5;&#x5B9A;&#x4E49;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#x3002; &#x53CD;&#x8FC7;&#x6765;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x5C06;&#x901A;&#x8FC7;&#x8BA9;&#x6BCF;&#x4E2A;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E4B;&#x95F4;&#x653E;&#x7F6E;/&#x5B57;&#x7B26;&#x6765;&#x6784;&#x5EFA;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x3002; &#x6BCF;&#x5F53;&#x8981;&#x6C42;Fraction&#x5BF9;&#x8C61;&#x5C06;&#x5176;&#x81EA;&#x8EAB;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;&#x5C06;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#x4F7F;&#x7528;&#x6B64;&#x529F;&#x80FD;&#x7684;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
+<p><em>Listing 4</em></p>
+<pre><code>def __str__(self):
+    return str(self.num)+&quot;/&quot;+str(self.den)
+</code></pre><pre><code>&gt;&gt;&gt; myf = Fraction(3,5)
+&gt;&gt;&gt; print(myf)
+3/5
+&gt;&gt;&gt; print(&quot;I ate&quot;, myf, &quot;of the pizza&quot;)
+I ate 3/5 of the pizza
+&gt;&gt;&gt; myf.__str__()
+&apos;3/5&apos;
+&gt;&gt;&gt; str(myf)
+&apos;3/5&apos;
+&gt;&gt;&gt;
+</code></pre><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E3A;&#x65B0;&#x7684;Fraction&#x7C7B;&#x8986;&#x76D6;&#x8BB8;&#x591A;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x3002; &#x5176;&#x4E2D;&#x4E00;&#x4E9B;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x57FA;&#x672C;&#x7684;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x3002; &#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;Fraction&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x7684;&#x201C;+&#x201D;&#x7B26;&#x53F7;&#x5C06;&#x5B83;&#x4EEC;&#x6DFB;&#x52A0;&#x5230;&#x4E00;&#x8D77;&#x3002; &#x6B64;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C1D;&#x8BD5;&#x6DFB;&#x52A0;&#x4E24;&#x4E2A;&#x5206;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x4EE5;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt; f1 = Fraction(1,4)
+&gt;&gt;&gt; f2 = Fraction(1,2)
+&gt;&gt;&gt; f1+f2
+
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#173&gt;&quot;, line 1, in -toplevel-
+    f1+f2
+TypeError: unsupported operand type(s) for +:
+          &apos;instance&apos; and &apos;instance&apos;
+&gt;&gt;&gt;
+</code></pre><p>&#x5982;&#x679C;&#x4ED4;&#x7EC6;&#x67E5;&#x770B;&#x9519;&#x8BEF;&#xFF0C;&#x60A8;&#x4F1A;&#x53D1;&#x73B0;&#x95EE;&#x9898;&#x662F;&#x201C;+&#x201D;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x7406;&#x89E3;Fraction&#x64CD;&#x4F5C;&#x6570;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E3A;Fraction&#x7C7B;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8986;&#x76D6;add&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002; &#x5728;Python&#x4E2D;&#xFF0C;&#x6B64;&#x65B9;&#x6CD5;&#x79F0;&#x4E3A;<strong>add</strong>&#xFF0C;&#x5B83;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x3002; &#x7B2C;&#x4E00;&#x4E2A;&#x662F;self&#xFF0C;&#x603B;&#x662F;&#x9700;&#x8981;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x4EE3;&#x8868;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x3002; &#x4F8B;&#x5982;&#xFF0C;</p>
+<pre><code>f1.__add__(f2)
+</code></pre><p>&#x4F1A;&#x8981;&#x6C42;Fraction&#x5BF9;&#x8C61;f1&#x5C06;Fraction&#x5BF9;&#x8C61;f2&#x6DFB;&#x52A0;&#x5230;&#x81EA;&#x8EAB;&#x3002; &#x8FD9;&#x53EF;&#x4EE5;&#x7528;&#x6807;&#x51C6;&#x7B26;&#x53F7;f1 + f2&#x7F16;&#x5199;&#x3002;</p>
+<p>&#x4E24;&#x4E2A;&#x5206;&#x6570;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5206;&#x6BCD;&#x624D;&#x80FD;&#x6DFB;&#x52A0;&#x3002; &#x786E;&#x4FDD;&#x5B83;&#x4EEC;&#x5177;&#x6709;&#x76F8;&#x540C;&#x5206;&#x6BCD;&#x7684;&#x6700;&#x7B80;&#x5355;&#x65B9;&#x6CD5;&#x662F;&#x7B80;&#x5355;&#x5730;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x5206;&#x6BCD;&#x7684;&#x4E58;&#x79EF;&#x4F5C;&#x4E3A;&#x516C;&#x5206;&#x6BCD;&#xFF0C;&#x4EE5;&#x4FBF;a/b + c/d = ad/bd + cb/bd = (ad + cb)/bd&#x5B9E;&#x73B0;&#x5982;Listing 5&#x6240;&#x793A;&#x3002;&#x9644;&#x52A0;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Fraction&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x603B;&#x548C;&#x7684;&#x5206;&#x5B50;&#x548C;&#x5206;&#x6BCD;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x5199;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x5206;&#x6570;&#x7684;&#x6807;&#x51C6;&#x7B97;&#x672F;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8D4B;&#x503C;&#x52A0;&#x6CD5;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x7136;&#x540E;&#x6253;&#x5370;&#x6211;&#x4EEC;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p><em>Listing 5</em></p>
+<pre><code>def __add__(self,otherfraction):
+
+     newnum = self.num*otherfraction.den + self.den*otherfraction.num
+     newden = self.den * otherfraction.den
+
+     return Fraction(newnum,newden)
+</code></pre><pre><code>&gt;&gt;&gt; f1=Fraction(1,4)
+&gt;&gt;&gt; f2=Fraction(1,2)
+&gt;&gt;&gt; f3=f1+f2
+&gt;&gt;&gt; print(f3)
+6/8
+&gt;&gt;&gt;
+</code></pre><p>&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x6211;&#x4EEC;&#x7684;&#x610F;&#x613F;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x6709;&#x4E00;&#x70B9;&#x53EF;&#x80FD;&#x66F4;&#x597D;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;6/8&#x662F;&#x6B63;&#x786E;&#x7684;&#x7ED3;&#x679C;&#xFF08;1/4 + 1/2&#xFF09;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x662F;&#x201C;&#x6700;&#x4F4E;&#x672F;&#x8BED;&#x201D;&#x8868;&#x793A;&#x3002; &#x6700;&#x597D;&#x7684;&#x4EE3;&#x8868;&#x662F;3/4&#x3002; &#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x6211;&#x4EEC;&#x7684;&#x7ED3;&#x679C;&#x603B;&#x662F;&#x5728;&#x6700;&#x4F4E;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x51CF;&#x5C11;&#x5206;&#x6570;&#x7684;&#x8F85;&#x52A9;&#x51FD;&#x6570;&#x3002; &#x6B64;&#x51FD;&#x6570;&#x9700;&#x8981;&#x67E5;&#x627E;&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;&#x6216;GCD&#x3002; &#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5206;&#x5B50;&#x548C;&#x5206;&#x6BCD;&#x9664;&#x4EE5;GCD&#xFF0C;&#x7ED3;&#x679C;&#x5C06;&#x51CF;&#x5C11;&#x5230;&#x6700;&#x4F4E;&#x9879;&#x3002;</p>
+<p>&#x7528;&#x4E8E;&#x6C42;&#x51FA;&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;&#x7684;&#x6700;&#x7740;&#x540D;&#x7B97;&#x6CD5;&#x662F;&#x6B27;&#x51E0;&#x91CC;&#x5FB7;&#x7B97;&#x6CD5;&#xFF0C;&#x5C06;&#x5728;&#x7B2C;8&#x7AE0;&#x4E2D;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x3002;&#x6B27;&#x51E0;&#x91CC;&#x5FB7;&#x7B97;&#x6CD5;&#x8868;&#x660E;&#xFF0C;&#x5982;&#x679C;n&#x5747;&#x5300;&#x5730;&#x9664;&#x4EE5;m&#xFF0C;&#x5219;&#x4E24;&#x4E2A;&#x6574;&#x6570;m&#x548C;n&#x7684;&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;&#x4E3A;n&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;n&#x4E0D;&#x5747;&#x5300;&#x5730;&#x9664;m&#xFF0C;&#x5219;&#x7B54;&#x6848;&#x662F;n&#x7684;&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;&#xFF0C;m&#x7684;&#x4F59;&#x6570;&#x9664;&#x4EE5;n&#x3002; &#x6211;&#x4EEC;&#x5C06;&#x5728;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x5730;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5B9E;&#x73B0;&#xFF08;&#x53C2;&#x89C1;ActiveCode 1&#xFF09;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;GCD&#x7B97;&#x6CD5;&#x7684;&#x6B64;&#x5B9E;&#x73B0;&#x4EC5;&#x5728;&#x5206;&#x6BCD;&#x4E3A;&#x6B63;&#x65F6;&#x624D;&#x6709;&#x6548;&#x3002; &#x8FD9;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x5206;&#x6570;&#x7C7B;&#x662F;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8BF4;&#x8FC7;&#x8D1F;&#x5206;&#x6570;&#x5C06;&#x7531;&#x8D1F;&#x5206;&#x5B50;&#x8868;&#x793A;&#x3002;</p>
+<p><em>ActiveCode 1</em></p>
+<pre><code>def gcd(m,n):
+    while m%n != 0:
+        oldm = m
+        oldn = n
+
+        m = oldn
+        n = oldm%oldn
+    return n
+
+print(gcd(20,10))
+</code></pre><p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x51FD;&#x6570;&#x6765;&#x5E2E;&#x52A9;&#x51CF;&#x5C11;&#x4EFB;&#x4F55;&#x5206;&#x6570;&#x3002; &#x4E3A;&#x4E86;&#x5C06;&#x5206;&#x6570;&#x7F6E;&#x4E8E;&#x6700;&#x4F4E;&#x9879;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5206;&#x5B50;&#x548C;&#x5206;&#x6BCD;&#x9664;&#x4EE5;&#x5B83;&#x4EEC;&#x7684;&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E;&#x5206;&#x6570;6/8&#xFF0C;&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;&#x4E3A;2.&#x5C06;&#x9876;&#x90E8;&#x548C;&#x5E95;&#x90E8;&#x9664;&#x4EE5;2&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5206;&#x6570;3/4&#xFF08;&#x53C2;&#x89C1;Listing 6&#xFF09;&#x3002;</p>
+<p><em>Listing 6</em></p>
+<pre><code>def __add__(self,otherfraction):
+    newnum = self.num*otherfraction.den + self.den*otherfraction.num
+    newden = self.den * otherfraction.den
+    common = gcd(newnum,newden)
+    return Fraction(newnum//common,newden//common)
+</code></pre><pre><code>&gt;&gt;&gt; f1=Fraction(1,4)
+&gt;&gt;&gt; f2=Fraction(1,2)
+&gt;&gt;&gt; f3=f1+f2
+&gt;&gt;&gt; print(f3)
+3/4
+&gt;&gt;&gt;
+</code></pre><p><img src="assets/1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure6.png" alt="1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure6"></p>
+<p><em>Figure 6</em></p>
+<p>&#x6211;&#x4EEC;&#x7684;&#x5206;&#x6570;&#x5BF9;&#x8C61;&#x73B0;&#x5728;&#x6709;&#x4E24;&#x4E2A;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;Figure 6&#x6240;&#x663E;&#x793A;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x793A;&#x4F8B;Fraction&#x7C7B;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x53E6;&#x4E00;&#x7EC4;&#x65B9;&#x6CD5;&#x5C06;&#x5141;&#x8BB8;&#x4E24;&#x4E2A;&#x5206;&#x6570;&#x76F8;&#x4E92;&#x6BD4;&#x8F83;&#x3002;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E24;&#x4E2A;Fraction&#x5BF9;&#x8C61;&#xFF0C;f1&#x548C;f2&#x3002; f1 == f2&#x53EA;&#x6709;&#x5728;&#x5F15;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x65F6;&#x624D;&#x4E3A;True&#x3002;&#x5177;&#x6709;&#x76F8;&#x540C;&#x5206;&#x5B50;&#x548C;&#x5206;&#x6BCD;&#x7684;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x5BF9;&#x8C61;&#x5728;&#x6B64;&#x5B9E;&#x73B0;&#x4E0B;&#x5C06;&#x4E0D;&#x76F8;&#x7B49;&#x3002;&#x8FD9;&#x79F0;&#x4E3A;&#x6D45;&#x7B49;&#x5F0F;&#xFF08;&#x53C2;&#x89C1;Figure 7&#xFF09;&#x3002;</p>
+<p><img src="assets/1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure7.png" alt="1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure7"></p>
+<p><em>Figure 7</em></p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8986;&#x76D6;<strong>eq</strong>&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;&#x76F8;&#x540C;&#x7684;&#x503C;&#x521B;&#x5EFA;&#x6DF1;&#x76F8;&#x7B49;&#xFF08;&#x53C2;&#x89C1;Figure 7&#xFF09;-equality&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F8;&#x540C;&#x7684;&#x5F15;&#x7528;&#x3002; <strong>eq</strong>&#x65B9;&#x6CD5;&#x662F;&#x4EFB;&#x4F55;&#x7C7B;&#x4E2D;&#x90FD;&#x53EF;&#x7528;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x6807;&#x51C6;&#x65B9;&#x6CD5;&#x3002; <strong>eq</strong>&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#x76F8;&#x540C;&#x5219;&#x8FD4;&#x56DE;True&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;False&#x3002;</p>
+<p>&#x5728;Fraction&#x7C7B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x518D;&#x6B21;&#x5C06;&#x4E24;&#x4E2A;&#x5206;&#x6570;&#x653E;&#x5728;&#x901A;&#x7528;&#x9879;&#x4E2D;&#x7136;&#x540E;&#x6BD4;&#x8F83;&#x5206;&#x5B50;&#x6765;&#x5B9E;&#x73B0;<strong>eq</strong>&#x65B9;&#x6CD5;&#xFF08;&#x53C2;&#x89C1;Listing 7&#xFF09;&#x3002; &#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x7684;&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;&#x3002; &#x4F8B;&#x5982;&#xFF0C;<strong> le</strong>&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x7684;&#x5C0F;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#x529F;&#x80FD;&#x3002;</p>
+<p><em>Listing 7</em></p>
+<pre><code>def __eq__(self, other):
+    firstnum = self.num * other.den
+    secondnum = other.num * self.den
+
+    return firstnum == secondnum
+</code></pre><p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x5B8C;&#x6574;&#x7684;Fraction&#x7C7B;&#x5728;ActiveCode 2&#x4E2D;&#x663E;&#x793A;&#x3002;&#x6211;&#x4EEC;&#x628A;&#x5269;&#x4E0B;&#x7684;&#x7B97;&#x672F;&#x548C;&#x5173;&#x7CFB;&#x65B9;&#x6CD5;&#x4F5C;&#x4E3A;&#x7EC3;&#x4E60;&#x3002;</p>
+<p><em>ActiveCode 2</em></p>
+<pre><code>def gcd(m,n):
+    while m%n != 0:
+        oldm = m
+        oldn = n
+
+        m = oldn
+        n = oldm%oldn
+    return n
+
+class Fraction:
+     def __init__(self,top,bottom):
+         self.num = top
+         self.den = bottom
+
+     def __str__(self):
+         return str(self.num)+&quot;/&quot;+str(self.den)
+
+     def show(self):
+         print(self.num,&quot;/&quot;,self.den)
+
+     def __add__(self,otherfraction):
+         newnum = self.num*otherfraction.den + \
+                      self.den*otherfraction.num
+         newden = self.den * otherfraction.den
+         common = gcd(newnum,newden)
+         return Fraction(newnum//common,newden//common)
+
+     def __eq__(self, other):
+         firstnum = self.num * other.den
+         secondnum = other.num * self.den
+
+         return firstnum == secondnum
+
+x = Fraction(1,2)
+y = Fraction(2,3)
+print(x+y)
+print(x == y)
+</code></pre><h3 id="1132&#x7EE7;&#x627F;&#xFF1A;&#x903B;&#x8F91;&#x95E8;&#x548C;&#x7535;&#x8DEF;">1.13.2.&#x7EE7;&#x627F;&#xFF1A;&#x903B;&#x8F91;&#x95E8;&#x548C;&#x7535;&#x8DEF;</h3>
+<p>&#x6211;&#x4EEC;&#x7684;&#x6700;&#x540E;&#x4E00;&#x8282;&#x5C06;&#x4ECB;&#x7ECD;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x65B9;&#x9762;&#x3002; &#x7EE7;&#x627F;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x4E0E;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x76F8;&#x5173;&#x8054;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x4E0E;&#x4EBA;&#x4EEC;&#x5F7C;&#x6B64;&#x76F8;&#x5173;&#x7684;&#x65B9;&#x5F0F;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#x3002; &#x513F;&#x7AE5;&#x7EE7;&#x627F;&#x7236;&#x6BCD;&#x7684;&#x7279;&#x5F81;&#x3002; &#x7C7B;&#x4F3C;&#x5730;&#xFF0C;Python&#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x4ECE;&#x7236;&#x7C7B;&#x7EE7;&#x627F;&#x7279;&#x5F81;&#x6570;&#x636E;&#x548C;&#x884C;&#x4E3A;&#x3002; &#x8FD9;&#x4E9B;&#x7C7B;&#x901A;&#x5E38;&#x79F0;&#x4E3A;&#x5B50;&#x7C7B;&#x548C;&#x8D85;&#x7C7B;&#x3002;</p>
+<p>Figure 8&#x663E;&#x793A;&#x4E86;&#x5185;&#x7F6E;&#x7684;Python&#x96C6;&#x5408;&#x53CA;&#x5176;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002; &#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x79CD;&#x5173;&#x7CFB;&#x7ED3;&#x6784;&#x79F0;&#x4E3A;&#x7EE7;&#x627F;&#x7ED3;&#x6784;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5217;&#x8868;&#x662F;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x5B50;&#x7C7B;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5217;&#x8868;&#x79F0;&#x4E3A;&#x5B50;&#x7EA7;&#xFF0C;&#x5C06;&#x5E8F;&#x5217;&#x79F0;&#x4E3A;&#x7236;&#x7EA7;&#xFF08;&#x6216;&#x5B50;&#x7C7B;&#x5217;&#x8868;&#x548C;&#x8D85;&#x7C7B;&#x5E8F;&#x5217;&#xFF09;&#x3002; &#x8FD9;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;IS-A Relationship&#xFF08;&#x5217;&#x8868;IS-A&#x6E38;&#x620F;&#x96C6;&#x5408;&#xFF09;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x5217;&#x8868;&#x4ECE;&#x5E8F;&#x5217;&#x7EE7;&#x627F;&#x4E86;&#x91CD;&#x8981;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x5373;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7684;&#x6392;&#x5E8F;&#x548C;&#x8FDE;&#x63A5;&#xFF0C;&#x91CD;&#x590D;&#x548C;&#x7D22;&#x5F15;&#x7B49;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><img src="assets/1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure8.png" alt="1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure8"></p>
+<p><em>Figure 8</em></p>
+<p>&#x5217;&#x8868;&#xFF0C;&#x5143;&#x7EC4;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x662F;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x3002; &#x5B83;&#x4EEC;&#x90FD;&#x7EE7;&#x627F;&#x4E86;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#x7EC4;&#x7EC7;&#x65B9;&#x5F0F;&#x548C;&#x64CD;&#x4F5C;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x6839;&#x636E;&#x6570;&#x636E;&#x662F;&#x5426;&#x662F;&#x540C;&#x6784;&#x7684;&#x4EE5;&#x53CA;&#x96C6;&#x5408;&#x662F;&#x5426;&#x4E0D;&#x53EF;&#x53D8;&#xFF0C;&#x5B83;&#x4EEC;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x90FD;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002; &#x5B69;&#x5B50;&#x4EEC;&#x90FD;&#x4ECE;&#x7236;&#x6BCD;&#x90A3;&#x91CC;&#x83B7;&#x76CA;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x589E;&#x52A0;&#x989D;&#x5916;&#x7684;&#x7279;&#x5F81;&#x6765;&#x533A;&#x5206;&#x81EA;&#x5DF1;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x8FD9;&#x79CD;&#x7EE7;&#x627F;&#x65B9;&#x5F0F;&#x6765;&#x7EC4;&#x7EC7;&#x7C7B;&#xFF0C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x5141;&#x8BB8;&#x6269;&#x5C55;&#x5148;&#x524D;&#x7F16;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x4EE5;&#x6EE1;&#x8DB3;&#x65B0;&#x60C5;&#x51B5;&#x7684;&#x9700;&#x8981;&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x901A;&#x8FC7;&#x4EE5;&#x8FD9;&#x79CD;&#x7EE7;&#x627F;&#x65B9;&#x5F0F;&#x6765;&#x7EC4;&#x7EC7;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3;&#x5B58;&#x5728;&#x7684;&#x5173;&#x7CFB;&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x66F4;&#x6709;&#x6548;&#x5730;&#x6784;&#x5EFA;&#x62BD;&#x8C61;&#x8868;&#x793A;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x63A2;&#x7D22;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6784;&#x9020;&#x4EFF;&#x771F;&#xFF0C;&#x4E00;&#x4E2A;&#x6A21;&#x62DF;&#x6570;&#x5B57;&#x7535;&#x8DEF;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002; &#x8BE5;&#x6A21;&#x62DF;&#x7684;&#x57FA;&#x672C;&#x6784;&#x5EFA;&#x5757;&#x5C06;&#x662F;&#x903B;&#x8F91;&#x95E8;&#x3002; &#x8FD9;&#x4E9B;&#x7535;&#x5B50;&#x5F00;&#x5173;&#x4EE3;&#x8868;&#x5176;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x4E4B;&#x95F4;&#x7684;&#x5E03;&#x5C14;&#x4EE3;&#x6570;&#x5173;&#x7CFB;&#x3002; &#x901A;&#x5E38;&#xFF0C;&#x95E8;&#x5177;&#x6709;&#x5355;&#x4E2A;&#x8F93;&#x51FA;&#x7EBF;&#x3002; &#x8F93;&#x51FA;&#x503C;&#x53D6;&#x51B3;&#x4E8E;&#x8F93;&#x5165;&#x7EBF;&#x4E0A;&#x7ED9;&#x51FA;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x4E0E;&#x95E8;&#x6709;&#x4E24;&#x6761;&#x8F93;&#x5165;&#x7EBF;&#xFF0C;&#x6BCF;&#x6761;&#x8F93;&#x5165;&#x7EBF;&#x53EF;&#x4EE5;&#x662F;0&#x6216;1&#xFF08;&#x5206;&#x522B;&#x4EE3;&#x8868;False&#x6216;True&#xFF09;&#x3002; &#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#x7684;&#x503C;&#x90FD;&#x4E3A;1&#xFF0C;&#x5219;&#x7ED3;&#x679C;&#x8F93;&#x51FA;&#x4E3A;1.&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x8F93;&#x5165;&#x884C;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x4E3A;0&#xFF0C;&#x5219;&#x7ED3;&#x679C;&#x4E3A;0.&#x6216;&#x8005;&#x95E8;&#x4E5F;&#x6709;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#x90FD;&#x4EA7;&#x751F;1 &#x8F93;&#x5165;&#x503C;&#x7684;&#x503C;&#x4E3A;1.&#x5728;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#x5747;&#x4E3A;0&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;0&#x3002;</p>
+<p>&#x975E;&#x95E8;&#x4E0E;&#x5176;&#x4ED6;&#x4E24;&#x4E2A;&#x95E8;&#x7684;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5B83;&#x4EEC;&#x53EA;&#x6709;&#x4E00;&#x6761;&#x8F93;&#x5165;&#x7EBF;&#x3002; &#x8F93;&#x51FA;&#x503C;&#x4E0E;&#x8F93;&#x5165;&#x503C;&#x5B8C;&#x5168;&#x76F8;&#x53CD;&#x3002; &#x5982;&#x679C;&#x8F93;&#x5165;&#x4E0A;&#x51FA;&#x73B0;0&#xFF0C;&#x5219;&#x5728;&#x8F93;&#x51FA;&#x4E0A;&#x4EA7;&#x751F;1&#x3002; &#x7C7B;&#x4F3C;&#x5730;&#xFF0C;1&#x4EA7;&#x751F;0. Figure 9&#x663E;&#x793A;&#x4E86;&#x8FD9;&#x4E9B;&#x95E8;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x901A;&#x5E38;&#x5982;&#x4F55;&#x8868;&#x793A;&#x3002; &#x6BCF;&#x4E2A;&#x95E8;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x771F;&#x503C;&#x8868;&#xFF0C;&#x663E;&#x793A;&#x7531;&#x95E8;&#x6267;&#x884C;&#x7684;&#x8F93;&#x5165;&#x5230;&#x8F93;&#x51FA;&#x6620;&#x5C04;&#x3002;</p>
+<p><img src="assets/1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure9.png" alt="1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure9"></p>
+<p><em>Figure 9</em></p>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x5404;&#x79CD;&#x6A21;&#x5F0F;&#x7EC4;&#x5408;&#x8FD9;&#x4E9B;&#x95E8;&#x7136;&#x540E;&#x5E94;&#x7528;&#x4E00;&#x7EC4;&#x8F93;&#x5165;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6784;&#x5EFA;&#x5177;&#x6709;&#x903B;&#x8F91;&#x529F;&#x80FD;&#x7684;&#x7535;&#x8DEF;&#x3002; Figure 10&#x663E;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x7531;&#x4E24;&#x4E2A;&#x4E0E;&#x95E8;&#xFF0C;&#x4E00;&#x4E2A;&#x6216;&#x95E8;&#x548C;&#x4E00;&#x4E2A;&#x975E;&#x95E8;&#x7EC4;&#x6210;&#x7684;&#x7535;&#x8DEF;&#x3002; &#x6765;&#x81EA;&#x4E24;&#x4E2A;&#x4E0E;&#x95E8;&#x7684;&#x8F93;&#x51FA;&#x7EBF;&#x76F4;&#x63A5;&#x9988;&#x5165;&#x6216;&#x95E8;&#xFF0C;&#x6216;&#x95E8;&#x4EA7;&#x751F;&#x7684;&#x8F93;&#x51FA;&#x63D0;&#x4F9B;&#x7ED9;&#x975E;&#x95E8;&#x3002; &#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C06;&#x4E00;&#x7EC4;&#x8F93;&#x5165;&#x503C;&#x5E94;&#x7528;&#x4E8E;&#x56DB;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#xFF08;&#x6BCF;&#x4E2A;&#x4E0E;&#x95E8;&#x4E24;&#x4E2A;&#xFF09;&#xFF0C;&#x5219;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x503C;&#x5E76;&#x5728;&#x975E;&#x95E8;&#x7684;&#x8F93;&#x51FA;&#x5904;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x3002; Figure 10&#x8FD8;&#x663E;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x503C;&#x7684;&#x793A;&#x4F8B;&#x3002;</p>
+<p><img src="assets/1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure10.png" alt="1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure10"></p>
+<p><em>Figure 10</em></p>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x7535;&#x8DEF;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x9996;&#x5148;&#x6784;&#x5EFA;&#x903B;&#x8F91;&#x95E8;&#x7684;&#x8868;&#x793A;&#x3002; &#x903B;&#x8F91;&#x95E8;&#x5F88;&#x5BB9;&#x6613;&#x7EC4;&#x7EC7;&#x6210;&#x4E00;&#x4E2A;&#x7C7B;&#x7EE7;&#x627F;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#xFF0C;&#x5982;Figure 11&#x6240;&#x793A;&#x3002;&#x5728;&#x7EE7;&#x627F;&#x7ED3;&#x6784;&#x7684;&#x9876;&#x90E8;&#xFF0C;LogicGate&#x7C7B;&#x4EE3;&#x8868;&#x903B;&#x8F91;&#x95E8;&#x7684;&#x6700;&#x4E00;&#x822C;&#x7279;&#x5F81;&#xFF1A;&#x5373;&#x95E8;&#x7684;&#x6807;&#x7B7E;&#x548C;&#x8F93;&#x51FA;&#x7EBF;&#x3002; &#x4E0B;&#x4E00;&#x7EA7;&#x5B50;&#x7C7B;&#x5C06;&#x903B;&#x8F91;&#x95E8;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x7CFB;&#x5217;&#xFF0C;&#x5373;&#x5177;&#x6709;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x7EBF;&#x7684;&#x7CFB;&#x5217;&#x548C;&#x5177;&#x6709;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x7EBF;&#x7684;&#x7CFB;&#x5217;&#x3002; &#x5728;&#x6B64;&#x4E4B;&#x4E0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x7684;&#x7279;&#x5B9A;&#x903B;&#x8F91;&#x529F;&#x80FD;&#x51FA;&#x73B0;&#x3002;</p>
+<p><img src="assets/1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure11.png" alt="1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure11"></p>
+<p><em>Figure 11</em></p>
+<p>&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x4ECE;&#x6700;&#x5E38;&#x89C1;&#x7684;LogicGate&#x5F00;&#x59CB;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B;&#x7C7B;&#x3002; &#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x6BCF;&#x6247;&#x95E8;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x8BC6;&#x522B;&#x6807;&#x7B7E;&#x548C;&#x4E00;&#x6761;&#x8F93;&#x51FA;&#x7EBF;&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5141;&#x8BB8;&#x95E8;&#x7684;&#x7528;&#x6237;&#x4ECE;&#x95E8;&#x4E0A;&#x8BF7;&#x6C42;&#x6807;&#x7B7E;&#x3002;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x903B;&#x8F91;&#x95E8;&#x9700;&#x8981;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x884C;&#x4E3A;&#x662F;&#x77E5;&#x9053;&#x5176;&#x8F93;&#x51FA;&#x503C;&#x7684;&#x80FD;&#x529B;&#x3002; &#x8FD9;&#x5C06;&#x8981;&#x6C42;&#x95E8;&#x57FA;&#x4E8E;&#x5F53;&#x524D;&#x8F93;&#x5165;&#x6267;&#x884C;&#x9002;&#x5F53;&#x7684;&#x903B;&#x8F91;&#x3002; &#x4E3A;&#x4E86;&#x4EA7;&#x751F;&#x8F93;&#x51FA;&#xFF0C;&#x95E8;&#x9700;&#x8981;&#x77E5;&#x9053;&#x8BE5;&#x903B;&#x8F91;&#x5177;&#x4F53;&#x662F;&#x4EC0;&#x4E48;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x6267;&#x884C;&#x903B;&#x8F91;&#x8BA1;&#x7B97;&#x3002; &#x5B8C;&#x6574;&#x7684;&#x7C7B;&#x5982;Listing 8&#x6240;&#x793A;&#x3002;</p>
+<p><em>Listing 8</em></p>
+<pre><code>class LogicGate:
+
+    def __init__(self,n):
+        self.label = n
+        self.output = None
+
+    def getLabel(self):
+        return self.label
+
+    def getOutput(self):
+        self.output = self.performGateLogic()
+        return self.output
+</code></pre><p>&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4F1A;&#x5B9E;&#x73B0;performGateLogic&#x51FD;&#x6570;&#x3002; &#x539F;&#x56E0;&#x662F;&#x6211;&#x4EEC;&#x4E0D;&#x77E5;&#x9053;&#x6BCF;&#x4E2A;&#x95E8;&#x5C06;&#x5982;&#x4F55;&#x6267;&#x884C;&#x81EA;&#x5DF1;&#x7684;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x3002; &#x8FD9;&#x4E9B;&#x7EC6;&#x8282;&#x5C06;&#x5305;&#x542B;&#x5728;&#x6DFB;&#x52A0;&#x5230;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x95E8;&#x4E2D;&#x3002; &#x8FD9;&#x662F;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x4E2D;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#x7684;&#x601D;&#x60F3;&#x3002; &#x6211;&#x4EEC;&#x6B63;&#x5728;&#x7F16;&#x5199;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5C06;&#x4F7F;&#x7528;&#x5C1A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x4EE3;&#x7801;&#x3002; &#x53C2;&#x6570;self&#x662F;&#x5BF9;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x9645;&#x95E8;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x3002; &#x6DFB;&#x52A0;&#x5230;&#x5C42;&#x7EA7;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x65B0;&#x903B;&#x8F91;&#x95E8;&#x90FD;&#x53EA;&#x9700;&#x8981;&#x5B9E;&#x73B0;performGateLogic&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x9002;&#x5F53;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x3002; &#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x95E8;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x5176;&#x8F93;&#x51FA;&#x503C;&#x3002; &#x8FD9;&#x79CD;&#x6269;&#x5C55;&#x5F53;&#x524D;&#x5B58;&#x5728;&#x7684;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x5E76;&#x63D0;&#x4F9B;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x65B0;&#x7C7B;&#x7684;&#x7279;&#x5B9A;&#x529F;&#x80FD;&#x7684;&#x80FD;&#x529B;&#x5BF9;&#x4E8E;&#x91CD;&#x7528;&#x73B0;&#x6709;&#x4EE3;&#x7801;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6839;&#x636E;&#x8F93;&#x5165;&#x7EBF;&#x7684;&#x6570;&#x91CF;&#x5BF9;&#x903B;&#x8F91;&#x95E8;&#x8FDB;&#x884C;&#x4E86;&#x5206;&#x7C7B;&#x3002; &#x4E0E;&#x95E8;&#x6709;&#x4E24;&#x6761;&#x8F93;&#x5165;&#x7EBF;&#x3002; &#x6216;&#x95E8;&#x4E5F;&#x6709;&#x4E24;&#x6761;&#x8F93;&#x5165;&#x7EBF;&#x3002; &#x975E;&#x95E8;&#x6709;&#x4E00;&#x6761;&#x8F93;&#x5165;&#x7EBF;&#x3002; BinaryGate&#x7C7B;&#x5C06;&#x662F;LogicGate&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x5E76;&#x5C06;&#x6DFB;&#x52A0;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#x3002; UnaryGate&#x7C7B;&#x4E5F;&#x5C06;&#x662F;LogicGate&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x4F46;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#x3002; &#x5728;&#x8BA1;&#x7B97;&#x673A;&#x7535;&#x8DEF;&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x7EBF;&#x6709;&#x65F6;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x5F15;&#x811A;&#x201D;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x5B9E;&#x73B0;&#x4E2D;&#x4F7F;&#x7528;&#x8BE5;&#x672F;&#x8BED;&#x3002;</p>
+<p><em>Listing 9</em></p>
+<pre><code>class BinaryGate(LogicGate):
+
+    def __init__(self,n):
+        LogicGate.__init__(self,n)
+
+        self.pinA = None
+        self.pinB = None
+
+    def getPinA(self):
+        return int(input(&quot;Enter Pin A input for gate &quot;+ self.getLabel()+&quot;--&gt;&quot;))
+
+    def getPinB(self):
+        return int(input(&quot;Enter Pin B input for gate &quot;+ self.getLabel()+&quot;--&gt;&quot;))
+</code></pre><p><em>Listing 10</em></p>
+<pre><code>class UnaryGate(LogicGate):
+
+    def __init__(self,n):
+        LogicGate.__init__(self,n)
+
+        self.pin = None
+
+    def getPin(self):
+        return int(input(&quot;Enter Pin input for gate &quot;+ self.getLabel()+&quot;--&gt;&quot;))
+</code></pre><p>Listing 9&#x548C;Listing 10&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E24;&#x4E2A;&#x7C7B;&#x3002; &#x8FD9;&#x4E24;&#x4E2A;&#x7C7B;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x7236;&#x7C7B;&#x7684;<strong>init</strong>&#x65B9;&#x6CD5;&#x663E;&#x5F0F;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002; &#x5728;&#x521B;&#x5EFA;BinaryGate&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x8981;&#x521D;&#x59CB;&#x5316;&#x4ECE;LogicGate&#x7EE7;&#x627F;&#x7684;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x9879;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x95E8;&#x7684;&#x6807;&#x7B7E;&#x3002; &#x7136;&#x540E;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7EE7;&#x7EED;&#x6DFB;&#x52A0;&#x4E24;&#x6761;&#x8F93;&#x5165;&#x7EBF;&#xFF08;pinA&#x548C;pinB&#xFF09;&#x3002; &#x8FD9;&#x662F;&#x6784;&#x5EFA;&#x7C7B;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x65F6;&#x5E94;&#x59CB;&#x7EC8;&#x4F7F;&#x7528;&#x7684;&#x975E;&#x5E38;&#x5E38;&#x89C1;&#x7684;&#x6A21;&#x5F0F;&#x3002; &#x5B50;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x9700;&#x8981;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x533A;&#x5206;&#x6570;&#x636E;&#x3002;</p>
+<p>Python&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;super&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4EE3;&#x66FF;&#x663E;&#x5F0F;&#x547D;&#x540D;&#x7236;&#x7C7B;&#x3002; &#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x66F4;&#x901A;&#x7528;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x5E76;&#x4E14;&#x88AB;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5F53;&#x4E00;&#x4E2A;&#x7C7B;&#x6709;&#x591A;&#x4E2A;&#x7236;&#x7C7B;&#x65F6;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x672C;&#x7B80;&#x4ECB;&#x4E2D;&#x8BA8;&#x8BBA;&#x7684;&#x5185;&#x5BB9;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;LogicGate .<strong> init </strong>&#xFF08;self&#xFF0C;n&#xFF09;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x4E3A;super&#xFF08;UnaryGate&#xFF0C;self&#xFF09;.<strong> init </strong>&#xFF08;n&#xFF09;&#x3002;</p>
+<p>BinaryGate&#x7C7B;&#x6DFB;&#x52A0;&#x7684;&#x552F;&#x4E00;&#x884C;&#x4E3A;&#x662F;&#x4ECE;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#x83B7;&#x53D6;&#x503C;&#x7684;&#x80FD;&#x529B;&#x3002; &#x7531;&#x4E8E;&#x8FD9;&#x4E9B;&#x503C;&#x6765;&#x81EA;&#x67D0;&#x4E9B;&#x5916;&#x90E8;&#x4F4D;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x901A;&#x8FC7;&#x8F93;&#x5165;&#x8BED;&#x53E5;&#x8BE2;&#x95EE;&#x7528;&#x6237;&#x5373;&#x53EF;&#x3002; &#x9664;&#x4E86;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#x4E4B;&#x5916;&#xFF0C;UnaryGate&#x7C7B;&#x4E5F;&#x4F1A;&#x8FDB;&#x884C;&#x76F8;&#x540C;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6709;&#x4E86;&#x4E00;&#x4E2A;&#x9488;&#x5BF9;&#x95E8;&#x7684;&#x901A;&#x7528;&#x7C7B;&#xFF0C;&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x8F93;&#x5165;&#x884C;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6784;&#x5EFA;&#x5177;&#x6709;&#x72EC;&#x7279;&#x884C;&#x4E3A;&#x7684;&#x7279;&#x5B9A;&#x95E8;&#x3002;&#x4F8B;&#x5982;&#xFF0C;AndGate&#x7C7B;&#x5C06;&#x662F;BinaryGate&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0E;&#x95E8;&#x6709;&#x4E24;&#x6761;&#x8F93;&#x5165;&#x7EBF;&#x3002; &#x548C;&#x4EE5;&#x524D;&#x4E00;&#x6837;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF08;BinaryGate&#xFF09;&#xFF0C;&#x540E;&#x8005;&#x53C8;&#x8C03;&#x7528;&#x5176;&#x7236;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF08;LogicGate&#xFF09;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;AndGate&#x7C7B;&#x4E0D;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x65B0;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x7EE7;&#x627F;&#x4E86;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#xFF0C;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x884C;&#x548C;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x3002;</p>
+<p><em>Listing 11</em></p>
+<pre><code>class AndGate(BinaryGate):
+
+    def __init__(self,n):
+        BinaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+
+        a = self.getPinA()
+        b = self.getPinB()
+        if a==1 and b==1:
+            return 1
+        else:
+            return 0
+</code></pre><p>AndGate&#x552F;&#x4E00;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x662F;&#x6267;&#x884C;&#x524D;&#x9762;&#x63CF;&#x8FF0;&#x7684;&#x5E03;&#x5C14;&#x64CD;&#x4F5C;&#x7684;&#x7279;&#x5B9A;&#x884C;&#x4E3A;&#x3002; &#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;performGateLogic&#x65B9;&#x6CD5;&#x7684;&#x5730;&#x65B9;&#x3002; &#x5BF9;&#x4E8E;AND&#x95E8;&#xFF0C;&#x6B64;&#x65B9;&#x6CD5;&#x9996;&#x5148;&#x5FC5;&#x987B;&#x83B7;&#x53D6;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x4EC5;&#x5728;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x503C;&#x5747;&#x4E3A;1&#x65F6;&#x8FD4;&#x56DE;1.&#x5B8C;&#x6574;&#x7C7B;&#x5982;Listing 11&#x6240;&#x793A;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x5E76;&#x8981;&#x6C42;&#x5B83;&#x8BA1;&#x7B97;&#x5176;&#x8F93;&#x51FA;&#x6765;&#x663E;&#x793A;AndGate&#x7C7B;&#x3002; &#x4EE5;&#x4E0B;&#x4F1A;&#x8BDD;&#x663E;&#x793A;&#x4E86;&#x4E00;&#x4E2A;AndGate&#x5BF9;&#x8C61;g1&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x5185;&#x90E8;&#x6807;&#x7B7E;&#x201C;G1&#x201D;&#x3002; &#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;getOutput&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x9996;&#x5148;&#x8C03;&#x7528;&#x5176;performGateLogic&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4F9D;&#x6B21;&#x67E5;&#x8BE2;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#x884C;&#x3002; &#x63D0;&#x4F9B;&#x503C;&#x540E;&#xFF0C;&#x5C06;&#x663E;&#x793A;&#x6B63;&#x786E;&#x7684;&#x8F93;&#x51FA;&#x3002;</p>
+<pre><code>&gt;&gt;&gt; g1 = AndGate(&quot;G1&quot;)
+&gt;&gt;&gt; g1.getOutput()
+Enter Pin A input for gate G1--&gt;1
+Enter Pin B input for gate G1--&gt;0
+0
+</code></pre><p>&#x5BF9;&#x4E8E;&#x6216;&#x95E8;&#x548C;&#x975E;&#x95E8;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x76F8;&#x540C;&#x7684;&#x5F00;&#x53D1;&#x3002; OrGate&#x7C7B;&#x4E5F;&#x5C06;&#x662F;BinaryGate&#x7684;&#x5B50;&#x7C7B;&#xFF0C;NotGate&#x7C7B;&#x5C06;&#x6269;&#x5C55;UnaryGate&#x7C7B;&#x3002; &#x8FD9;&#x4E24;&#x4E2A;&#x7C7B;&#x90FD;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x81EA;&#x5DF1;&#x7684;performGateLogic&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x5B83;&#x4EEC;&#x7684;&#x7279;&#x5B9A;&#x884C;&#x4E3A;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5355;&#x4E2A;&#x95E8;&#xFF0C;&#x9996;&#x5148;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x95E8;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x7136;&#x540E;&#x5F97;&#x5230;&#x95E8;&#x7684;&#x8F93;&#x51FA;&#xFF08;&#x8FD9;&#x5C06;&#x53CD;&#x8FC7;&#x6765;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x8F93;&#x5165;&#xFF09;&#x3002; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt; g2 = OrGate(&quot;G2&quot;)
+&gt;&gt;&gt; g2.getOutput()
+Enter Pin A input for gate G2--&gt;1
+Enter Pin B input for gate G2--&gt;1
+1
+&gt;&gt;&gt; g2.getOutput()
+Enter Pin A input for gate G2--&gt;0
+Enter Pin B input for gate G2--&gt;0
+0
+&gt;&gt;&gt; g3 = NotGate(&quot;G3&quot;)
+&gt;&gt;&gt; g3.getOutput()
+Enter Pin input for gate G3--&gt;0
+1
+</code></pre><p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x6CE8;&#x610F;&#x529B;&#x8F6C;&#x5411;&#x6784;&#x5EFA;&#x7535;&#x8DEF;&#x3002; &#x4E3A;&#x4E86;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7535;&#x8DEF;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x95E8;&#x8FDE;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x53E6;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x3002; &#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;Connector&#x7684;&#x65B0;&#x7C7B;&#x3002;</p>
+<p>Connector&#x7C7B;&#x4E0D;&#x4F1A;&#x9A7B;&#x7559;&#x5728;&#x95E8;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x3002; &#x7136;&#x800C;&#xFF0C;&#x5B83;&#x5C06;&#x4F7F;&#x7528;&#x95E8;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x8FDE;&#x63A5;&#x5668;&#x5C06;&#x5177;&#x6709;&#x4E24;&#x4E2A;&#x95E8;&#xFF0C;&#x4E00;&#x4E2A;&#x5728;&#x4E24;&#x7AEF;&#xFF08;&#x53C2;&#x89C1;Figure 12&#xFF09;&#x3002; &#x8FD9;&#x79CD;&#x5173;&#x7CFB;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x4E2D;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002; &#x5B83;&#x88AB;&#x79F0;&#x4E3A;HAS-A&#x5173;&#x7CFB;&#x3002; &#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x77ED;&#x8BED;&#x201C;IS-A Relationship&#x201D;&#x6765;&#x8868;&#x793A;&#x5B50;&#x7C7B;&#x4E0E;&#x7236;&#x7C7B;&#x76F8;&#x5173;&#xFF0C;&#x4F8B;&#x5982;UnaryGate IS-A LogicGate&#x3002;</p>
+<p><img src="assets/1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure12.png" alt="1.13.&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;-&#x5B9A;&#x4E49;&#x7C7B;.figure12"></p>
+<p><em>Figure 12</em></p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x4F7F;&#x7528;Connector&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x8BF4;&#x8FDE;&#x63A5;&#x5668;HAS-A LogicGate&#x610F;&#x5473;&#x7740;&#x8FDE;&#x63A5;&#x5668;&#x5C06;&#x5305;&#x542B;LogicGate&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x4F46;&#x4E0D;&#x662F;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002; &#x5728;&#x8BBE;&#x8BA1;&#x7C7B;&#x65F6;&#xFF0C;&#x533A;&#x5206;&#x5177;&#x6709;IS-A&#x5173;&#x7CFB;&#xFF08;&#x9700;&#x8981;&#x7EE7;&#x627F;&#xFF09;&#x548C;&#x5177;&#x6709;HAS-A&#x5173;&#x7CFB;&#xFF08;&#x6CA1;&#x6709;&#x7EE7;&#x627F;&#xFF09;&#x7684;&#x7C7B;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<p>Listing 12&#x663E;&#x793A;&#x4E86;Connector&#x7C7B;&#x3002; &#x6BCF;&#x4E2A;&#x8FDE;&#x63A5;&#x5668;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x4E24;&#x4E2A;&#x95E8;&#x5B9E;&#x4F8B;&#x5C06;&#x88AB;&#x79F0;&#x4E3A;fromgate&#x548C;togate&#xFF0C;&#x8BC6;&#x522B;&#x51FA;&#x6570;&#x636E;&#x503C;&#x5C06;&#x4ECE;&#x4E00;&#x4E2A;&#x95E8;&#x7684;&#x8F93;&#x51FA;&#x201C;&#x6D41;&#x52A8;&#x201D;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x95E8;&#x7684;&#x8F93;&#x5165;&#x7EBF;&#x3002; &#x5BF9;setNextPin&#x7684;&#x8C03;&#x7528;&#x5BF9;&#x4E8E;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF08;&#x53C2;&#x89C1;Listing 13&#xFF09;&#x3002; &#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x6B64;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x95E8;&#x7C7B;&#x4E2D;&#xFF0C;&#x4EE5;&#x4FBF;&#x6BCF;&#x4E2A;togate&#x53EF;&#x4EE5;&#x4E3A;&#x8FDE;&#x63A5;&#x9009;&#x62E9;&#x6B63;&#x786E;&#x7684;&#x8F93;&#x5165;&#x884C;&#x3002;</p>
+<p><em>Listing 12</em></p>
+<pre><code>class Connector:
+
+    def __init__(self, fgate, tgate):
+        self.fromgate = fgate
+        self.togate = tgate
+
+        tgate.setNextPin(self)
+
+    def getFrom(self):
+        return self.fromgate
+
+    def getTo(self):
+        return self.togate
+</code></pre><p>&#x5728;BinaryGate&#x7C7B;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;&#x5177;&#x6709;&#x4E24;&#x6761;&#x53EF;&#x80FD;&#x8F93;&#x5165;&#x7EBF;&#x7684;&#x95E8;&#xFF0C;&#x8FDE;&#x63A5;&#x5668;&#x5FC5;&#x987B;&#x4EC5;&#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x6761;&#x7EBF;&#x3002; &#x5982;&#x679C;&#x5B83;&#x4EEC;&#x90FD;&#x53EF;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x9ED8;&#x8BA4;&#x9009;&#x62E9;pinA&#x3002; &#x5982;&#x679C;pinA&#x5DF2;&#x7ECF;&#x8FDE;&#x63A5;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C06;&#x9009;&#x62E9;pinB&#x3002; &#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x5230;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x8F93;&#x5165;&#x7EBF;&#x7684;&#x95E8;&#x3002;</p>
+<p><em>Listing 13</em></p>
+<pre><code>def setNextPin(self,source):
+    if self.pinA == None:
+        self.pinA = source
+    else:
+        if self.pinB == None:
+            self.pinB = source
+        else:
+           raise RuntimeError(&quot;Error: NO EMPTY PINS&quot;)
+</code></pre><p>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x4ECE;&#x4E24;&#x4E2A;&#x4F4D;&#x7F6E;&#x83B7;&#x53D6;&#x8F93;&#x5165;&#xFF1A;&#x5916;&#x90E8;&#xFF0C;&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x4EE5;&#x53CA;&#x8FDE;&#x63A5;&#x5230;&#x8BE5;&#x8F93;&#x5165;&#x7EBF;&#x7684;&#x95E8;&#x7684;&#x8F93;&#x51FA;&#x3002; &#x8FD9;&#x9700;&#x8981;&#x66F4;&#x6539;getPinA&#x548C;getPinB&#x65B9;&#x6CD5;&#xFF08;&#x53C2;&#x89C1;Listing 14&#xFF09;&#x3002; &#x5982;&#x679C;&#x8F93;&#x5165;&#x884C;&#x6CA1;&#x6709;&#x8FDE;&#x63A5;&#x5230;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#xFF08;&#x7A7A;&#xFF09;&#xFF0C;&#x5219;&#x50CF;&#x4EE5;&#x524D;&#x4E00;&#x6837;&#x5411;&#x5916;&#x90E8;&#x8BE2;&#x95EE;&#x7528;&#x6237;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x8FDE;&#x63A5;&#xFF0C;&#x5219;&#x8BBF;&#x95EE;&#x8FDE;&#x63A5;&#x5E76;&#x68C0;&#x7D22;fromgate&#x7684;&#x8F93;&#x51FA;&#x503C;&#x3002; &#x8FD9;&#x53CD;&#x8FC7;&#x6765;&#x5BFC;&#x81F4;&#x8BE5;&#x95E8;&#x5904;&#x7406;&#x5176;&#x903B;&#x8F91;&#x3002; &#x8FD9;&#x4E00;&#x76F4;&#x6301;&#x7EED;&#x5230;&#x6240;&#x6709;&#x8F93;&#x5165;&#x90FD;&#x53EF;&#x7528;&#x5E76;&#x4E14;&#x6700;&#x7EC8;&#x8F93;&#x51FA;&#x503C;&#x6210;&#x4E3A;&#x6240;&#x8BA8;&#x8BBA;&#x7684;&#x95E8;&#x7684;&#x6240;&#x9700;&#x8F93;&#x5165;&#x3002; &#x4ECE;&#x67D0;&#x79CD;&#x610F;&#x4E49;&#x4E0A;&#x8BF4;&#xFF0C;&#x7535;&#x8DEF;&#x5411;&#x540E;&#x5DE5;&#x4F5C;&#x4EE5;&#x627E;&#x5230;&#x6700;&#x7EC8;&#x4EA7;&#x751F;&#x8F93;&#x51FA;&#x6240;&#x9700;&#x7684;&#x8F93;&#x5165;&#x3002;</p>
+<p><em>Listing 14</em></p>
+<pre><code>def getPinA(self):
+    if self.pinA == None:
+        return input(&quot;Enter Pin A input for gate &quot; + self.getName()+&quot;--&gt;&quot;)
+    else:
+        return self.pinA.getFrom().getOutput()
+</code></pre><p>&#x4EE5;&#x4E0B;&#x7247;&#x6BB5;&#x6784;&#x5EFA;&#x4E86;&#x672C;&#x8282;&#x524D;&#x9762;&#x6240;&#x793A;&#x7684;&#x7535;&#x8DEF;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt; g1 = AndGate(&quot;G1&quot;)
+&gt;&gt;&gt; g2 = AndGate(&quot;G2&quot;)
+&gt;&gt;&gt; g3 = OrGate(&quot;G3&quot;)
+&gt;&gt;&gt; g4 = NotGate(&quot;G4&quot;)
+&gt;&gt;&gt; c1 = Connector(g1,g3)
+&gt;&gt;&gt; c2 = Connector(g2,g3)
+&gt;&gt;&gt; c3 = Connector(g3,g4)
+</code></pre><p>&#x4E24;&#x4E2A;&#x4E0E;&#x95E8;&#xFF08;g1&#x548C;g2&#xFF09;&#x7684;&#x8F93;&#x51FA;&#x8FDE;&#x63A5;&#x5230;&#x6216;&#x95E8;&#xFF08;g3&#xFF09;&#xFF0C;&#x8F93;&#x51FA;&#x8FDE;&#x63A5;&#x5230;&#x975E;&#x95E8;&#xFF08;g4&#xFF09;&#x3002; &#x975E;&#x95E8;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x6574;&#x4E2A;&#x7535;&#x8DEF;&#x7684;&#x8F93;&#x51FA;&#x3002; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt; g4.getOutput()
+Pin A input for gate G1--&gt;0
+Pin B input for gate G1--&gt;1
+Pin A input for gate G2--&gt;1
+Pin B input for gate G2--&gt;1
+0
+</code></pre><p>&#x4F7F;&#x7528;ActiveCode 4&#x81EA;&#x5DF1;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;:</p>
+<p><em>ActiveCode 4</em></p>
+<pre><code>class LogicGate:
+
+    def __init__(self,n):
+        self.name = n
+        self.output = None
+
+    def getName(self):
+        return self.name
+
+    def getOutput(self):
+        self.output = self.performGateLogic()
+        return self.output
+
+
+class BinaryGate(LogicGate):
+
+    def __init__(self,n):
+        LogicGate.__init__(self,n)
+
+        self.pinA = None
+        self.pinB = None
+
+    def getPinA(self):
+        if self.pinA == None:
+            return int(input(&quot;Enter Pin A input for gate &quot;+self.getName()+&quot;--&gt;&quot;))
+        else:
+            return self.pinA.getFrom().getOutput()
+
+    def getPinB(self):
+        if self.pinB == None:
+            return int(input(&quot;Enter Pin B input for gate &quot;+self.getName()+&quot;--&gt;&quot;))
+        else:
+            return self.pinB.getFrom().getOutput()
+
+    def setNextPin(self,source):
+        if self.pinA == None:
+            self.pinA = source
+        else:
+            if self.pinB == None:
+                self.pinB = source
+            else:
+                print(&quot;Cannot Connect: NO EMPTY PINS on this gate&quot;)
+
+
+class AndGate(BinaryGate):
+
+    def __init__(self,n):
+        BinaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+
+        a = self.getPinA()
+        b = self.getPinB()
+        if a==1 and b==1:
+            return 1
+        else:
+            return 0
+
+class OrGate(BinaryGate):
+
+    def __init__(self,n):
+        BinaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+
+        a = self.getPinA()
+        b = self.getPinB()
+        if a ==1 or b==1:
+            return 1
+        else:
+            return 0
+
+class UnaryGate(LogicGate):
+
+    def __init__(self,n):
+        LogicGate.__init__(self,n)
+
+        self.pin = None
+
+    def getPin(self):
+        if self.pin == None:
+            return int(input(&quot;Enter Pin input for gate &quot;+self.getName()+&quot;--&gt;&quot;))
+        else:
+            return self.pin.getFrom().getOutput()
+
+    def setNextPin(self,source):
+        if self.pin == None:
+            self.pin = source
+        else:
+            print(&quot;Cannot Connect: NO EMPTY PINS on this gate&quot;)
+
+
+class NotGate(UnaryGate):
+
+    def __init__(self,n):
+        UnaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+        if self.getPin():
+            return 0
+        else:
+            return 1
+
+
+class Connector:
+
+    def __init__(self, fgate, tgate):
+        self.fromgate = fgate
+        self.togate = tgate
+
+        tgate.setNextPin(self)
+
+    def getFrom(self):
+        return self.fromgate
+
+    def getTo(self):
+        return self.togate
+
+
+def main():
+   g1 = AndGate(&quot;G1&quot;)
+   g2 = AndGate(&quot;G2&quot;)
+   g3 = OrGate(&quot;G3&quot;)
+   g4 = NotGate(&quot;G4&quot;)
+   c1 = Connector(g1,g3)
+   c2 = Connector(g2,g3)
+   c3 = Connector(g3,g4)
+   print(g4.getOutput())
+
+main()
+</code></pre><p><em>&#x81EA;&#x6211;&#x68C0;&#x6D4B;</em></p>
+<p>&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x65B0;&#x7684;&#x95E8;&#x7C7B;&#xFF0C;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;NorGate&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;NandGate&#x3002; NandGates&#x50CF;AndGates&#x4E00;&#x6837;&#x5DE5;&#x4F5C;&#xFF0C;&#x5B83;&#x6CA1;&#x6709;&#x9644;&#x52A0;&#x5230;&#x8F93;&#x51FA;&#x3002; NorGates&#x5DE5;&#x4F5C;&#x7684;&#x6E56;OrGates&#x6CA1;&#x6709;&#x9644;&#x52A0;&#x5230;&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x7CFB;&#x5217;&#x95E8;&#xFF0C;&#x8BC1;&#x660E;&#x4EE5;&#x4E0B;&#x7B49;&#x5F0F;NOT(( A and B) or (C and D))&#x4E0E;NOT( A and B ) and NOT (C and D)&#x76F8;&#x540C;&#x3002; &#x786E;&#x4FDD;&#x5728;&#x6A21;&#x62DF;&#x4E2D;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x65B0;&#x7684;&#x95E8;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../1.12.定义函数/" class="navigation navigation-prev " aria-label="Previous page: 1.12.定义函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../1.14.总结/" class="navigation navigation-next " aria-label="Next page: 1.14.总结">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.13.面向对象编程-定义类","level":"1.2.13","depth":2,"next":{"title":"1.14.总结","level":"1.2.14","depth":2,"path":"1.介绍/1.14.总结/README.md","ref":"1.介绍/1.14.总结/README.md","articles":[]},"previous":{"title":"1.12.定义函数","level":"1.2.12","depth":2,"path":"1.介绍/1.12.定义函数/README.md","ref":"1.介绍/1.12.定义函数/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1.介绍/1.13.面向对象编程-定义类/README.md","mtime":"2019-01-20T07:40:10.635Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T07:41:15.270Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
